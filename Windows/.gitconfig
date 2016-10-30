@@ -1,0 +1,13 @@
+[user]
+	name = Neos21
+	email = neos21@gmail.com
+[color]
+	ui = auto
+[core]
+	autoCRLF = false
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+[push]
+	default = simple
