@@ -1,0 +1,43 @@
+# ================================================================================
+# .gitconfig
+# ================================================================================
+
+
+[user]
+	name = Neos21
+	email = neos21@gmail.com
+[alias]
+	ad  = add
+	b   = branch
+	ba  = branch -a
+	co  = checkout
+	c   = commit
+	ce  = commit --allow-empty
+	cm  = commit -m
+	df  = diff
+	dfn = diff --name-only
+	fe  = fetch
+	l   = log -10 --date=short --pretty=format:\"%C(Yellow)%h %C(Cyan)%cd %C(Reset)%s %C(Blue)[%cn]%C(Red)%d\"
+	lr  = log -10 --date=short --pretty=format:\"%C(Yellow)%h %C(Cyan)%cd %C(Reset)%s %C(Blue)[%cn]%C(Red)%d\" --graph
+	pl  = pull
+	ps  = push
+	st  = status
+	s   = status -s -b
+[color]
+	ui = auto
+[core]
+	autoCRLF = false
+	quotepath = false
+[fetch]
+	prune = true
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true
+[merge]
+	ff = false
+[push]
+	default = simple
+
+
+# --------------------------------------------------------------------------------

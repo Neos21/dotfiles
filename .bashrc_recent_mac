@@ -1,0 +1,13 @@
+# ================================================================================
+# 【Original】.bashrc_recent_mac
+#   My Recent Settings For Mac (Alias, Function)
+# ================================================================================
+
+
+echo [Mac OS] .bashrc_recent_mac
+
+alias cdev='cd ~/Documents/Dev/'
+alias cdgh='cd ~/Documents/Dev/GitHub/'
+
+
+# --------------------------------------------------------------------------------

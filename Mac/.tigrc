@@ -1,0 +1,20 @@
+# ================================================================================
+# 【For Mac】.tigrc
+#   tig … Mac 用 Git ログビューア
+# ================================================================================
+
+
+# main view の左端にコミット ID を表示する
+set main-view = date id author commit-title:graph=yes,refs=yes
+
+# Colour Settings
+color default white black
+color cursor default magenta
+color date cyan default
+color delimiter cyan default
+color line-number yellow default
+color diff-header yellow default
+color diff-index blue default
+color diff-chunk magenta default
+color "Reported-by:" green default
+color graph-commit cyan default
