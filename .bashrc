@@ -19,7 +19,7 @@ if [ "$(uname)" == "Darwin" ]; then
   # Open = Start
   alias start='open'
   
-  # Sudo コマンドの補完をきくようにする
+  # Sudo コマンドの補完を有効化
   complete -cf sudo
   
   # Tig
@@ -38,7 +38,10 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "MINGW" ]; then
   
   
   # Ls
+  # C:\Program Files\Git\etc\DIR_COLORS が色設定を持っている
+  # 「DIR 01;34」を「DIR 01;36」にするとディレクトリが水色になる
   alias ls='ls -F --color=auto --show-control-chars'
+  eval $(dircolors /etc/DIR_COLORS)
   
   # Start = Open
   alias open='start'
@@ -110,15 +113,22 @@ alias g='git'
 alias ga='git add'
 alias gb='git branch'
 alias gba='git branch -a'
+alias gbd='git branch -D'
 alias gco='git checkout'
+alias gcob='git checkout -b'
 alias gc='git commit'
 alias gce='git commit --allow-empty'
+alias gcem='git commit --allow-empty -m'
 alias gcm='git commit -m'
 alias gdf='git diff'
+alias gdfc='git diff --cached'
 alias gdfn='git diff --name-only'
 alias gfe='git fetch'
 alias gl=' git log -10 --date=short --pretty=format:"%C(Yellow)%h %C(Cyan)%cd %C(Reset)%s %C(Blue)[%cn]%C(Red)%d"'
+alias glf='git log --pretty=fuller'
+alias glog='git log'
 alias glr='git log -10 --date=short --pretty=format:"%C(Yellow)%h %C(Cyan)%cd %C(Reset)%s %C(Blue)[%cn]%C(Red)%d" --graph'
+alias gm='git merge'
 alias gpl='git pull'
 alias gps='git push'
 alias gst='git status'
