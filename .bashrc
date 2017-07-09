@@ -97,9 +97,6 @@ alias grep='grep --color'
 # Df
 alias df='df -h'
 
-# Ps
-alias ps='ps --sort=start_time'
-
 # Edit .bashrc
 alias erc='vi ~/.bashrc'
 alias rc='. ~/.bashrc'
@@ -142,7 +139,7 @@ alias galias='git config --global -l | grep alias'
 # ================================================================================
 
 alias npmls='npm list --depth=0'
-alias npmlsg='npmls -g'
+alias npmlsg='npm list --depth=0 -g'
 
 
 # --------------------------------------------------------------------------------

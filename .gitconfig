@@ -43,6 +43,8 @@
 	required = true
 [merge]
 	ff = false
+[pull]
+	ff = only
 [push]
 	default = simple
 

@@ -12,7 +12,7 @@ if [ "$(uname)" == "Darwin" ]; then
   # ==============================================================================
   
   
-  # プロンプト変更 : Git ブランチを表示させ、Git コマンド補完を有効にする
+  # プロンプト変更 : Git ブランチを表示させ Git コマンド補完を有効にする
   . /usr/local/etc/bash_completion.d/git-prompt.sh
   . /usr/local/etc/bash_completion.d/git-completion.bash
   GIT_PS1_SHOWDIRTYSTATE=true
