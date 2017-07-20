@@ -83,6 +83,7 @@ alias quit='exit'
 alias cls='reset'
 
 # Ls
+alias la='ls -a'
 alias ll='ls -l'
 
 # Cd
