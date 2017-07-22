@@ -6,8 +6,8 @@
 
 echo [Mac OS] .bashrc_recent_mac
 
-alias cdev='cd ~/Documents/Dev/'
-alias cdgh='cd ~/Documents/Dev/GitHub/'
+alias cdev='cdd ~/Documents/Dev/'
+alias cdgh='cdd ~/Documents/Dev/GitHub/'
 
 
 # --------------------------------------------------------------------------------

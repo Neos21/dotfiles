@@ -6,8 +6,8 @@
 
 echo [Windows] .bashrc_recent_win
 
-alias cdev='cd '\''/p/Dev/'\'''
-alias cdgh='cd '\''/p/Dev/GitHub/'\'''
+alias cdev='cdd '\''/p/Dev/'\'''
+alias cdgh='cdd '\''/p/Dev/GitHub/'\'''
 
 
 # --------------------------------------------------------------------------------
