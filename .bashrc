@@ -139,6 +139,11 @@ alias galias='git config --global -l | grep alias'
 # Alias : Node
 # ================================================================================
 
+alias n='npm'
+alias nr='npm run'
+alias ns='npm start'
+alias nt='npm test'
+
 alias npmls='npm list --depth=0'
 alias npmlsg='npm list --depth=0 -g'
 
