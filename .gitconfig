@@ -20,6 +20,7 @@
 	df  = diff
 	dfc = diff --cached
 	dfn = diff --name-only
+	dfw = diff --word-diff
 	fe  = fetch
 	l   = log -10 --date=short --pretty=format:\"%C(Yellow)%h %C(Cyan)%cd %C(Reset)%s %C(Blue)[%cn]%C(Red)%d\"
 	lf  = log --pretty=fuller
