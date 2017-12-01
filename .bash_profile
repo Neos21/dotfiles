@@ -71,6 +71,12 @@ fi
 export HISTCONTROL=ignoreboth
 
 
+# Git Alias Completion
+# ================================================================================
+
+test -r ~/git-completion.bash && . ~/git-completion.bash
+
+
 # Source .bashrc
 # ================================================================================
 

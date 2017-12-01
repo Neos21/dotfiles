@@ -1,0 +1,33 @@
+{
+	"name": "Theme-my-flatland-monokai",
+	"displayName": "my-flatland-monokai",
+	"description": "Flatland Monokai Theme for VS Code based on the TextMate themes.",
+	"version": "0.0.4",
+	"publisher": "gerane",
+	"engines": {
+		"vscode": "^0.10.1"
+	},
+	"categories": [
+		"Themes"
+	],
+	"icon": "icon.png",
+	"homepage": "https://github.com/gerane/VSCode-FlatlandMonokaiTheme/blob/master/gerane.Theme-FlatlandMonokai/README.md",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/gerane/VSCode-FlatlandMonokaiTheme.git"
+	},
+	"contributes": {
+		"themes": [
+			{
+				"label": "my-flatland-monokai",
+				"uiTheme": "vs-dark",
+				"path": "./themes/Flatland_Monokai.tmTheme"
+			}
+		]
+	},
+	"__metadata": {
+		"id": "6bfab4b0-9e4f-4143-9cc2-2cb359d841d8",
+		"publisherId": "a5c25faf-bf60-4941-81b9-9a852b96c5fb",
+		"publisherDisplayName": "gerane"
+	}
+}

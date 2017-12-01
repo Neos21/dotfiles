@@ -1,0 +1,22 @@
+{
+    "diffEditor.ignoreTrimWhitespace": false,
+    
+    "editor.fontFamily": "MeiryoKe_Gothic, 'Ricty Diminished', Menlo, Monaco, 'Courier New', monospace",
+    "editor.fontSize": 13,
+    "editor.minimap.enabled": false,
+    "editor.renderWhitespace": "all",
+    "editor.scrollBeyondLastLine": false,
+    "editor.tabSize": 2,
+    "editor.trimAutoWhitespace": false,
+    
+    "workbench.colorTheme": "my-flatland-monokai",
+    "workbench.startupEditor": "newUntitledFile",
+    
+    "terminal.integrated.fontSize": 13,
+    
+    "tslint.autoFixOnSave": true,
+    
+    "path-intellisense.absolutePathToWorkspace": false,
+    
+    "//": "//"
+}
