@@ -143,6 +143,8 @@ alias galias='git config --global -l | grep alias'
 alias n='npm'
 
 alias ni='npm install'
+alias nl='npm list --depth=0'
+alias nlg='npm list --depth=0 -g'
 alias nls='npm list --depth=0'
 alias nlsg='npm list --depth=0 -g'
 alias nr='npm run'
