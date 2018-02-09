@@ -130,6 +130,8 @@ alias glr='git log -10 --date=short --pretty=format:"%C(Yellow)%h %C(Cyan)%cd %C
 alias gm='git merge'
 alias gpl='git pull'
 alias gps='git push'
+alias gre='git reset'
+alias greh='git reset --hard'
 alias gst='git status'
 alias gs='git status -s -b'
 

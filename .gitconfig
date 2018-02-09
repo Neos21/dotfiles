@@ -29,6 +29,8 @@
 	m   = merge
 	pl  = pull
 	ps  = push
+	re  = reset
+	reh = reset --hard
 	st  = status
 	s   = status -s -b
 [color]
