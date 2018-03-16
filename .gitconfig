@@ -7,32 +7,33 @@
 	name = Neos21
 	email = neos21@gmail.com
 [alias]
-	ad  = add
-	b   = branch
-	ba  = branch -a
-	bd  = branch -D
-	co  = checkout
-	cob = checkout -b
-	c   = commit
-	ce  = commit --allow-empty
-	cem = commit --allow-empty -m
-	cm  = commit -m
-	df  = diff
-	dfc = diff --cached
-	dfn = diff --name-only
-	dfw = diff --word-diff
-	fe  = fetch
-	l   = log -10 --date=short --pretty=format:\"%C(Yellow)%h %C(Cyan)%cd %C(Reset)%s %C(Blue)[%cn]%C(Red)%d\"
-	lf  = log --pretty=fuller
-	log = log
-	lr  = log -10 --date=short --pretty=format:\"%C(Yellow)%h %C(Cyan)%cd %C(Reset)%s %C(Blue)[%cn]%C(Red)%d\" --graph
-	m   = merge
-	pl  = pull
-	ps  = push
-	re  = reset
-	reh = reset --hard
-	st  = status
-	s   = status -s -b
+	ad   = add
+	b    = branch
+	ba   = branch -a
+	bd   = branch -D
+	co   = checkout
+	cob  = checkout -b
+	c    = commit
+	ce   = commit --allow-empty
+	cem  = commit --allow-empty -m
+	cm   = commit -m
+	df   = diff
+	dfc  = diff --cached
+	dfn  = diff --name-only
+	dfw  = diff --word-diff
+	dfww = diff --color-words --word-diff-regex='\\w+|[^[:space:]]'
+	fe   = fetch
+	l    = log -10 --date=short --pretty=format:\"%C(Yellow)%h %C(Cyan)%cd %C(Reset)%s %C(Blue)[%cn]%C(Red)%d\"
+	lf   = log --pretty=fuller
+	log  = log
+	lr   = log -10 --date=short --pretty=format:\"%C(Yellow)%h %C(Cyan)%cd %C(Reset)%s %C(Blue)[%cn]%C(Red)%d\" --graph
+	m    = merge
+	pl   = pull
+	ps   = push
+	re   = reset
+	reh  = reset --hard
+	st   = status
+	s    = status -s -b
 [color]
 	ui = auto
 [core]
