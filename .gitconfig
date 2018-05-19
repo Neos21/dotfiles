@@ -20,8 +20,9 @@
 	df   = diff
 	dfc  = diff --cached
 	dfn  = diff --name-only
-	dfw  = diff --word-diff
-	dfww = diff --color-words --word-diff-regex='\\w+|[^[:space:]]'
+	dfnc = diff --name-only --cached
+	dfw  = diff --color-words --word-diff-regex='\\w+|[^[:space:]]'
+	dfwc = diff --color-words --word-diff-regex='\\w+|[^[:space:]]' --cached
 	fe   = fetch
 	l    = log -10 --date=short --pretty=format:\"%C(Yellow)%h %C(Cyan)%cd %C(Reset)%s %C(Blue)[%cn]%C(Red)%d\"
 	lf   = log --pretty=fuller

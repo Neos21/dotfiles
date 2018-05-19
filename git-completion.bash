@@ -3335,7 +3335,9 @@ __git_complete gcm _git_commit
 __git_complete gdf _git_diff
 __git_complete gdfc _git_diff
 __git_complete gdfn _git_diff
+__git_complete gdfnc _git_diff
 __git_complete gdfw _git_diff
+__git_complete gdfwc _git_diff
 # Fetch
 __git_complete gfe _git_fetch
 # Log
