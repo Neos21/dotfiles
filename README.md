@@ -9,7 +9,7 @@ Dotfiles を置いておきます。
 
 ## Author
 
-[Neo](http://neo.s21.xrea.com/) ([@Neos21](https://twitter.com/neos21))
+[Neo](http://neo.s21.xrea.com/) ([@Neos21](https://twitter.com/Neos21))
 
 
 ## Links
