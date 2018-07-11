@@ -40,9 +40,6 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "MINGW" ]; then
   # Nodist
   NODIST_BIN_DIR__=$(echo "$NODIST_PREFIX" | sed -e 's,\\,/,g')/bin;
   test -r "$NODIST_BIN_DIR__/nodist.sh" && . "$NODIST_BIN_DIR__/nodist.sh"
-  # if [ -f "$NODIST_BIN_DIR__/nodist.sh" ]; then
-  #   . "$NODIST_BIN_DIR__/nodist.sh";
-  # fi;
   unset NODIST_BIN_DIR__;
   
   
