@@ -3343,7 +3343,7 @@ __git_complete gfe _git_fetch
 # Log
 __git_complete gl _git_log
 __git_complete glf _git_log
-__git_complete glo _git_log
+__git_complete glog _git_log
 __git_complete glr _git_log
 # Merge
 __git_complete gm _git_merge
@@ -3352,6 +3352,7 @@ __git_complete gpl _git_pull
 # Push
 __git_complete gps _git_push
 # Reset
+__git_complete gre _git_reset
 __git_complete greh _git_reset
 # Status
 __git_complete gst _git_statusstatus

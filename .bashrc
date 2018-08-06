@@ -22,13 +22,9 @@ if [ "$(uname)" == "Darwin" ]; then
   # Sudo コマンドの補完を有効化
   complete -cf sudo
   
-  # Tig
-  alias tiga='tig --all'
-  
-  # Source .bashrc_recent_mac
-  test -r ~/.bashrc_recent_mac && . ~/.bashrc_recent_mac
-  alias ercr='vi ~/.bashrc_recent_mac'
-  alias rcr='. ~/.bashrc_recent_mac'
+  # Cd Aliases
+  alias cdev='cdd ~/Documents/Dev/'
+  alias cdgh='cdd ~/Documents/Dev/GitHub/'
   
   
   # ------------------------------------------------------------------------------
@@ -49,10 +45,9 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "MINGW" ]; then
   # Notepad++
   alias np='"/c/Program Files/Notepad++/notepad++.exe"'
   
-  # Source .bashrc_recent_win
-  test -r ~/.bashrc_recent_win && . ~/.bashrc_recent_win
-  alias ercr='vi ~/.bashrc_recent_win'
-  alias rcr='. ~/.bashrc_recent_win'
+  # Cd Aliases
+  alias cdev='cdd '\''/p/Dev/'\'''
+  alias cdgh='cdd '\''/p/Dev/GitHub/'\'''
   
   
   # ------------------------------------------------------------------------------
@@ -98,6 +93,10 @@ alias grep='grep --color'
 # Df
 alias df='df -h'
 
+# Edit .bash_profile
+alias ebp='vi ~/.bash_profile'
+alias bp='. ~/.bash_profile'
+
 # Edit .bashrc
 alias erc='vi ~/.bashrc'
 alias rc='. ~/.bashrc'
@@ -140,6 +139,9 @@ alias gs='git status -s -b'
 # Show Git Alias
 alias galias='git config --global -l | grep alias'
 
+# Tig
+alias tiga='tig --all'
+
 
 # Alias : Node
 # ================================================================================
@@ -147,18 +149,12 @@ alias galias='git config --global -l | grep alias'
 alias n='npm'
 
 alias ni='npm install'
-alias nl='npm list --depth=0'
-alias nlg='npm list --depth=0 -g'
 alias nls='npm list --depth=0'
 alias nlsg='npm list --depth=0 -g'
 alias nr='npm run'
 alias ns='npm start'
 alias nt='npm test'
 alias nu='npm uninstall'
-alias nup='npm update'
-
-alias npmls='npm list --depth=0'
-alias npmlsg='npm list --depth=0 -g'
 
 
 # --------------------------------------------------------------------------------

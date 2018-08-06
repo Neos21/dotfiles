@@ -21,6 +21,9 @@ if [ "$(uname)" == "Darwin" ]; then
   # Nodebrew
   export PATH=$HOME/.nodebrew/current/bin:$PATH
   
+  # VSCode
+  export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+  
   # RBEnv
   eval "$(rbenv init -)"
   
