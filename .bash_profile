@@ -19,10 +19,10 @@ if [ "$(uname)" == "Darwin" ]; then
   export PS1='\[\033]0;$TITLEPREFIX:${PWD//[^[:ascii:]]/?}\007\]\n\[\033[32m\]\u@\h \[\033[33m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\]\n$ '
   
   # Nodebrew
-  export PATH=$HOME/.nodebrew/current/bin:$PATH
+  export PATH="$HOME/.nodebrew/current/bin:$PATH"
   
   # VSCode
-  export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+  export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH"
   
   # RBEnv
   eval "$(rbenv init -)"

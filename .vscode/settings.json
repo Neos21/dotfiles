@@ -1,6 +1,6 @@
 {
   "diffEditor.ignoreTrimWhitespace": false,
-
+  
   "editor.fontFamily": "MeiryoKe_Gothic, 'Ricty Diminished', 'Courier New', Courier, Monaco, Menlo, Consolas, monospace",
   "editor.fontSize": 14,
   "editor.minimap.enabled": false,
