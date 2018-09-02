@@ -19,6 +19,9 @@ if [ "$(uname)" == "Darwin" ]; then
   # Open = Start
   alias start='open'
   
+  # Nodebrew
+  alias nb='nodebrew'
+  
   # Sudo コマンドの補完を有効化
   complete -cf sudo
   
@@ -80,6 +83,8 @@ alias cls='reset'
 # Ls
 alias la='ls -a'
 alias ll='ls -l'
+alias lla='ls -la'
+alias lal='ls -la'
 
 # Cd
 alias ..='cdd ..'
