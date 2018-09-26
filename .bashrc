@@ -19,6 +19,10 @@ if [ "$(uname)" == "Darwin" ]; then
   # Open = Start
   alias start='open'
   
+  # Open App
+  alias chrome='open -a "Google Chrome"'
+  alias cot='open -a CotEditor'
+  
   # Nodebrew
   alias nb='nodebrew'
   
