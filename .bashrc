@@ -44,13 +44,16 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "MINGW" ]; then
   # C:\Program Files\Git\etc\DIR_COLORS が色設定を持っている
   # 「DIR 01;34」を「DIR 01;36」にするとディレクトリが水色になる
   alias ls='ls -F --color=auto --show-control-chars'
-  eval $(dircolors /etc/DIR_COLORS)
+  eval $(/usr/bin/dircolors /etc/DIR_COLORS 2> /dev/null)
   
   # Start = Open
   alias open='start'
   
   # Notepad++
   alias np='"/c/Program Files/Notepad++/notepad++.exe"'
+  
+  # VSCode のターミナルで日本語が文字化けするので設定
+  export LANG=ja_JP.UTF-8
   
   # Cd Aliases
   alias cdev='cdd '\''/p/Dev/'\'''
