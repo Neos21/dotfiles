@@ -1,7 +1,10 @@
 {
+  "css.lint.duplicateProperties": "warning",
+  "css.lint.zeroUnits": "warning",
+  
   "diffEditor.ignoreTrimWhitespace": false,
   
-  "editor.fontFamily": "MeiryoKe_Gothic, 'Ricty Diminished', 'Courier New', Courier, Monaco, Menlo, Consolas, monospace",
+  "editor.fontFamily": "MeiryoKe_Gothic, 'Ricty Diminished', 'Osaka－等幅', 'Osaka-等幅', Osaka-mono, 'ＭＳ ゴシック', 'MS Gothic', 'Courier New', Courier, Monaco, Menlo, Consolas, 'Lucida Console', monospace",
   "editor.fontSize": 14,
   "editor.minimap.enabled": false,
   "editor.renderWhitespace": "all",
@@ -9,41 +12,26 @@
   "editor.tabSize": 2,
   "editor.trimAutoWhitespace": false,
   
-  "terminal.integrated.fontSize": 14,
-  "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
   
-  "workbench.colorTheme": "my-flatland-monokai",
-  "workbench.startupEditor": "newUntitledFile",
+  "files.eol": "\n",
   
   "html.autoClosingTags": false,
   "html.format.extraLiners": "",
   "html.format.indentInnerHtml": true,
   
-  "css.lint.duplicateProperties": "warning",
-  "css.lint.zeroUnits": "warning",
   "scss.lint.duplicateProperties": "warning",
   "scss.lint.zeroUnits": "warning",
   
-  "path-intellisense.absolutePathToWorkspace": false,
-  
-  "tslint.autoFixOnSave": true,
-  
-  // 検索時に除外するパス
   "search.exclude": {
     "**/node_modules": true
   },
   
-  // Beautify 拡張機能 : HTML・CSS・SCSS・JS・JSON のフォーマット設定
-  "beautify.language": {
-    "js": {
-      "type": ["json"],
-      "filename": [".jsbeautifyrc"]
-    },
-    "css": ["css", "scss"],
-    "html": ["htm", "html"]
-  },
-  // Beautify 拡張機能を無効にするファイル
-  "beautify.ignore": [],
+  "sync.gist": "0c0563760f02b0382400ae9e06a37feb",
   
-  "//": "//"
+  "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+  
+  "workbench.colorTheme": "Neos21",
+  "workbench.startupEditor": "newUntitledFile"
 }

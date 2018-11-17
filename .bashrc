@@ -40,6 +40,12 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "MINGW" ]; then
   # ==============================================================================
   
   
+  # プロンプト変更 : Git ブランチを表示させる (.bash_profile だと有効にならない場合があるのでコチラにも)
+  GIT_PS1_SHOWDIRTYSTATE=true
+  
+  # Git Alias Completion
+  test -r ~/git-completion.bash && . ~/git-completion.bash
+  
   # Ls
   # C:\Program Files\Git\etc\DIR_COLORS が色設定を持っている
   # 「DIR 01;34」を「DIR 01;36」にするとディレクトリが水色になる
