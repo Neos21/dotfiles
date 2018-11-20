@@ -40,17 +40,11 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "MINGW" ]; then
   # ==============================================================================
   
   
-  # プロンプト変更 : Git ブランチを表示させる (.bash_profile だと有効にならない場合があるのでコチラにも)
-  GIT_PS1_SHOWDIRTYSTATE=true
-  
-  # Git Alias Completion
-  test -r ~/git-completion.bash && . ~/git-completion.bash
-  
   # Ls
   # C:\Program Files\Git\etc\DIR_COLORS が色設定を持っている
   # 「DIR 01;34」を「DIR 01;36」にするとディレクトリが水色になる
   alias ls='ls -F --color=auto --show-control-chars'
-  eval $(/usr/bin/dircolors /etc/DIR_COLORS 2> /dev/null)
+  eval $(dircolors /etc/DIR_COLORS 2> /dev/null)
   
   # Start = Open
   alias open='start'
@@ -58,7 +52,7 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "MINGW" ]; then
   # Notepad++
   alias np='"/c/Program Files/Notepad++/notepad++.exe"'
   
-  # VSCode のターミナルで日本語が文字化けするので設定
+  # VSCode のターミナルで日本語が文字化けするので設定する
   export LANG=ja_JP.UTF-8
   
   # Cd Aliases
@@ -174,6 +168,9 @@ alias ns='npm start'
 alias nt='npm test'
 alias nu='npm uninstall'
 
+# For Angular CLI
+alias nn='npm run ng'
+
 
 # Alias : Vagrant
 # ================================================================================
@@ -194,7 +191,7 @@ alias vha='vagrant halt'
 #   http://qiita.com/0x60df/items/303666033788b937c578
 # ================================================================================
 
-mkcd () {
+function mkcd () {
   exec 3>&1
   cd "`
   if mkdir "$@" 1>&3; then
@@ -221,7 +218,7 @@ mkcd () {
 #   http://thehacker.jp/alias-settings/
 # ================================================================================
 
-cdd() {
+function cdd() {
   \cd "$@" && pwd && ls
 }
 
