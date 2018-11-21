@@ -39,6 +39,7 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "MINGW" ]; then
   
   # プロンプト変更 : Git ブランチを表示させる
   GIT_PS1_SHOWDIRTYSTATE=true
+  export PS1='\n\[\033[32m\]\u@\h \[\033[33m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\]\n$ '
   
   # Nodist
   NODIST_BIN_DIR__=$(echo "$NODIST_PREFIX" | sed -e 's,\\,/,g')/bin;
