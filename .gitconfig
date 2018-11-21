@@ -39,6 +39,8 @@
 	ui = auto
 [core]
 	autoCRLF = false
+	fscache = true
+	preloadindex = true
 	quotepath = false
 [fetch]
 	prune = true
@@ -46,6 +48,8 @@
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
 	required = true
+[gc]
+	auto = 256
 [merge]
 	ff = false
 [pull]
