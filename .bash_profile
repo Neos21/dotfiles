@@ -68,8 +68,10 @@ export HISTCONTROL=ignoreboth
 # Git Prompt Completion
 # ================================================================================
 
-test -r ~/git-prompt.sh && . ~/git-prompt.sh
 test -r ~/git-completion.bash && . ~/git-completion.bash
+test -r ~/git-prompt.sh && . ~/git-prompt.sh
+GIT_PS1_SHOWDIRTYSTATE=true
+GIT_PS1_SHOWUNTRACKEDFILES=true
 export PS1='\n\[\033[32m\]\u@\h \[\033[33m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\]\n$ '
 
 
