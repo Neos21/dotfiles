@@ -7,7 +7,7 @@
 # ================================================================================
 
 if [ "$(uname)" == "Darwin" ]; then
-  echo [Mac OS] .bashrc
+  echo [MacOS] .bashrc
   # ==============================================================================
   
   
@@ -19,6 +19,12 @@ if [ "$(uname)" == "Darwin" ]; then
   # Open = Start
   alias start='open'
   
+  # sed
+  alias sed='gsed'
+  
+  # tree
+  alias tree='tree -N'
+  
   # Open App
   alias chrome='open -a "Google Chrome"'
   alias cot='open -a CotEditor'
@@ -28,6 +34,11 @@ if [ "$(uname)" == "Darwin" ]; then
   
   # Sudo コマンドの補完を有効化
   complete -cf sudo
+  
+  # カレントディレクトリ配下の .DS_Store を全て消す
+  alias delds='find . -name ".DS_Store" -delete'
+  
+  # ------------------------------------------------------------------------------
   
   # Cd Aliases
   alias cdev='cdd ~/Documents/Dev/'
@@ -40,6 +51,9 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "MINGW" ]; then
   # ==============================================================================
   
   
+  # VSCode のターミナルで日本語が文字化けするので設定する
+  export LANG=ja_JP.UTF-8
+  
   # Ls
   # C:\Program Files\Git\etc\DIR_COLORS が色設定を持っている
   # 「DIR 01;34」を「DIR 01;36」にするとディレクトリが水色になる
@@ -50,10 +64,9 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "MINGW" ]; then
   alias open='start'
   
   # Notepad++
-  alias np='"/c/Program Files/Notepad++/notepad++.exe"'
+  alias np='"/c/Program Files/Notepad++/notepad++.exe" &'
   
-  # VSCode のターミナルで日本語が文字化けするので設定する
-  export LANG=ja_JP.UTF-8
+  # ------------------------------------------------------------------------------
   
   # Cd Aliases
   alias cdev='cdd '\''/p/Dev/'\'''
@@ -99,11 +112,15 @@ alias ...='cdd ../..'
 alias -- -='cd - && ls'
 alias -- --='cd - && ls'
 
-# Grep
+# Grep : 検索文字列を色付けする
 alias grep='grep --color'
+alias grepinr='grep -inR'
 
-# Df
+# Df : バイト表示を単位変換する
 alias df='df -h'
+
+# PostgreSQL : パスワードは ~/.pgpass (pgpass.conf) で設定
+alias mpsql='psql -U postgres --dbname=my_local_db'
 
 # Edit .bash_profile
 alias ebp='vi ~/.bash_profile'
@@ -135,10 +152,12 @@ alias gdfn='git diff --name-only'
 alias gdfnc='git diff --name-only --cached'
 alias gdfw='git diff --color-words --word-diff-regex='\''\\w+|[^[:space:]]'\'''
 alias gdfwc='git diff --color-words --word-diff-regex='\''\\w+|[^[:space:]]'\'' --cached'
+alias gdfwo='git diff --word-diff'
+alias gdfwoc='git diff --word-diff --cached'
 alias gfe='git fetch'
 alias gl=' git log -10 --date=short --pretty=format:"%C(Yellow)%h %C(Cyan)%cd %C(Reset)%s %C(Blue)[%cn]%C(Red)%d"'
 alias glf='git log --pretty=fuller'
-alias glog='git log'
+alias glo='git log'
 alias glr='git log -10 --date=short --pretty=format:"%C(Yellow)%h %C(Cyan)%cd %C(Reset)%s %C(Blue)[%cn]%C(Red)%d" --graph'
 alias gm='git merge'
 alias gpl='git pull'
@@ -160,13 +179,15 @@ alias tiga='tig --all'
 
 alias n='npm'
 
-alias ni='npm install'
+alias ni='npm install --progress=true'
+alias nl='npm list --depth=0'
 alias nls='npm list --depth=0'
+alias nlg='npm list --depth=0 -g'
 alias nlsg='npm list --depth=0 -g'
 alias nr='npm run'
-alias ns='npm start'
+alias ns='npm start || npm run dev'
 alias nt='npm test'
-alias nu='npm uninstall'
+alias nu='npm uninstall --progress=true'
 
 # For Angular CLI
 alias nn='npm run ng'

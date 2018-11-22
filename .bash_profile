@@ -8,15 +8,9 @@
 # ================================================================================
 
 if [ "$(uname)" == "Darwin" ]; then
-  echo [Mac OS] .bash_profile
+  echo [MacOS] .bash_profile
   # ==============================================================================
   
-  
-  # プロンプト変更 : Git ブランチを表示させ Git コマンド補完を有効にする
-  . /usr/local/etc/bash_completion.d/git-prompt.sh
-  . /usr/local/etc/bash_completion.d/git-completion.bash
-  GIT_PS1_SHOWDIRTYSTATE=true
-  export PS1='\n\[\033[32m\]\u@\h \[\033[33m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\]\n$ '
   
   # Nodebrew
   export PATH="$HOME/.nodebrew/current/bin:$PATH"
@@ -24,8 +18,11 @@ if [ "$(uname)" == "Darwin" ]; then
   # VSCode
   export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH"
   
+  # PostgreSQL
+  export PATH="/Library/PostgreSQL/11/bin:$PATH"
+  
   # RBEnv
-  eval "$(rbenv init -)"
+  eval "$(rbenv init - 2> /dev/null)"
   
   
   # ------------------------------------------------------------------------------
@@ -36,10 +33,6 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "MINGW" ]; then
   #     "$(expr substr $(uname -s) 1 10)" == "MINGW64_NT"
   # ==============================================================================
   
-  
-  # プロンプト変更 : Git ブランチを表示させる
-  GIT_PS1_SHOWDIRTYSTATE=true
-  export PS1='\n\[\033[32m\]\u@\h \[\033[33m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\]\n$ '
   
   # Nodist
   NODIST_BIN_DIR__=$(echo "$NODIST_PREFIX" | sed -e 's,\\,/,g')/bin;
@@ -72,10 +65,18 @@ fi
 export HISTCONTROL=ignoreboth
 
 
-# Git Alias Completion
+# Git Prompt Completion
 # ================================================================================
 
+test -r ~/git-prompt.sh && . ~/git-prompt.sh
 test -r ~/git-completion.bash && . ~/git-completion.bash
+export PS1='\n\[\033[32m\]\u@\h \[\033[33m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\]\n$ '
+
+
+# My Commands
+# ================================================================================
+
+export PATH="~/bin:$PATH"
 
 
 # Source .bashrc

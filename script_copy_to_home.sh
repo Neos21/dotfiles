@@ -15,6 +15,7 @@ cp -f ./.gitconfig ~/.gitconfig
 cp -f ./.tigrc ~/.tigrc
 cp -f ./.vimrc ~/.vimrc
 cp -f ./git-completion.bash ~/git-completion.bash
+cp -f ./git-prompt.sh ~/git-prompt.sh
 
 # ディレクトリ系
 cp -rf ./.vim ~  # 「~/」とすると「~/.vim/colors/」とならず「~/colors/」と作成されてしまう

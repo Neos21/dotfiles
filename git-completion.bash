@@ -3338,12 +3338,14 @@ __git_complete gdfn _git_diff
 __git_complete gdfnc _git_diff
 __git_complete gdfw _git_diff
 __git_complete gdfwc _git_diff
+__git_complete gdfwo _git_diff
+__git_complete gdfwoc _git_diff
 # Fetch
 __git_complete gfe _git_fetch
 # Log
 __git_complete gl _git_log
 __git_complete glf _git_log
-__git_complete glog _git_log
+__git_complete glo _git_log
 __git_complete glr _git_log
 # Merge
 __git_complete gm _git_merge
