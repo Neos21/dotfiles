@@ -212,7 +212,7 @@ alias vha='vagrant halt'
 #   http://qiita.com/0x60df/items/303666033788b937c578
 # ================================================================================
 
-function mkcd () {
+function mkcd() {
   exec 3>&1
   cd "`
   if mkdir "$@" 1>&3; then
