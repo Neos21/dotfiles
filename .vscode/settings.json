@@ -5,7 +5,7 @@
   "diffEditor.ignoreTrimWhitespace": false,
   
   "editor.fontFamily": "MeiryoKe_Gothic, 'Ricty Diminished', 'Osaka－等幅', 'Osaka-等幅', Osaka-mono, 'ＭＳ ゴシック', 'MS Gothic', 'Courier New', Courier, Monaco, Menlo, Consolas, 'Lucida Console', monospace",
-  "editor.fontSize": 14,
+  "editor.fontSize": 13,
   "editor.minimap.enabled": false,
   "editor.renderWhitespace": "all",
   "editor.scrollBeyondLastLine": false,
@@ -16,6 +16,7 @@
   "explorer.confirmDragAndDrop": false,
   
   "files.eol": "\n",
+  "files.trimTrailingWhitespace": false,
   
   "html.autoClosingTags": false,
   "html.format.extraLiners": "",
@@ -28,10 +29,13 @@
     "**/node_modules": true
   },
   
+  "sync.autoUpload": true,
   "sync.gist": "0c0563760f02b0382400ae9e06a37feb",
   
   "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+  "terminal.integrated.shellArgs.windows": ["-l"],
   
   "workbench.colorTheme": "Neos21",
-  "workbench.startupEditor": "newUntitledFile"
+  "workbench.startupEditor": "newUntitledFile",
+  "workbench.iconTheme": "material-icon-theme"
 }

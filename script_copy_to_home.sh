@@ -11,11 +11,11 @@ echo '開始'
 # ファイル系
 cp -f ./.bash_profile ~/.bash_profile
 cp -f ./.bashrc ~/.bashrc
+cp -f ./.git-completion.bash ~/.git-completion.bash
 cp -f ./.gitconfig ~/.gitconfig
+cp -f ./.git-prompt.sh ~/.git-prompt.sh
 cp -f ./.tigrc ~/.tigrc
 cp -f ./.vimrc ~/.vimrc
-cp -f ./git-completion.bash ~/git-completion.bash
-cp -f ./git-prompt.sh ~/git-prompt.sh
 
 # ディレクトリ系
 cp -rf ./.vim ~  # 「~/」とすると「~/.vim/colors/」とならず「~/colors/」と作成されてしまう

@@ -1,4 +1,4 @@
-# bash/zsh git prompt support
+# bash/zsh git prompt support    # 2017-12-07 041fe8f : https://github.com/git/git/blob/041fe8f/contrib/completion/git-prompt.sh
 #
 # Copyright (C) 2006,2007 Shawn O. Pearce <spearce@spearce.org>
 # Distributed under the GNU General Public License, version 2.0.
