@@ -265,9 +265,9 @@ function gbds() {
   fi
   
   local branch_name="$1";
-  local list=`git branch | grep -i "$branch_name" |  grep -v '*'`
+  local list=`git branch | grep -i "$branch_name" | grep -v '*'`
   
-  if [ ! "$list" ]; then
+  if [ -z "$list" ]; then
     echo '該当するブランチはありません'
     return 1
   fi
@@ -275,7 +275,7 @@ function gbds() {
   echo "$list"
   read -p 'これらのブランチを削除してもよろしいですか？ [Y/n] ' yn
   case "$yn" in
-    [yY]) git branch | grep -i "$branch_name" | grep -v '*' |  xargs git branch -D
+    [yY]) git branch | grep -i "$branch_name" | grep -v '*' | xargs git branch -D
           echo 'Deleted.'
           ;;
        *) echo '中止'
