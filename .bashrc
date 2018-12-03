@@ -38,6 +38,16 @@ if [ "$(uname)" == "Darwin" ]; then
   # カレントディレクトリ配下の .DS_Store を全て消す
   alias delds='find . -name ".DS_Store" -delete'
   
+  # Finder のアクティブウィンドウのディレクトリに移動する
+  function cdf() {
+    local target=`osascript -e 'tell application "Finder" to if (count of Finder windows) > 0 then get POSIX path of (target of front Finder window as text)'`
+    if [ "$target" != "" ]; then
+      cd "$target" && pwd && ls
+    else
+      echo 'No Finder window found' >&2
+    fi
+  }
+  
   # ------------------------------------------------------------------------------
   
   # Cd Aliases
@@ -241,6 +251,37 @@ function mkcd() {
 
 function cdd() {
   \cd "$@" && pwd && ls
+}
+
+
+# Function : 複数の Git ブランチをまとめて削除する
+#   https://github.com/takutoarao/shellutils/blob/master/git-rmbranch
+# ================================================================================
+
+function gbds() {
+  if [ -z "$1" ]; then
+    echo 'ブランチ名を指定してください'
+    return 1
+  fi
+  
+  local branch_name="$1";
+  local list=`git branch | grep -i "$branch_name" |  grep -v '*'`
+  
+  if [ ! "$list" ]; then
+    echo '該当するブランチはありません'
+    return 1
+  fi
+  
+  echo "$list"
+  read -p 'これらのブランチを削除してもよろしいですか？ [Y/n] ' yn
+  case "$yn" in
+    [yY]) git branch | grep -i "$branch_name" | grep -v '*' |  xargs git branch -D
+          echo 'Deleted.'
+          ;;
+       *) echo '中止'
+          return 1
+          ;;
+  esac
 }
 
 
