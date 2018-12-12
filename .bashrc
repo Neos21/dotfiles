@@ -74,7 +74,7 @@ elif [ "$(expr substr $(uname -s) 1 5)" == "MINGW" ]; then
   alias open='start'
   
   # Notepad++
-  alias np='"/c/Program Files/Notepad++/notepad++.exe" &'
+  alias npp='"/c/Program Files/Notepad++/notepad++.exe" &'
   
   # ------------------------------------------------------------------------------
   
