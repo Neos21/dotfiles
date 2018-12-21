@@ -69,8 +69,6 @@ export HISTCONTROL=ignoreboth
 
 # My Aliases
 # if type __git_complete 1>/dev/null 2>/dev/null; then
-  # Add
-  # __git_complete ga _git_add
   # Branch
   __git_complete gbd _git_branch
   # Checkout
