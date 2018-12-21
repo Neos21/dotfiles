@@ -17,13 +17,13 @@ if [ "$(uname)" == "Darwin" ]; then
   export PS1='\n\[\033[32m\]\u@\h \[\033[33m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\]\n$ '
   
   # Nodebrew
-  export PATH="$HOME/.nodebrew/current/bin:$PATH"
+  PATH="$HOME/.nodebrew/current/bin:$PATH"
   
   # VSCode
-  export PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH"
+  PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH"
   
   # PostgreSQL
-  export PATH="/Library/PostgreSQL/11/bin:$PATH"
+  PATH="/Library/PostgreSQL/11/bin:$PATH"
   
   # RBEnv
   eval "$(rbenv init - 2> /dev/null)"
@@ -87,7 +87,7 @@ export HISTCONTROL=ignoreboth
 # fi
 
 
-# My Commands
+# My Commands : Export PATH
 # ================================================================================
 
 export PATH="~/bin:$PATH"
