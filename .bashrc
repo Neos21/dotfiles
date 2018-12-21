@@ -7,16 +7,16 @@
 # ================================================================================
 
 if [ "$(uname)" == "Darwin" ]; then
-  echo '[MacOS] .bashrc'
+  # echo '[MacOS] .bashrc'
   # ==============================================================================
   
   
-  # Ls
+  # ls
   export CLICOLOR=1
   export LSCOLORS=gxfxcxdxbxegedabagacad
   alias ls='ls -G'
   
-  # Open = Start
+  # open = start
   alias start='open'
   
   # sed
@@ -32,7 +32,7 @@ if [ "$(uname)" == "Darwin" ]; then
   # Nodebrew
   alias nb='nodebrew'
   
-  # Sudo コマンドの補完を有効化
+  # Sudo コマンドの補完を有効にする
   complete -cf sudo
   
   # カレントディレクトリ配下の .DS_Store を全て消す
@@ -50,49 +50,31 @@ if [ "$(uname)" == "Darwin" ]; then
   
   # ------------------------------------------------------------------------------
   
-  # Cd Aliases
+  # cd Aliases
   alias cdev='cdd ~/Documents/Dev/'
   alias cdgh='cdd ~/Documents/Dev/GitHub/'
   
   
   # ------------------------------------------------------------------------------
-elif [ "$(expr substr $(uname -s) 1 5)" == "MINGW" ]; then
-  echo '[Windows] .bashrc'
+else
+  # echo '[Windows] .bashrc'
   # ==============================================================================
   
   
-  # VSCode のターミナルで日本語が文字化けするので設定する
-  export LANG=ja_JP.UTF-8
-  
-  # Ls
-  # C:\Program Files\Git\etc\DIR_COLORS が色設定を持っている
-  # 「DIR 01;34」を「DIR 01;36」にするとディレクトリが水色になる
+  # ls
   alias ls='ls -F --color=auto --show-control-chars'
+  # C:\Program Files\Git\etc\ や C:\git-sdk-64\etc\ 配下の DIR_COLORS が色設定を持っている
+  # 「DIR 01;34」を「DIR 01;36」にするとディレクトリが水色になる
   eval $(dircolors /etc/DIR_COLORS 2> /dev/null)
   
-  # Start = Open
+  # start = open
   alias open='start'
   
-  # Notepad++
-  alias npp='"/c/Program Files/Notepad++/notepad++.exe" &'
-  
   # ------------------------------------------------------------------------------
   
-  # Cd Aliases
+  # cd Aliases
   alias cdev='cdd '\''/p/Dev/'\'''
   alias cdgh='cdd '\''/p/Dev/GitHub/'\'''
-  
-  
-  # ------------------------------------------------------------------------------
-elif [ "$(expr substr $(uname -s) 1 5)" == "Linux" ]; then
-  echo '[Linux] .bashrc'
-  # ==============================================================================
-  
-  
-  # ------------------------------------------------------------------------------
-else
-  echo '[Unknown OS] .bashrc'
-  # ==============================================================================
   
   
   # ------------------------------------------------------------------------------
@@ -110,23 +92,23 @@ fi
 alias quit='exit'
 alias cls='reset'
 
-# Ls
+# ls
 alias la='ls -a'
 alias ll='ls -l'
 alias lla='ls -la'
 alias lal='ls -la'
 
-# Cd
+# cd
 alias ..='cdd ..'
 alias ...='cdd ../..'
 alias -- -='cd - && ls'
 alias -- --='cd - && ls'
 
-# Grep : 検索文字列を色付けする
+# grep : 検索文字列を色付けする
 alias grep='grep --color'
 alias grepinr='grep -inR'
 
-# Df : バイト表示を単位変換する
+# df : バイト表示を単位変換する
 alias df='df -h'
 
 # PostgreSQL : パスワードは ~/.pgpass (pgpass.conf) で設定
@@ -180,7 +162,7 @@ alias gs='git status -s -b'
 # Show Git Alias
 alias galias='git config --global -l | grep alias'
 
-# Tig
+# tig
 alias tiga='tig --all'
 
 
@@ -225,21 +207,20 @@ alias vha='vagrant halt'
 function mkcd() {
   exec 3>&1
   cd "`
-  if mkdir "$@" 1>&3; then
-    while [ $# -gt 0 ]
-    do
-      case "$1" in
-        -- ) printf '%s' "$2"; exit 0;;
-        -* ) shift;;
-        * ) printf '%s' "$1"; exit 0;;
-      esac
-    done
-    printf '.'
-    exit 0
-  else
-    printf '.'
-    exit 1
-  fi
+    if mkdir "$@" 1>&3; then
+      while [ $# -gt 0 ]; do
+        case "$1" in
+          -- ) printf '%s' "$2"; exit 0;;
+          -* ) shift;;
+          * ) printf '%s' "$1"; exit 0;;
+        esac
+      done
+      printf '.'
+      exit 0
+    else
+      printf '.'
+      exit 1
+    fi
   `"
   exec 3>&-
 }
