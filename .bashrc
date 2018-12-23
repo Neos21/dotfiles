@@ -62,7 +62,7 @@ else
   
   
   # ls
-  alias ls='ls -F --color=auto --show-control-chars'
+  alias ls='ls -F --color=auto --show-control-chars --time-style=long-iso'
   # C:\Program Files\Git\etc\ や C:\git-sdk-64\etc\ 配下の DIR_COLORS が色設定を持っている
   # 「DIR 01;34」を「DIR 01;36」にするとディレクトリが水色になる
   eval $(dircolors /etc/DIR_COLORS 2> /dev/null)
