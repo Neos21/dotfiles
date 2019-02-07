@@ -48,11 +48,17 @@ if [ "$(uname)" == "Darwin" ]; then
     fi
   }
   
+  # CotEditor で開いているファイルを VSCode で開く
+  alias cotvs='open -a '\''Visual Studio Code'\'' "$(osascript -e '\''tell application "CotEditor" to get path of document 1'\'')"'
+  # CotEditor で開いているファイルを Chrome で開く
+  alias cotchrome='open -a '\''Google Chrome'\'' "$(osascript -e '\''tell application "CotEditor" to get path of document 1'\'')"'
+  
   # ------------------------------------------------------------------------------
   
   # cd Aliases
   alias cdev='cdd ~/Documents/Dev/'
   alias cdgh='cdd ~/Documents/Dev/GitHub/'
+  alias cds='cdd ~/Documents/Dev/Sandboxes/'
   
   
   # ------------------------------------------------------------------------------
@@ -73,8 +79,9 @@ else
   # ------------------------------------------------------------------------------
   
   # cd Aliases
-  alias cdev='cdd '\''/p/Dev/'\'''
-  alias cdgh='cdd '\''/p/Dev/GitHub/'\'''
+  alias cdev='cdd '\''/c/Neos21/Dev/'\'''
+  alias cdgh='cdd '\''/c/Neos21/Dev/GitHub/'\'''
+  alias cds='cdd '\''/c/Neos21/Dev/Sandboxes/'\'''
   
   
   # ------------------------------------------------------------------------------
