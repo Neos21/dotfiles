@@ -116,14 +116,7 @@
 LAlt up::
     if (A_PriorHotkey == "*~LAlt")
     {
-        if (IME_GET() == 0)
-        {
-            IME_SET(1)
-        }
-        else
-        {
-            IME_SET(0)
-        }
+        IME_SET(0)
     }
     Return
 
@@ -131,13 +124,6 @@ LAlt up::
 RAlt up::
     if (A_PriorHotkey == "*~RAlt")
     {
-        if (IME_GET() == 0)
-        {
-            IME_SET(1)
-        }
-        else
-        {
-            IME_SET(0)
-        }
+        IME_SET(1)
     }
     Return
