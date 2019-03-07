@@ -54,6 +54,10 @@ if [ "$(uname)" == "Darwin" ]; then
   # CotEditor で開いているファイルを Chrome で開く
   alias cotchrome='open -a '\''Google Chrome'\'' "$(osascript -e '\''tell application "CotEditor" to get path of document 1'\'')"'
   
+  # CotEditor で開く
+  alias cotbp='open -a CotEditor ~/.bash_profile'
+  alias cotrc='open -a CotEditor ~/.bashrc'
+  
   # ------------------------------------------------------------------------------
   
   # cd Aliases
@@ -110,6 +114,8 @@ alias la='ls -a'
 alias ll='ls -l'
 alias lla='ls -la'
 alias lal='ls -la'
+alias la1='ls -a -1'
+alias ls1='ls -1'
 
 # cd
 alias ..='cdd ..'
@@ -169,11 +175,11 @@ alias gpl='git pull'
 alias gps='git push'
 alias gre='git reset'
 alias greh='git reset --hard'
+alias gremo='git remote'
+alias gremov='git remote -v'
+alias gremos='git remote set-url origin'
 alias gst='git status'
 alias gs='git status -s -b'
-
-# Show Git Alias
-alias galias='git config --global -l | grep alias'
 
 # tig
 alias tiga='tig --all'
@@ -190,9 +196,11 @@ alias nls='npm list --depth=0'
 alias nlg='npm list --depth=0 -g'
 alias nlsg='npm list --depth=0 -g'
 alias nr='npm run'
+alias np='npm publish --access=public'
 alias ns='npm start || npm run dev'
 alias nt='npm test'
 alias nu='npm uninstall --progress=true'
+alias nunp='npm unpublish'
 
 # For Angular CLI
 alias nn='npm run ng'
@@ -206,6 +214,43 @@ alias v='vagrant'
 alias vup='vagrant up'
 alias vsh='vagrant ssh'
 alias vha='vagrant halt'
+
+
+# Alias : Docker
+# ================================================================================
+
+alias d='docker'
+alias dbuild='docker build --no-cache --tag'
+alias dexec='docker exec -it'  # ex. docker exec -it 【Container ID】 bash
+alias di='docker images'
+alias ditag='docker image tag'
+alias dps='docker ps -a'
+alias dpush='docker push'
+alias drm='docker rm'
+alias drmi='docker rmi'
+alias drun='docker run -it'  # ex. docker run -v `pwd`:/tmp/shared -p 8080:8080 【Image】 bash
+
+
+# Alias : Kubernetes
+# ================================================================================
+
+alias k='kubectl'
+alias kaf='kubectl apply -f'
+alias kd='kubectl describe'
+alias kdn='kubectl describe node'
+alias kdp='kubectl describe pod'
+alias kds='kubectl describe service'
+alias kdsc='kubectl describe secret'
+alias ke='kubectl edit'
+alias kes='kubectl edit service'
+alias kesh='kubectl exec -ti'
+alias kg='kubectl get'
+alias kgn='kubectl get node'
+alias kgp='kubectl get pod'
+alias kgs='kubectl get service'
+alias kgsc='kubectl get secret'
+alias kl='kubectl logs'
+alias kp='kubectl proxy'
 
 
 # --------------------------------------------------------------------------------

@@ -14,19 +14,25 @@ if [ "$(uname)" == "Darwin" ]; then
   test -r ~/.git-prompt.sh && . ~/.git-prompt.sh
   GIT_PS1_SHOWDIRTYSTATE=true
   GIT_PS1_SHOWUNTRACKEDFILES=true
-  export PS1='\n\[\033[32m\]\u@\h \[\033[33m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\]\n$ '
+  export PS1='\n\[\033[32m\]\u@\h \[\033[35m\]\D{%F %T} \[\033[33m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\]\n$ '
   
   # Nodebrew
-  PATH="$HOME/.nodebrew/current/bin:$PATH"
+  PATH="${HOME}/.nodebrew/current/bin:${PATH}"
   
   # VSCode
-  PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:$PATH"
+  PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:${PATH}"
   
   # PostgreSQL
-  PATH="/Library/PostgreSQL/11/bin:$PATH"
+  PATH="/Library/PostgreSQL/11/bin:${PATH}"
   
   # RBEnv
   eval "$(rbenv init - 2> /dev/null)"
+  
+  # Python3
+  PATH="/usr/local/opt/python/libexec/bin:${PATH}"
+  
+  # OCI CLI Tab Completion
+  . "${HOME}/lib/oracle-cli/lib/python3.7/site-packages/oci_cli/bin/oci_autocomplete.sh"
   
   
   # ------------------------------------------------------------------------------
@@ -45,7 +51,7 @@ else
     # どうしてもパフォーマンスが出ないのでブランチ名だけ出すことにする
     echo " [$branch_name]"
   }
-  export PS1='\n\[\033[32m\]\u@\h \[\033[33m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\]\n$ '
+  export PS1='\n\[\033[32m\]\u@\h \[\033[35m\]\D{%F %T} \[\033[33m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\]\n$ '
   
   
   # ------------------------------------------------------------------------------
@@ -90,7 +96,7 @@ export HISTCONTROL=ignoreboth
 # My Commands : Export PATH
 # ================================================================================
 
-export PATH="~/bin:$PATH"
+export PATH="${HOME}/bin:${PATH}"
 
 
 # Source .bashrc
