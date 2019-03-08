@@ -36,9 +36,6 @@ if [ "$(uname)" == "Darwin" ]; then
   # Sudo コマンドの補完を有効にする
   complete -cf sudo
   
-  # カレントディレクトリ配下の .DS_Store を全て消す
-  alias delds='find . -name ".DS_Store" -delete'
-  
   # Finder のアクティブウィンドウのディレクトリに移動する
   function cdf() {
     local target=`osascript -e 'tell application "Finder" to if (count of Finder windows) > 0 then get POSIX path of (target of front Finder window as text)'`
@@ -122,6 +119,9 @@ alias ..='cdd ..'
 alias ...='cdd ../..'
 alias -- -='cd - && ls'
 alias -- --='cd - && ls'
+
+# カレントディレクトリ配下の .DS_Store を全て消す
+alias delds='find . -name ".DS_Store" -delete'
 
 # grep : 検索文字列を色付けする
 alias grep='grep --color'
