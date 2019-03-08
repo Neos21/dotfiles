@@ -49,7 +49,9 @@ sc03A:: vkF4sc029    ; sc03A : 英数キー。CapsLock キーを押すと英数�
 !t:: Send, ^t           ; Ctrl + t
 !o:: Send, ^o           ; Ctrl + o
 !Left:: Send, {Home}    ; Home
+!+Left:: Send, +{Home}  ; Shift + Home
 !Right:: Send, {End}    ; End
+!+Right:: Send, +{End}  ; Shift + End
 
 
 ; Alt 単独で IME を切り替える
