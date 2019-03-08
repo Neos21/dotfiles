@@ -33,6 +33,24 @@ sc03A:: vkF4sc029    ; sc03A : 英数キー。CapsLock キーを押すと英数�
 !BS:: Send, {Del}    ; Alt
 +BS:: Send, {Del}    ; Shift
 
+; Alt コンビネーションを Mac 風に使えるようにする
+!z:: Send, ^z           ; Ctrl + z
+!x:: Send, ^x           ; Ctrl + x
+!c:: Send, ^c           ; Ctrl + c
+!v:: Send, ^v           ; Ctrl + v
+!a:: Send, ^a           ; Ctrl + a
+!s:: Send, ^s           ; Ctrl + s
+!f:: Send, ^f           ; Ctrl + d
+!g:: Send, ^g           ; Ctrl + g
+!h:: Send, ^h           ; Ctrl + h
+!q:: Send, !{F4}        ; Alt + F4 (Cmd + q)
+!w:: Send, ^w           ; Ctrl + w
+!r:: Send, ^r           ; Ctrl + r
+!t:: Send, ^t           ; Ctrl + t
+!o:: Send, ^o           ; Ctrl + o
+!Left:: Send, {Home}    ; Home
+!Right:: Send, {End}    ; End
+
 
 ; Alt 単独で IME を切り替える
 ; ====================================================================================================
