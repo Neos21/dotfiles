@@ -6,7 +6,7 @@
 # Detect OS And Settings
 # ================================================================================
 
-if [ "$(uname)" == "Darwin" ]; then
+if [ "$(uname)" == 'Darwin' ]; then
   # echo '[MacOS] .bashrc'
   # ==============================================================================
   
@@ -39,7 +39,7 @@ if [ "$(uname)" == "Darwin" ]; then
   # Finder のアクティブウィンドウのディレクトリに移動する
   function cdf() {
     local target=`osascript -e 'tell application "Finder" to if (count of Finder windows) > 0 then get POSIX path of (target of front Finder window as text)'`
-    if [ "$target" != "" ]; then
+    if [ "$target" != '' ]; then
       cd "$target" && pwd && ls
     else
       echo 'No Finder window found' >&2
@@ -55,7 +55,7 @@ if [ "$(uname)" == "Darwin" ]; then
   alias cotbp='open -a CotEditor ~/.bash_profile'
   alias cotrc='open -a CotEditor ~/.bashrc'
   
-  # ------------------------------------------------------------------------------
+  # Customize --------------------------------------------------------------------
   
   # cd Aliases
   alias cdev='cdd ~/Documents/Dev/'
@@ -83,7 +83,7 @@ else
   alias firefox='cmd //c start firefox.exe'
   alias npp=' cmd //c start notepad++.exe'
   
-  # ------------------------------------------------------------------------------
+  # Customize --------------------------------------------------------------------
   
   # cd Aliases
   alias cdev='cdd '\''/c/Neos21/Dev/'\'''
@@ -109,8 +109,8 @@ alias cls='reset'
 # ls
 alias la='ls -a'
 alias ll='ls -l'
-alias lla='ls -la'
 alias lal='ls -la'
+alias lla='ls -la'
 alias la1='ls -a -1'
 alias ls1='ls -1'
 
@@ -121,7 +121,7 @@ alias -- -='cd - && ls'
 alias -- --='cd - && ls'
 
 # カレントディレクトリ配下の .DS_Store を全て消す
-alias delds='find . -name ".DS_Store" -delete'
+alias delds='find . -name '\''.DS_Store'\'' -delete'
 
 # grep : 検索文字列を色付けする
 alias grep='grep --color'
@@ -270,7 +270,7 @@ function mkcd() {
         case "$1" in
           -- ) printf '%s' "$2"; exit 0;;
           -* ) shift;;
-          * ) printf '%s' "$1"; exit 0;;
+           * ) printf '%s' "$1"; exit 0;;
         esac
       done
       printf '.'

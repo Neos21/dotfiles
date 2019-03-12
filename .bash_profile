@@ -6,7 +6,7 @@
 # Detect OS And Settings
 # ================================================================================
 
-if [ "$(uname)" == "Darwin" ]; then
+if [ "$(uname)" == 'Darwin' ]; then
   # echo '[MacOS] .bash_profile'
   # ==============================================================================
   
@@ -32,7 +32,12 @@ if [ "$(uname)" == "Darwin" ]; then
   PATH="/usr/local/opt/python/libexec/bin:${PATH}"
   
   # OCI CLI Tab Completion
-  . "${HOME}/lib/oracle-cli/lib/python3.7/site-packages/oci_cli/bin/oci_autocomplete.sh"
+  test -r "${HOME}/lib/oracle-cli/lib/python3.7/site-packages/oci_cli/bin/oci_autocomplete.sh" && . "${HOME}/lib/oracle-cli/lib/python3.7/site-packages/oci_cli/bin/oci_autocomplete.sh"
+  
+  # Rust
+  PATH="${HOME}/.cargo/bin:${PATH}"
+  
+  # Customize --------------------------------------------------------------------
   
   
   # ------------------------------------------------------------------------------
@@ -40,6 +45,10 @@ else
   # echo '[Windows] .bash_profile'
   # ==============================================================================
   
+  # Git Prompt
+  # test -r "${HOME}/.git-prompt.sh" && . "${HOME}/.git-prompt.sh"
+  GIT_PS1_SHOWDIRTYSTATE=true
+  GIT_PS1_SHOWUNTRACKEDFILES=true
   # Git Prompt : Neo's __git_ps1 (標準の __git_ps1 が Windows 環境で遅いので簡易版を自作した)
   function __git_ps1() {
     # ブランチ名 : symbolic-ref はブランチ名しか出せないが、タグなどにも対応している describe よりは若干高速
@@ -52,6 +61,8 @@ else
     echo " [$branch_name]"
   }
   export PS1='\n\[\033[32m\]\u@\h \[\033[35m\]\D{%F %T} \[\033[33m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\]\n$ '
+  
+  # Customize --------------------------------------------------------------------
   
   
   # ------------------------------------------------------------------------------
@@ -70,8 +81,8 @@ export HISTCONTROL=ignoreboth
 # Git Completion
 # ================================================================================
 
-# test -r ~/.git-completion.bash &&
-. ~/.git-completion.bash
+# test -r "${HOME}/.git-completion.bash" &&
+. "${HOME}/.git-completion.bash"
 
 # My Aliases
 # if type __git_complete 1>/dev/null 2>/dev/null; then
@@ -102,8 +113,8 @@ export PATH="${HOME}/bin:${PATH}"
 # Source .bashrc
 # ================================================================================
 
-# test -r ~/.bashrc &&
-. ~/.bashrc
+# test -r "${HOME}/.bashrc" &&
+. "${HOME}/.bashrc"
 
 
 # --------------------------------------------------------------------------------
