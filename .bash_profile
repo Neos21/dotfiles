@@ -62,6 +62,12 @@ else
   }
   export PS1='\n\[\033[32m\]\u@\h \[\033[35m\]\D{%F %T} \[\033[33m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\]\n$ '
   
+  # Node.js
+  alias node='winpty node.exe'
+  
+  # Docker For Windows
+  alias docker='winpty docker'
+  
   # Customize --------------------------------------------------------------------
   
   
