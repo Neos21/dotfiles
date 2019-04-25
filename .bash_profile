@@ -68,6 +68,9 @@ else
   # Docker For Windows
   alias docker='winpty docker'
   
+  # Python
+  alias python='winpty python'
+  
   # Customize --------------------------------------------------------------------
   
   
@@ -75,13 +78,11 @@ else
 fi
 
 
-# History Control : HISTCONTROL
-#   - 重複履歴を無視               … ignoredups
-#   - 空白から始めたコマンドを無視 … ignorespace
-#   - 両方指定                     … ignoreboth
+# History
 # ================================================================================
 
 export HISTCONTROL=ignoreboth
+export HISTTIMEFORMAT='%F %T '
 
 
 # Git Completion
