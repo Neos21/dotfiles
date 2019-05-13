@@ -1,3 +1,4 @@
+alias=if "$1"=="" (doskey /macros) else (doskey $*)
 cat=type $*
 cp=copy $*
 h=doskey /history
@@ -8,4 +9,4 @@ lv=more /E $*
 mv=move $*
 pwd=echo %CD%
 tree=tree /f $b more
-quit=exit
+unalias=doskey $*=
