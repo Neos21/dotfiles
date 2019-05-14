@@ -1,0 +1,350 @@
+/* ========== Chrome Markdown Preview Plus ========== */
+
+
+/* ==================================================
+ * ページ全体
+ * ================================================== */
+
+/* 全ての要素のボックスサイズの計算方法を border-box にする */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* ページ全体のスタイルを設定する */
+html {
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, YuGothic, "Yu Gothic", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Hiragino Kaku Gothic Pro", Meiryo, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  overflow-y: scroll;
+  cursor: default;
+  text-decoration-skip-ink: none;
+  -webkit-text-size-adjust: 100%;
+  -webkit-text-decoration-skip: objects;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ページの基準となるスタイルを設定する */
+body {
+  margin: 0 calc(25% + 1rem) 0 0;  /* 右側の見出しメニュー .BlogAnchor 用の余白 */
+  padding: 1rem;
+  line-height: 1.7;
+  overflow-wrap: break-word;
+      word-wrap: break-word;  /* overflow-wrap が IE で効かないため指定する */
+}
+
+/* IE11 でブロック要素として扱われない要素を設定しておく */
+details, main {
+  display: block;
+}
+
+
+/* ==================================================
+ * マージン関連
+ * ================================================== */
+
+/* 上下のマージンを設定する */
+h1, h2, h3, h4, h5, h6, p, hr,
+dl, dt, dd, ol, ul,
+address, details, figcaption, fieldset, form, pre, summary, table {
+  margin-top: 0;
+  margin-bottom: 1.25em;
+}
+
+/* 下マージンをなくす : 入れ子のリスト・子要素のマージンと親要素のパディングとの衝突回避 */
+ol ol, ol ul,
+ul ol, ul ul,
+blockquote > :last-child,
+fieldset > :last-child,
+pre > :last-child {
+  margin-bottom: 0;
+}
+
+/* 左マージンを付ける */
+dd, li {
+  margin-left: 2.5em;
+}
+
+/* 引用ブロック・図表はまとめて調整する */
+blockquote, figure {
+  margin: 0 0 1rem 2.5em;
+}
+
+/* リストの左パディングをなくす */
+ol, ul {
+  padding-left: 0;
+}
+
+
+/* ==================================================
+ * フォント関連
+ * ================================================== */
+
+/* 見出しサイズを調整する */
+h1     { font-size: 2.0em; }
+h2     { font-size: 1.7em; }
+h3     { font-size: 1.5em; }
+h4     { font-size: 1.2em; }
+h5, h6 { font-size: 1.0em; }
+
+/* リンク */
+a {
+  color: #07f;
+}
+
+a:hover,
+a:active {
+  color: #f00;
+}
+
+/* 太字にする */
+caption, dt, em, th {
+  font-weight: bold;
+}
+
+/* 斜体にしない */
+address, dfn, em, var {
+  font-style: normal;
+}
+
+/* 等幅フォントにする */
+pre, code, kbd, samp, var, textarea {
+  font-family: MeiryoKe_Gothic, "Ricty Diminished", Osaka-mono, "MS Gothic", "Courier New", monospace, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+}
+
+/* IE11 でフォントサイズが小さくなるのを直す */
+code, kbd, samp, var {
+  font-size: 1em;
+}
+
+/* フォーム部品のフォントは親要素から継承させる */
+button, input, optgroup, select, textarea {
+  margin: 0;  /* 要素の余白をなくす */
+  font-family: inherit;
+  font-size: inherit;
+}
+
+/* 注釈のサイズを調整する */
+small {
+  font-size: .8em;
+}
+
+/* 下付き文字・上付き文字のサイズ・位置を調整する */
+sub, sup {
+  position: relative;
+  font-size: .75em;
+  vertical-align: baseline;
+}
+
+sub { bottom: -.25em; }
+sup { top   : -.50em; }
+
+
+/* ==================================================
+ * 個別スタイル設定
+ * ================================================== */
+
+/* 引用ブロック */
+blockquote {
+  border: 1px solid #0da;
+  border-radius: 4px;
+  padding: 1em;
+  background: #dfe;
+}
+
+/* 等幅ブロック */
+pre {
+  border: 1px solid #d2d4d6;
+  border-radius: 4px;
+  padding: 1em;
+  background: #f2f4f6;
+  overflow: auto;
+  overflow-wrap: normal;
+      word-wrap: normal;  /* IE・Edge 向け */
+  word-break: keep-all;
+  white-space: pre;
+}
+
+/* テーブル */
+table {
+  border-collapse: collapse;
+}
+
+/* テーブルセル */
+td, th {
+  border: 1px solid #d2d4d6;
+  padding: .25em .5em;
+}
+
+/* テーブル見出し */
+th {
+  text-align: center;
+  background: #f2f4f6;
+}
+
+/* 水平線 */
+hr {
+  border: 0;
+  border-bottom: 1px solid #d2d4d6;
+}
+
+/* フォームグループ */
+fieldset {
+  border: 1px solid #d2d4d6;
+  border-radius: 4px;
+}
+
+/* 図表 */
+figure {
+  border-left: .5em solid #d2d4d6;
+  padding-left: 1em;
+}
+
+/* 要約 */
+summary {
+  cursor: pointer;
+}
+
+/* 略語・定義 */
+abbr[title], dfn[title] {
+  text-decoration: underline;
+  text-decoration: underline dotted;
+  cursor: help;
+}
+
+/* コード */
+:not(pre) > code,
+:not(pre) > samp,
+:not(pre) > kbd,
+:not(pre) > var {
+  margin: 0 .25em;
+  border: 1px solid #d2d4d6;
+  border-radius: 4px;
+  padding: .1em .25em;
+  background: #f2f4f6;
+}
+
+/* 引用 */
+q {
+  quotes: "“"  "”"    "‘"  "’";;
+}
+
+q::before { content:  open-quote; }
+q::after  { content: close-quote; }
+
+/* 隣接するテキストを上揃えにする */
+input, select, textarea {
+  vertical-align: top;
+}
+
+/* チェックボックスとラジオボタンは隣接するテキストを垂直中央揃えにする */
+[type="checkbox"], [type="radio"] {
+  vertical-align: middle;
+}
+
+/* Mac でのボタン類の表示仕様を揃える */
+button, [type="button"], [type="reset"], [type="submit"] {
+  -webkit-appearance: button;
+}
+
+
+/* ==================================================
+ * Markdown Preview Plus 用の追加設定
+ * ================================================== */
+
+/* 強調構文のスタイル */
+em     { color: #092; }
+strong { color: #f00; }
+
+/* 見出しに下線引く */
+h2, h3 {
+  border-bottom: 1px solid #ddd;
+}
+
+/* 右側の見出しメニューの調整 */
+.BlogAnchor {
+  top: 1rem !important;
+  right: 1rem !important;
+  border-radius: 4px;
+  width: 25% !important;
+  max-width: 25% !important;
+  min-width: 25% !important;
+  height: calc(100% - 2rem) !important;
+}
+
+.BlogAnchor > span,
+.BlogAnchor > p {
+  display: none;
+}
+
+.BlogAnchor .AnchorContent {
+  height: 100% !important;
+  min-height: 100% !important;
+  max-height: 100% !important;
+}
+
+.BlogAnchor li {
+  margin-left: 0;
+}
+
+/* シンタックスハイライトの設定 */
+.hljs {
+  display: block;
+  background: #fff;
+  padding: .5em;
+  color: #333;
+  overflow-x: auto;
+}
+
+.hljs-comment, .hljs-meta {
+  color: #969896;
+}
+
+.hljs-string, .hljs-variable, .hljs-template-variable, .hljs-strong, .hljs-emphasis, .hljs-quote {
+  color: #df5000;
+}
+
+.hljs-keyword, .hljs-selector-tag, .hljs-type {
+  color: #a71d5d;
+}
+
+.hljs-literal, .hljs-symbol, .hljs-bullet, .hljs-attribute {
+  color: #0086b3;
+}
+
+.hljs-section, .hljs-name {
+  color: #63a35c;
+}
+
+.hljs-tag {
+  color: #333;
+}
+
+.hljs-title, .hljs-attr, .hljs-selector-id, .hljs-selector-class, .hljs-selector-attr, .hljs-selector-pseudo {
+  color: #795da3;
+}
+
+.hljs-addition {
+  color: #55a532;
+  background: #eaffea;
+}
+
+.hljs-deletion {
+  color: #bd2c00;
+  background: #ffecec;
+}
+
+.hljs-link {
+  text-decoration: underline;
+}
+
+.task-list-item {
+  list-style-type: none;
+}
+
+.task-list-item-checkbox {
+  margin: 0 .2em .25em -1.6em;
+  vertical-align: middle;
+}
+
+
+/* ---------- Chrome Markdown Preview Plus ---------- */
