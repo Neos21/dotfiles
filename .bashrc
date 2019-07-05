@@ -206,6 +206,14 @@ alias nunp='npm unpublish'
 alias nn='npm run ng'
 
 
+# Alias : VSCode
+# ================================================================================
+
+alias c='code .'
+alias ca='code -a .'
+alias cr='code -r .'
+
+
 # Alias : Vagrant
 # ================================================================================
 
