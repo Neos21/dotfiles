@@ -21,6 +21,8 @@
 	required = true
 [gc]
 	auto = 256
+[log]
+	date = iso-local
 [merge]
 	ff = false
 [pull]
