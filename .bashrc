@@ -52,8 +52,8 @@ if [ "$(uname)" == 'Darwin' ]; then
   alias cotchrome='open -a '\''Google Chrome'\'' "$(osascript -e '\''tell application "CotEditor" to get path of document 1'\'')"'
   
   # CotEditor で開く
-  alias cotbp='open -a CotEditor ~/.bash_profile'
-  alias cotrc='open -a CotEditor ~/.bashrc'
+  alias cotbp='open -a CotEditor "${HOME}/.bash_profile"'
+  alias cotrc='open -a CotEditor "${HOME}/.bashrc"'
   
   # Customize --------------------------------------------------------------------
   
@@ -130,23 +130,27 @@ alias grepinr='grep -inR'
 # df : バイト表示を単位変換する
 alias df='df -h'
 
-# PostgreSQL : パスワードは ~/.pgpass (pgpass.conf) で設定
+# PostgreSQL : パスワードは .pgpass (pgpass.conf) で設定
 alias mpsql='psql -U postgres --dbname=my_local_db'
 
-# Edit .bash_profile
-alias ebp='vi ~/.bash_profile'
-alias bp='. ~/.bash_profile'
+# vi = vim
+alias vi='vim'
 
-# Edit .bashrc
-alias erc='vi ~/.bashrc'
-alias rc='. ~/.bashrc'
+# Edit And Apply Setting Files
+alias ebp='vi "${HOME}/.bash_profile"'
+alias rbp='.  "${HOME}/.bash_profile"'
+alias erc='vi "${HOME}/.bashrc"'
+alias rrc='.  "${HOME}/.bashrc"'
+alias evi='vi "${HOME}/.vimrc"'
+alias rvi='.  "${HOME}/.vimrc"'
+alias etm='vi "${HOME}/.tmux.conf"'
+alias rtm='.  "${HOME}/.tmux.conf"'
 
 
 # Alias : Git
 # ================================================================================
 
 alias g='git'
-
 alias ga='git add'
 alias gb='git branch'
 alias gba='git branch -a'
@@ -189,7 +193,6 @@ alias tiga='tig --all'
 # ================================================================================
 
 alias n='npm'
-
 alias ni='npm install --progress=true'
 alias nl='npm list --depth=0'
 alias nls='npm list --depth=0'
@@ -218,7 +221,6 @@ alias cr='code -r .'
 # ================================================================================
 
 alias v='vagrant'
-
 alias vup='vagrant up'
 alias vsh='vagrant ssh'
 alias vha='vagrant halt'
@@ -245,6 +247,7 @@ alias drun='docker run -it'  # ex. docker run -v `pwd`:/tmp/shared -p 8080:8080 
 alias k='kubectl'
 alias kaf='kubectl apply -f'
 alias kd='kubectl describe'
+alias kdd='kubectl describe deployment'
 alias kdn='kubectl describe node'
 alias kdp='kubectl describe pod'
 alias kds='kubectl describe service'
@@ -253,12 +256,24 @@ alias ke='kubectl edit'
 alias kes='kubectl edit service'
 alias kesh='kubectl exec -ti'
 alias kg='kubectl get'
+alias kgd='kubectl get deployment'
 alias kgn='kubectl get node'
 alias kgp='kubectl get pod'
+alias kgpw='kubectl get pod -o wide'
 alias kgs='kubectl get service'
 alias kgsc='kubectl get secret'
 alias kl='kubectl logs'
 alias kp='kubectl proxy'
+
+
+# Alias : Terraform
+# ================================================================================
+
+alias t='terraform'
+alias ta='terraform apply'
+alias td='terraform destroy'
+alias ti='terraform init'
+alias tp='terraform plan'
 
 
 # --------------------------------------------------------------------------------
@@ -298,37 +313,6 @@ function mkcd() {
 
 function cdd() {
   \cd "$@" && pwd && ls
-}
-
-
-# Function : 複数の Git ブランチをまとめて削除する
-#   https://github.com/takutoarao/shellutils/blob/master/git-rmbranch
-# ================================================================================
-
-function gbds() {
-  if [ -z "$1" ]; then
-    echo 'ブランチ名を指定してください'
-    return 1
-  fi
-  
-  local branch_name="$1";
-  local list=`git branch | grep -i "$branch_name" | grep -v '*'`
-  
-  if [ -z "$list" ]; then
-    echo '該当するブランチはありません'
-    return 1
-  fi
-  
-  echo "$list"
-  read -p 'これらのブランチを削除してもよろしいですか？ [Y/n] ' yn
-  case "$yn" in
-    [yY]) git branch | grep -i "$branch_name" | grep -v '*' | xargs git branch -D
-          echo 'Deleted.'
-          ;;
-       *) echo '中止'
-          return 1
-          ;;
-  esac
 }
 
 

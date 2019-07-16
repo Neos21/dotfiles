@@ -2,6 +2,7 @@
 " .vimrc
 " ================================================================================
 
+
 " 文字コードを UFT-8 に設定する
 set fenc=utf-8
 " バックアップファイルを作らない
@@ -14,9 +15,21 @@ set autoread
 set hidden
 " 入力中のコマンドをステータスに表示する
 set showcmd
+" クリップボード連携を有効にする (MacOS の場合は unnamedplus ではなく unnamed で有効にできた・vi ではなく vim を使うこと)
+set clipboard&
+set clipboard^=unnamed
+" クリップボード連携を有効にした時に BackSpace (Delete) が効かなくなるので設定する
+set backspace=indent,eol,start
+
 
 " 見た目
 " ------------------------------------------------------------
+
+" Monokai カラースキーム
+syntax on
+colorscheme monokai
+" 範囲選択が見づらいので変更する
+hi Visual ctermbg=227
 
 " 行番号を表示する
 set number
@@ -24,8 +37,6 @@ set number
 set cursorline
 " カーソルラインの色をクリアする
 hi clear CursorLine
-" 現在の列を強調表示する
-" set cursorcolumn
 " 行末の1文字先までカーソルを移動できるようにする
 set virtualedit=onemore
 " スマートインデントにする
@@ -42,14 +53,8 @@ set wildmode=list:longest
 nnoremap j gj
 nnoremap k gk
 
-" Monokai カラースキーム
-syntax on
-colorscheme monokai
-" iTerm2で半透明にしているが、vimのcolorschemeを設定すると背景も変更されるため
-highlight Normal ctermbg=none
 
-
-" Tab
+" Tab 文字
 " ------------------------------------------------------------
 
 " 不可視文字を可視化 (タブが「▸-」と表示される)
@@ -75,5 +80,43 @@ set incsearch
 set wrapscan
 " 検索語をハイライト表示する
 set hlsearch
-" ESC 連打でハイライト解除する
-nmap <Esc><Esc> :nohlsearch<CR><Esc>
+
+
+" ウィンドウ
+" ------------------------------------------------------------
+
+" ウィンドウを垂直縦分割する
+nmap sv :vsplit<Return><C-w>w
+" ウィンドウを水平横分割する
+nmap sh :split<Return><C-w>w
+
+" Space でウィンドウ移動する
+nmap <Space> <C-w>w
+" s + 矢印キーでウィンドウ移動する
+map s<left> <C-w>h
+map s<down> <C-w>j
+map s<up> <C-w>k
+map s<right> <C-w>l
+" s + hjkl でウィンドウ移動する
+map sh <C-w>h
+map sj <C-w>j
+map sk <C-w>k
+map sl <C-w>l
+
+" ウィンドウをリサイズする
+nmap <C-w><left> <C-w><
+nmap <C-w><right> <C-w>>
+nmap <C-w><up> <C-w>+
+nmap <C-w><down> <C-w>-
+
+" タブ移動
+nmap <Tab> :tabnext<Return>
+nmap <S-Tab> :tabprev<Return>
+
+" Ctrl + z で元に戻す (u)
+nnoremap <C-z> u
+" Ctrl + y でやり直す (Ctrl + r)
+nnoremap <C-Y> <C-r>
+
+" Esc 連打で :nohlsearch が出ないようにする
+nnoremap <Esc><Esc> <Esc>
