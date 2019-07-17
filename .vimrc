@@ -85,31 +85,38 @@ set hlsearch
 " ウィンドウ
 " ------------------------------------------------------------
 
-" ウィンドウを垂直縦分割する
-nmap sv :vsplit<Return><C-w>w
-" ウィンドウを水平横分割する
-nmap sh :split<Return><C-w>w
+" t + \ ・ t + | でウィンドウを垂直縦分割する
+nmap t<Bslash> :vsplit<Return><C-w>w
+nmap t<Bar> :vsplit<Return><C-w>w
+" t + - でウィンドウを水平横分割する
+nmap t- :split<Return><C-w>w
+
+" t + hjkl でウィンドウ移動する
+map th <C-w>h
+map tj <C-w>j
+map tk <C-w>k
+map tl <C-w>l
+" Ctrl + w → 矢印キーでウィンドウをリサイズする
+nmap tH <C-w>>
+nmap tJ <C-w>-
+nmap tK <C-w>+
+nmap tL <C-w><
+
+" t + 矢印キーでウィンドウ移動する
+map t<left> <C-w>h
+map t<down> <C-w>j
+map t<up> <C-w>k
+map t<right> <C-w>l
+" Ctrl + w → 矢印キーでウィンドウをリサイズする
+nmap <C-w><left> <C-w>>
+nmap <C-w><down> <C-w>-
+nmap <C-w><up> <C-w>+
+nmap <C-w><right> <C-w><
 
 " Space でウィンドウ移動する
 nmap <Space> <C-w>w
-" s + 矢印キーでウィンドウ移動する
-map s<left> <C-w>h
-map s<down> <C-w>j
-map s<up> <C-w>k
-map s<right> <C-w>l
-" s + hjkl でウィンドウ移動する
-map sh <C-w>h
-map sj <C-w>j
-map sk <C-w>k
-map sl <C-w>l
 
-" ウィンドウをリサイズする
-nmap <C-w><left> <C-w><
-nmap <C-w><right> <C-w>>
-nmap <C-w><up> <C-w>+
-nmap <C-w><down> <C-w>-
-
-" タブ移動
+" Tab・Space + Tab でタブ移動
 nmap <Tab> :tabnext<Return>
 nmap <S-Tab> :tabprev<Return>
 
