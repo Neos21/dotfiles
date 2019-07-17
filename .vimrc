@@ -96,22 +96,22 @@ map th <C-w>h
 map tj <C-w>j
 map tk <C-w>k
 map tl <C-w>l
-" Ctrl + w → 矢印キーでウィンドウをリサイズする
+" t + HJKL でウィンドウをリサイズする
 nmap tH <C-w>>
 nmap tJ <C-w>-
 nmap tK <C-w>+
 nmap tL <C-w><
 
 " t + 矢印キーでウィンドウ移動する
-map t<left> <C-w>h
-map t<down> <C-w>j
-map t<up> <C-w>k
-map t<right> <C-w>l
+map t<Left> <C-w>h
+map t<Down> <C-w>j
+map t<Up> <C-w>k
+map t<Right> <C-w>l
 " Ctrl + w → 矢印キーでウィンドウをリサイズする
-nmap <C-w><left> <C-w>>
-nmap <C-w><down> <C-w>-
-nmap <C-w><up> <C-w>+
-nmap <C-w><right> <C-w><
+nmap <C-w><Left> <C-w>>
+nmap <C-w><Down> <C-w>-
+nmap <C-w><Up> <C-w>+
+nmap <C-w><Right> <C-w><
 
 " Space でウィンドウ移動する
 nmap <Space> <C-w>w
@@ -123,7 +123,7 @@ nmap <S-Tab> :tabprev<Return>
 " Ctrl + z で元に戻す (u)
 nnoremap <C-z> u
 " Ctrl + y でやり直す (Ctrl + r)
-nnoremap <C-Y> <C-r>
+nnoremap <C-y> <C-r>
 
 " Esc 連打で :nohlsearch が出ないようにする
 nnoremap <Esc><Esc> <Esc>
