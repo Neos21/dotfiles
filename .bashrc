@@ -104,7 +104,9 @@ fi
 # ================================================================================
 
 alias quit='exit'
+
 alias cls='reset'
+alias tc='clear && tmux clear-history'
 
 # ls
 alias la='ls -a'
@@ -136,7 +138,7 @@ alias mpsql='psql -U postgres --dbname=my_local_db'
 # vi = vim
 alias vi='vim'
 
-# Edit And Apply Setting Files
+# Edit And Reload Setting Files
 alias ebp='vi "${HOME}/.bash_profile"'
 alias rbp='.  "${HOME}/.bash_profile"'
 alias erc='vi "${HOME}/.bashrc"'
