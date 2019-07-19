@@ -1,16 +1,45 @@
-BoldAsFont=yes
-Transparency=low
-OpaqueWhenFocused=no
-Font=Consolas
-FontHeight=11
-FontWeight=700
-FontIsBold=yes
-FontSmoothing=full
-Columns=120
-Rows=25
-Locale=ja_JP
-Charset=UTF-8
-Language=@
-ThemeFile=xterm
-AllowBlinking=yes
-CursorType=block
+# ================================================================================
+# .minttyrc
+# ================================================================================
+
+
+Charset  = UTF-8
+Language = ja
+Locale   = ja_JP
+
+Columns  = 120
+Rows     = 25
+
+Font          = Consolas
+FontHeight    = 11
+FontWeight    = 700
+FontIsBold    = yes
+FontSmoothing = full
+BoldAsColour  = yes
+BoldAsFont    = yes
+
+AllowBlinking     = yes
+CursorType        = block
+OpaqueWhenFocused = yes
+Term              = xterm-256color
+ThemeFile         =
+
+ForegroundColour = 240,240,240
+BackgroundColour =   0,  0,  0
+CursorColour     = 240,240,240
+Black            = 100,100,100
+BoldBlack        = 100,100,100
+Red              = 240,  0,  0
+BoldRed          = 240,  0,  0
+Green            =   0,220,  0
+BoldGreen        =   0,220,  0
+Yellow           = 255,255,  0
+BoldYellow       = 255,255,  0
+Blue             =   0,140,255
+BoldBlue         =   0,140,255
+Magenta          = 255,  0,240
+BoldMagenta      = 255,  0,240
+Cyan             =   0,240,240
+BoldCyan         =   0,240,240
+White            = 255,255,255
+BoldWhite        = 255,255,255
