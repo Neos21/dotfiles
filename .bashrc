@@ -138,6 +138,9 @@ alias mpsql='psql -U postgres --dbname=my_local_db'
 # vi = vim
 alias vi='vim'
 
+# SSH
+alias sshls='grep -rh '\''^Host '\'' "${HOME}/.ssh/" | grep -v '\''*'\'' | sed '\''s/Host /ssh /'\'' | sort'
+
 # Edit And Reload Setting Files
 alias ebp='vi "${HOME}/.bash_profile"'
 alias rbp='.  "${HOME}/.bash_profile"'
@@ -162,6 +165,7 @@ alias gcob='git checkout -b'
 alias gc='git commit'
 alias gce='git commit --allow-empty'
 alias gcem='git commit --allow-empty -m'
+alias gcl='git clone'
 alias gcm='git commit -m'
 alias gdf='git diff'
 alias gdfc='git diff --cached'
@@ -186,6 +190,7 @@ alias gremov='git remote -v'
 alias gremos='git remote set-url origin'
 alias gst='git status'
 alias gs='git status -s -b'
+alias gt='git tag'
 
 # tig
 alias tiga='tig --all'
