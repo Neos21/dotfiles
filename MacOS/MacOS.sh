@@ -6,15 +6,16 @@
 
 
 if [ "$(uname)" != 'Darwin' ] ; then
-  echo 'Not macOS!'
+  echo 'Not MacOS'
   exit 1
 fi
 
 echo 'Setup MacOS'
 
-chflags nohidden ~/Library    # ~/Library ディレクトリを可視化する
-sudo chflags nohidden /Volumes    # /Volumes ディレクトリを可視化する
 sudo nvram SystemAudioVolume=" "    # ブート時のサウンドを無効化する
+sudo chflags nohidden /Volumes    # /Volumes ディレクトリを可視化する
+
+chflags nohidden ~/Library    # ~/Library ディレクトリを可視化する
 
 sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo HostName    # 時計アイコンクリック時に OS やホスト名 IP を表示する
 
@@ -48,16 +49,15 @@ defaults write com.apple.desktopservices DSDontWriteUSBStores -bool true    # US
 
 # Dock : 設定反映は $ killall Dock
 defaults write com.apple.dock autohide-delay -float 0    # Dock が表示されるまでの待ち時間を無効にする
-defaults write com.apple.dock largesize -int 100    # Dock の拡大時のサイズを指定する
+defaults write com.apple.dock largesize -int 80    # Dock の拡大時のサイズを指定する
 defaults write com.apple.dock magnification -bool true    # Dock の拡大を有効にする
 defaults write com.apple.dock mcx-expose-disabled -bool true    # Mission Control を使用不可にする
-# defaults write com.apple.dock persistent-apps -array    # Dock の Finder とゴミ箱以外を消す・普段は無効にしておく
-defaults write com.apple.dock tilesize -int 45    # Dock の通常サイズを指定する
+defaults write com.apple.dock tilesize -int 25    # Dock の通常サイズを指定する
 defaults write com.apple.dock wvous-tl-corner -int 10    # ディスプレイ左上でディスプレイをスリープする
 
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true    # トラックパッドのタップでクリックにする
 
-# Finder : 設定反映は $ killall Finder
+# Finder : 設定反映は killall Finder
 defaults write com.apple.finder _FXShowPosixPathInTitle -bool true    # Finder のタイトルバーにフルパスを表示する
 defaults write com.apple.finder _FXSortFoldersFirst -bool true    # 名前で並べ替えを選択時にディレクトリを前に置くようにする
 defaults write com.apple.finder AnimateWindowZoom -bool false    # フォルダを開くときのアニメーションを無効にする
