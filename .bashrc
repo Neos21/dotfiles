@@ -138,9 +138,6 @@ alias mpsql='psql -U postgres --dbname=my_local_db'
 # vi = vim
 alias vi='vim'
 
-# SSH
-alias sshls='grep -rh '\''^Host '\'' "${HOME}/.ssh/" | grep -v '\''*'\'' | sed '\''s/Host /ssh /'\'' | sort'
-
 # Edit And Reload Setting Files
 alias ebp='vi "${HOME}/.bash_profile"'
 alias rbp='.  "${HOME}/.bash_profile"'
@@ -150,6 +147,11 @@ alias evi='vi "${HOME}/.vimrc"'
 alias rvi='.  "${HOME}/.vimrc"'
 alias etm='vi "${HOME}/.tmux.conf"'
 alias rtm='.  "${HOME}/.tmux.conf"'
+
+# SSH Config のリストを表示する
+alias sshls='grep -rh '\''^Host '\'' "${HOME}/.ssh/" | grep -v '\''*'\'' | sed '\''s/Host /ssh /'\'' | sort'
+# SSH 接続先で使いたい PS1 プロンプトをコピペ用に出力する
+alias echops1='echo '\''export PS1="\n\[\033[31m\]\u@\h \[\033[35m\]\D{%F %T} \[\033[33m\]\w\[\033[0m\]\n$ "'\'''
 
 
 # Alias : Git
@@ -224,28 +226,30 @@ alias ca='code -a .'
 alias cr='code -r .'
 
 
-# Alias : Vagrant
-# ================================================================================
-
-alias v='vagrant'
-alias vup='vagrant up'
-alias vsh='vagrant ssh'
-alias vha='vagrant halt'
-
-
 # Alias : Docker
 # ================================================================================
 
 alias d='docker'
-alias dbuild='docker build --no-cache --tag'
-alias dexec='docker exec -it'  # ex. docker exec -it 【Container ID】 bash
+alias da='docker attach'
+alias db='docker build --no-cache --tag'
+alias de='docker exec -it'  # ex. docker exec -it 【Container ID】 bash
 alias di='docker images'
-alias ditag='docker image tag'
-alias dps='docker ps -a'
+alias dit='docker image tag'
+alias dpl='docker pull'
+alias dps='docker ps --all'
 alias dpush='docker push'
-alias drm='docker rm'
+alias drm='docker rm -f'
+alias drma='docker rm -f $(docker ps -aq)'
 alias drmi='docker rmi'
 alias drun='docker run -it'  # ex. docker run -v `pwd`:/tmp/shared -p 8080:8080 【Image】 bash
+alias ds='docker start'
+alias dsta='docker start'
+alias dsto='docker stop'
+
+alias dc='docker-compose'
+alias dcb='docker-compose build --no-cache'
+alias dcup='docker-compose up --detach'
+alias dcrm='docker-compose rm --stop --force'
 
 
 # Alias : Kubernetes
@@ -281,6 +285,7 @@ alias ta='terraform apply'
 alias td='terraform destroy'
 alias ti='terraform init'
 alias tp='terraform plan'
+alias tpd='terraform plan -destroy'
 
 
 # --------------------------------------------------------------------------------
@@ -324,3 +329,8 @@ function cdd() {
 
 
 # --------------------------------------------------------------------------------
+# Customize
+# --------------------------------------------------------------------------------
+
+
+# ------------------------------------------------------------------------------
