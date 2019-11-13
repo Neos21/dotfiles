@@ -11,9 +11,11 @@
 [core]
 	autoCRLF = false
 	fscache = true
+	precomposeunicode = true
 	preloadindex = true
 	quotepath = false
 [credential]
+	helper = store --file ~/.gitconfig-credential
 	helper = osxkeychain
 [fetch]
 	prune = true
