@@ -10,6 +10,11 @@ if [ "$(uname)" == 'Darwin' ]; then
   # echo '[MacOS] .bashrc'
   # ==============================================================================
   
+  # Git Prompt
+  test -r "${HOME}/.git-prompt.sh" && . "${HOME}/.git-prompt.sh"
+  export GIT_PS1_SHOWDIRTYSTATE=true
+  export GIT_PS1_SHOWUNTRACKEDFILES=true
+  export PS1='\n\[\033[32m\]\u@\h \[\033[35m\]\D{%F %T} \[\033[33m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\]\n$ '
   
   # ls
   export CLICOLOR=1
@@ -58,16 +63,31 @@ if [ "$(uname)" == 'Darwin' ]; then
   # Customize --------------------------------------------------------------------
   
   # cd Aliases
-  alias cdev='cdd ~/Documents/Dev/'
-  alias cdgh='cdd ~/Documents/Dev/GitHub/'
-  alias cds='cdd ~/Documents/Dev/Sandboxes/'
-  
+  alias cdev='cd "${HOME}/Documents/Dev/" && pwd && ls'
+  alias cdgh='cd "${HOME}/Documents/Dev/GitHub/" && pwd && ls'
+  alias cds='cd "${HOME}/Documents/Dev/Sandboxes/" && pwd && ls'
   
   # ------------------------------------------------------------------------------
 else
   # echo '[Windows] .bashrc'
   # ==============================================================================
   
+  # Git Prompt
+  # test -r "${HOME}/.git-prompt.sh" && . "${HOME}/.git-prompt.sh"
+  export GIT_PS1_SHOWDIRTYSTATE=true
+  export GIT_PS1_SHOWUNTRACKEDFILES=true
+  # Git Prompt : Neo's __git_ps1 (標準の __git_ps1 が Windows 環境で遅いので簡易版を自作した)
+  function __git_ps1() {
+    # ブランチ名 : symbolic-ref はブランチ名しか出せないが、タグなどにも対応している describe よりは若干高速
+    local branch_name="$(git symbolic-ref --short HEAD 2> /dev/null)"  # "$(git describe --all 2> /dev/null | sed 's/heads\///' 2> /dev/null)"
+    # ブランチ名がなければ Git リポジトリ配下ではないと見なす・何も出力せず中断する
+    if [ -z "$branch_name" ]; then
+      exit 0
+    fi
+    # どうしてもパフォーマンスが出ないのでブランチ名だけ出すことにする
+    echo " [$branch_name]"
+  }
+  export PS1='\n\[\033[32m\]\u@\h \[\033[35m\]\D{%F %T} \[\033[33m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\]\n$ '
   
   # ls
   alias ls='ls -F --color=auto --show-control-chars --time-style=long-iso'
@@ -86,10 +106,9 @@ else
   # Customize --------------------------------------------------------------------
   
   # cd Aliases
-  alias cdev='cdd '\''/c/Neos21/Dev/'\'''
-  alias cdgh='cdd '\''/c/Neos21/Dev/GitHub/'\'''
-  alias cds='cdd '\''/c/Neos21/Dev/Sandboxes/'\'''
-  
+  alias cdev='cd '\''/c/Neos21/Dev/'\'' && pwd && ls'
+  alias cdgh='cd '\''/c/Neos21/Dev/GitHub/'\'' && pwd && ls'
+  alias cds='cd '\''/c/Neos21/Dev/Sandboxes/'\'' && pwd && ls'
   
   # ------------------------------------------------------------------------------
 fi
@@ -117,10 +136,10 @@ alias la1='ls -a -1'
 alias ls1='ls -1'
 
 # cd
-alias ..='cdd ..'
-alias ...='cdd ../..'
-alias -- -='cd - && ls'
-alias -- --='cd - && ls'
+alias ..='cd .. && pwd && ls'
+alias ...='cd ../.. && pwd && ls'
+alias -- -='cd - && pwd && ls'
+alias -- --='cd - && pwd && ls'
 
 # カレントディレクトリ配下の .DS_Store を全て消す
 alias delds='find . -name '\''.DS_Store'\'' -delete'
@@ -289,48 +308,8 @@ alias tpd='terraform plan -destroy'
 
 
 # --------------------------------------------------------------------------------
-# Function
-# --------------------------------------------------------------------------------
-
-
-# Function : mkdir したディレクトリに cd する
-#   http://qiita.com/0x60df/items/303666033788b937c578
-# ================================================================================
-
-function mkcd() {
-  exec 3>&1
-  cd "`
-    if mkdir "$@" 1>&3; then
-      while [ $# -gt 0 ]; do
-        case "$1" in
-          -- ) printf '%s' "$2"; exit 0;;
-          -* ) shift;;
-           * ) printf '%s' "$1"; exit 0;;
-        esac
-      done
-      printf '.'
-      exit 0
-    else
-      printf '.'
-      exit 1
-    fi
-  `"
-  exec 3>&-
-}
-
-
-# Function : cd したあと ls する
-#   http://thehacker.jp/alias-settings/
-# ================================================================================
-
-function cdd() {
-  \cd "$@" && pwd && ls
-}
-
-
-# --------------------------------------------------------------------------------
 # Customize
 # --------------------------------------------------------------------------------
 
 
-# ------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------

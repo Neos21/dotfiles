@@ -10,12 +10,6 @@ if [ "$(uname)" == 'Darwin' ]; then
   # echo '[MacOS] .bash_profile'
   # ==============================================================================
   
-  # Git Prompt
-  test -r "${HOME}/.git-prompt.sh" && . "${HOME}/.git-prompt.sh"
-  GIT_PS1_SHOWDIRTYSTATE=true
-  GIT_PS1_SHOWUNTRACKEDFILES=true
-  export PS1='\n\[\033[32m\]\u@\h \[\033[35m\]\D{%F %T} \[\033[33m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\]\n$ '
-  
   # Nodebrew
   PATH="${HOME}/.nodebrew/current/bin:${PATH}"
   
@@ -60,23 +54,6 @@ if [ "$(uname)" == 'Darwin' ]; then
 else
   # echo '[Windows] .bash_profile'
   # ==============================================================================
-  
-  # Git Prompt
-  # test -r "${HOME}/.git-prompt.sh" && . "${HOME}/.git-prompt.sh"
-  GIT_PS1_SHOWDIRTYSTATE=true
-  GIT_PS1_SHOWUNTRACKEDFILES=true
-  # Git Prompt : Neo's __git_ps1 (標準の __git_ps1 が Windows 環境で遅いので簡易版を自作した)
-  function __git_ps1() {
-    # ブランチ名 : symbolic-ref はブランチ名しか出せないが、タグなどにも対応している describe よりは若干高速
-    local branch_name="$(git symbolic-ref --short HEAD 2> /dev/null)"  # "$(git describe --all 2> /dev/null | sed 's/heads\///' 2> /dev/null)"
-    # ブランチ名がなければ Git リポジトリ配下ではないと見なす・何も出力せず中断する
-    if [ -z "$branch_name" ]; then
-      exit 0
-    fi
-    # どうしてもパフォーマンスが出ないのでブランチ名だけ出すことにする
-    echo " [$branch_name]"
-  }
-  export PS1='\n\[\033[32m\]\u@\h \[\033[35m\]\D{%F %T} \[\033[33m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\]\n$ '
   
   # WinPTY
   alias node='winpty node.exe'
@@ -141,4 +118,4 @@ export PATH="${HOME}/bin:${PATH}"
 # --------------------------------------------------------------------------------
 
 
-# ------------------------------------------------------------------------------
+# --------------------------------------------------------------------------------
