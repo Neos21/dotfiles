@@ -52,7 +52,7 @@ defaults write com.apple.dock autohide-delay -float 0    # Dock が表示され�
 defaults write com.apple.dock largesize -int 80    # Dock の拡大時のサイズを指定する
 defaults write com.apple.dock magnification -bool true    # Dock の拡大を有効にする
 defaults write com.apple.dock mcx-expose-disabled -bool true    # Mission Control を使用不可にする
-defaults write com.apple.dock tilesize -int 25    # Dock の通常サイズを指定する
+defaults write com.apple.dock tilesize -int 35    # Dock の通常サイズを指定する
 defaults write com.apple.dock wvous-tl-corner -int 10    # ディスプレイ左上でディスプレイをスリープする
 
 defaults write com.apple.driver.AppleBluetoothMultitouch.trackpad Clicking -bool true    # トラックパッドのタップでクリックにする
