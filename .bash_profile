@@ -99,6 +99,10 @@ export HISTTIMEFORMAT='%F %T '
   __git_complete gm _git_merge
 # fi
 
+# Git Prompt
+export GIT_PS1_SHOWDIRTYSTATE='true'
+export GIT_PS1_SHOWUNTRACKEDFILES='true'
+
 
 # My Commands : Export PATH
 # ================================================================================

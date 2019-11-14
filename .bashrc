@@ -12,20 +12,20 @@ if [ "$(uname)" == 'Darwin' ]; then
   
   # Git Prompt
   test -r "${HOME}/.git-prompt.sh" && . "${HOME}/.git-prompt.sh"
-  export GIT_PS1_SHOWDIRTYSTATE=true
-  export GIT_PS1_SHOWUNTRACKEDFILES=true
   export PS1='\n\[\033[32m\]\u@\h \[\033[35m\]\D{%F %T} \[\033[33m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\]\n$ '
   
   # ls
-  export CLICOLOR=1
-  export LSCOLORS=gxfxcxdxbxegedabagacad
+  export CLICOLOR='1'
+  export LSCOLORS='gxfxcxdxbxegedabagacad'
   alias ls='ls -G'
   
   # open = start
   alias start='open'
   
   # sed
-  alias sed='gsed'
+  if type gsed > /dev/null 2>&1; then
+    alias sed='gsed'
+  fi
   
   # tree
   alias tree='tree -N'
@@ -63,6 +63,7 @@ if [ "$(uname)" == 'Darwin' ]; then
   # Customize --------------------------------------------------------------------
   
   # cd Aliases
+  alias cdb='cd "${HOME}/Documents/Dev/BitBucket/" && pwd && ls'
   alias cdev='cd "${HOME}/Documents/Dev/" && pwd && ls'
   alias cdgh='cd "${HOME}/Documents/Dev/GitHub/" && pwd && ls'
   alias cds='cd "${HOME}/Documents/Dev/Sandboxes/" && pwd && ls'
@@ -72,11 +73,7 @@ else
   # echo '[Windows] .bashrc'
   # ==============================================================================
   
-  # Git Prompt
-  # test -r "${HOME}/.git-prompt.sh" && . "${HOME}/.git-prompt.sh"
-  export GIT_PS1_SHOWDIRTYSTATE=true
-  export GIT_PS1_SHOWUNTRACKEDFILES=true
-  # Git Prompt : Neo's __git_ps1 (標準の __git_ps1 が Windows 環境で遅いので簡易版を自作した)
+  # Git Prompt : 標準の __git_ps1 が Windows 環境で遅いので簡易版を自作した
   function __git_ps1() {
     # ブランチ名 : symbolic-ref はブランチ名しか出せないが、タグなどにも対応している describe よりは若干高速
     local branch_name="$(git symbolic-ref --short HEAD 2> /dev/null)"  # "$(git describe --all 2> /dev/null | sed 's/heads\///' 2> /dev/null)"
@@ -87,6 +84,7 @@ else
     # どうしてもパフォーマンスが出ないのでブランチ名だけ出すことにする
     echo " [$branch_name]"
   }
+  # test -r "${HOME}/.git-prompt.sh" && . "${HOME}/.git-prompt.sh"
   export PS1='\n\[\033[32m\]\u@\h \[\033[35m\]\D{%F %T} \[\033[33m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\]\n$ '
   
   # ls
@@ -106,6 +104,7 @@ else
   # Customize --------------------------------------------------------------------
   
   # cd Aliases
+  alias cdb='cd '\''/c/Neos21/Dev/BitBucket/'\'' && pwd && ls'
   alias cdev='cd '\''/c/Neos21/Dev/'\'' && pwd && ls'
   alias cdgh='cd '\''/c/Neos21/Dev/GitHub/'\'' && pwd && ls'
   alias cds='cd '\''/c/Neos21/Dev/Sandboxes/'\'' && pwd && ls'
@@ -240,9 +239,29 @@ alias nn='npm run ng'
 # Alias : VSCode
 # ================================================================================
 
-alias c='code .'
-alias ca='code -a .'
-alias cr='code -r .'
+function c() {
+  if [ "$#" -eq 0 ]; then
+    code .
+  else 
+    code "$@"
+  fi
+}
+
+function ca() {
+  if [ "$#" -eq 0 ]; then
+    code --add .
+  else 
+    code --add "$@"
+  fi
+}
+
+function cr() {
+  if [ "$#" -eq 0 ]; then
+    code --reuse-window .
+  else 
+    code --reuse-window "$@"
+  fi
+}
 
 
 # Alias : Docker
@@ -251,7 +270,6 @@ alias cr='code -r .'
 alias d='docker'
 alias da='docker attach'
 alias db='docker build --no-cache --tag'
-alias de='docker exec -it'  # ex. docker exec -it 【Container ID】 bash
 alias di='docker images'
 alias dit='docker image tag'
 alias dpl='docker pull'
@@ -260,14 +278,29 @@ alias dpush='docker push'
 alias drm='docker rm -f'
 alias drma='docker rm -f $(docker ps -aq)'
 alias drmi='docker rmi'
-alias drun='docker run -it'  # ex. docker run -v `pwd`:/tmp/shared -p 8080:8080 【Image】 bash
+alias drun='docker run -it'  # ex. docker run -it -v `pwd`:/tmp/shared -p 8080:8080 【Image Name】 bash
 alias ds='docker start'
 alias dsta='docker start'
 alias dsto='docker stop'
 
+# 対象コンテナが止まっていても強制的に docker exec する
+function de() {
+  if [ "$#" -eq 0 ]; then
+    echo '[ de : docker exec function ] Requires at least 1 argument.'
+    return 1
+  fi
+  docker start "$1" > /dev/null 2&>1
+  if [ "$#" -eq 1 ]; then
+    docker exec -it "$1" '/bin/bash'
+  else
+    docker exec -it "$@"  # ex. 【Container ID or Container Name】 bash
+  fi
+}
+
 alias dc='docker-compose'
 alias dcb='docker-compose build --no-cache'
-alias dcup='docker-compose up --detach'
+alias dcup='docker-compose up'
+alias dcupd='docker-compose up --detach'
 alias dcrm='docker-compose rm --stop --force'
 
 
