@@ -289,9 +289,9 @@ function de() {
     echo '[ de : docker exec function ] Requires at least 1 argument.'
     return 1
   fi
-  docker start "$1" > /dev/null 2&>1
+  docker start "$1" > /dev/null
   if [ "$#" -eq 1 ]; then
-    docker exec -it "$1" '/bin/bash'
+    docker exec -it "$1" 'bash'
   else
     docker exec -it "$@"  # ex. 【Container ID or Container Name】 bash
   fi
