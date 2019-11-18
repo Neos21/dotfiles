@@ -137,8 +137,8 @@ alias ls1='ls -1'
 # cd
 alias ..='cd .. && pwd && ls'
 alias ...='cd ../.. && pwd && ls'
-alias -- -='cd - && pwd && ls'
-alias -- --='cd - && pwd && ls'
+alias -- -='cd - && ls'
+alias -- --='cd - && ls'
 
 # カレントディレクトリ配下の .DS_Store を全て消す
 alias delds='find . -name '\''.DS_Store'\'' -delete'
