@@ -99,7 +99,7 @@ else
   # Open App
   alias chrome='cmd //c start chrome.exe'
   alias firefox='cmd //c start firefox.exe'
-  alias npp=' cmd //c start notepad++.exe'
+  alias npp='cmd //c start notepad++.exe'
   
   # Customize --------------------------------------------------------------------
   
@@ -161,10 +161,6 @@ alias ebp='vi "${HOME}/.bash_profile"'
 alias rbp='.  "${HOME}/.bash_profile"'
 alias erc='vi "${HOME}/.bashrc"'
 alias rrc='.  "${HOME}/.bashrc"'
-alias evi='vi "${HOME}/.vimrc"'
-alias rvi='.  "${HOME}/.vimrc"'
-alias etm='vi "${HOME}/.tmux.conf"'
-alias rtm='.  "${HOME}/.tmux.conf"'
 
 # SSH Config のリストを表示する
 alias sshls='grep -rh '\''^Host '\'' "${HOME}/.ssh/" | grep -v '\''*'\'' | sed '\''s/Host /ssh /'\'' | sort'
@@ -273,12 +269,13 @@ alias db='docker build --no-cache --tag'
 alias di='docker images'
 alias dit='docker image tag'
 alias dpl='docker pull'
-alias dps='docker ps --all'
+alias dps='docker ps -a'
 alias dpush='docker push'
+alias dr='docker run -it'  # ex. docker run -it -v "$(pwd):/tmp/shared" -p 8080:8080 【Image Name】 bash
 alias drm='docker rm -f'
 alias drma='docker rm -f $(docker ps -aq)'
 alias drmi='docker rmi'
-alias drun='docker run -it'  # ex. docker run -it -v `pwd`:/tmp/shared -p 8080:8080 【Image Name】 bash
+alias drun='docker run -it'
 alias ds='docker start'
 alias dsta='docker start'
 alias dsto='docker stop'
@@ -286,7 +283,7 @@ alias dsto='docker stop'
 # 対象コンテナが止まっていても強制的に docker exec する
 function de() {
   if [ "$#" -eq 0 ]; then
-    echo '[ de : docker exec function ] Requires at least 1 argument.'
+    echo '[de : docker exec function] Requires at least 1 argument.'
     return 1
   fi
   docker start "$1" > /dev/null
@@ -300,8 +297,12 @@ function de() {
 alias dc='docker-compose'
 alias dcb='docker-compose build --no-cache'
 alias dcup='docker-compose up'
-alias dcupd='docker-compose up --detach'
-alias dcrm='docker-compose rm --stop --force'
+alias dcupd='docker-compose up -d'
+alias dcr='docker-compose run --rm'
+alias dcrm='docker-compose rm -sf'
+alias dcrun='docker-compose run --rm'
+alias dcsta='docker-compose start'
+alias dcsto='docker-compose stop'
 
 
 # Alias : Kubernetes
