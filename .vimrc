@@ -28,8 +28,6 @@ set backspace=indent,eol,start
 " Monokai カラースキーム
 syntax on
 colorscheme monokai
-" 範囲選択が見づらいので変更する
-hi Visual ctermbg=227
 
 " 行番号を表示する
 set number
