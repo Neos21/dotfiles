@@ -12,7 +12,7 @@ if [ "$(uname)" == 'Darwin' ]; then
   
   # Git Prompt
   test -r "${HOME}/.git-prompt.sh" && . "${HOME}/.git-prompt.sh"
-  export PS1='\n\[\033[32m\]\u@\h \[\033[35m\]\D{%F %T} \[\033[33m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\]\n$ '
+  export PS1='\n\[\033[32m\]\u@\h \[\033[35m\]\D{%F %T} \[\033[33m\]\w\[\033[36m\]$(__git_ps1)\[\033[0m\]\n$ '
   
   # ls
   export CLICOLOR='1'
@@ -43,7 +43,7 @@ if [ "$(uname)" == 'Darwin' ]; then
   
   # Finder のアクティブウィンドウのディレクトリに移動する
   function cdf() {
-    local target=`osascript -e 'tell application "Finder" to if (count of Finder windows) > 0 then get POSIX path of (target of front Finder window as text)'`
+    local target="$(osascript -e 'tell application "Finder" to if (count of Finder windows) > 0 then get POSIX path of (target of front Finder window as text)')"
     if [ "$target" != '' ]; then
       cd "$target" && pwd && ls
     else
@@ -85,13 +85,13 @@ else
     echo " [$branch_name]"
   }
   # test -r "${HOME}/.git-prompt.sh" && . "${HOME}/.git-prompt.sh"
-  export PS1='\n\[\033[32m\]\u@\h \[\033[35m\]\D{%F %T} \[\033[33m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\]\n$ '
+  export PS1='\n\[\033[32m\]\u@\h \[\033[35m\]\D{%F %T} \[\033[33m\]\w\[\033[36m\]$(__git_ps1)\[\033[0m\]\n$ '
   
   # ls
   alias ls='ls -F --color=auto --show-control-chars --time-style=long-iso'
   # C:\Program Files\Git\etc\ や C:\git-sdk-64\etc\ 配下の DIR_COLORS が色設定を持っている
   # 「DIR 01;34」を「DIR 01;36」にするとディレクトリが水色になる
-  eval $(dircolors /etc/DIR_COLORS 2> /dev/null)
+  eval "$(dircolors /etc/DIR_COLORS 2> /dev/null)"
   
   # start = open
   alias open='start'
@@ -178,10 +178,10 @@ alias gba='git branch -a'
 alias gbd='git branch -D'
 alias gco='git checkout'
 alias gcob='git checkout -b'
+alias gcl='git clone'
 alias gc='git commit'
 alias gce='git commit --allow-empty'
 alias gcem='git commit --allow-empty -m'
-alias gcl='git clone'
 alias gcm='git commit -m'
 alias gdf='git diff'
 alias gdfc='git diff --cached'
@@ -201,12 +201,22 @@ alias gpl='git pull'
 alias gps='git push'
 alias gre='git reset'
 alias greh='git reset --hard'
-alias gremo='git remote'
-alias gremov='git remote -v'
-alias gremos='git remote set-url origin'
+alias gr='git remote'
+alias grv='git remote -v'
+alias grs='git remote set-url origin'
 alias gst='git status'
 alias gs='git status -s -b'
 alias gt='git tag'
+
+function gclcd() {
+  git clone "$1" && cd "$(basename "$1" .git)" || return
+}
+
+function gplf() {
+  local current_branch_name="$(git branch | grep -e '^* ' | sed 's/^* //g')"
+  git branch --set-upstream-to="origin/${current_branch_name}" "${current_branch_name}"
+  git pull
+}
 
 # tig
 alias tiga='tig --all'
