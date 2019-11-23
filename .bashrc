@@ -85,7 +85,7 @@ else
     echo " [$branch_name]"
   }
   # test -r "${HOME}/.git-prompt.sh" && . "${HOME}/.git-prompt.sh"
-  export PS1='\n\[\033[32m\]\u@\h \[\033[35m\]\D{%F %T} \[\033[33m\]\w\[\033[36m\]$(__git_ps1)\[\033[0m\]\n$ '
+  export PS1='\n\[\033[32m\]\u@\h \[\033[35m\]\D{%F %T} \[\033[33m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\]\n$ '
   
   # ls
   alias ls='ls -F --color=auto --show-control-chars --time-style=long-iso'

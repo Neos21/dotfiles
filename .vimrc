@@ -28,6 +28,8 @@ set backspace=indent,eol,start
 " Monokai カラースキーム
 syntax on
 colorscheme monokai
+" VSCode Terminal で色を反映するため
+syntax reset
 
 " 行番号を表示する
 set number
