@@ -6,11 +6,16 @@
 " 全般
 " ====================================================================================================
 
-let g:colors_name = "monokai"
+hi clear
 
-if exists("syntax_on")
-  syntax reset
+if version > 580
+  hi clear
+  if exists("syntax_on")
+    syntax reset
+  endif
 endif
+
+let g:colors_name = "monokai"
 
 
 " 色設定
@@ -93,3 +98,9 @@ hi SpellBad                      ctermbg=52                     guifg=#ff0000   
 hi SpellCap                      ctermbg=17                     guifg=#7070f0                 gui=none     
 hi SpellLocal                    ctermbg=17                     guifg=#70f0f0                 gui=none     
 hi SpellRare       ctermfg=none  ctermbg=none  cterm=none       guifg=#ffffff                 gui=none     
+
+
+" 後処理
+" ====================================================================================================
+
+set background=dark
