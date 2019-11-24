@@ -100,6 +100,31 @@ hi SpellLocal                    ctermbg=17                     guifg=#70f0f0   
 hi SpellRare       ctermfg=none  ctermbg=none  cterm=none       guifg=#ffffff                 gui=none     
 
 
+" For Windows VSCode Integrated Terminal
+" ====================================================================================================
+
+if &t_Co <= 8
+  hi Normal          ctermfg=7           
+  hi Comment         ctermfg=0           
+  hi StatusLine      ctermfg=0  ctermbg=7
+  hi LineNr          ctermfg=0           
+  hi CursorLineNr    ctermfg=1           
+  hi Number          ctermfg=1           
+  hi Function        ctermfg=2           
+  hi PreProc         ctermfg=2           
+  hi String          ctermfg=3           
+  hi Conditional     ctermfg=5           
+  hi Operator        ctermfg=5           
+  hi Statement       ctermfg=5           
+  hi Error           ctermfg=5           
+  hi ErrorMsg        ctermfg=5           
+  hi WarningMsg      ctermfg=5           
+  hi Question        ctermfg=6           
+  hi Identifier      ctermfg=6           
+  hi Special         ctermfg=6           
+endif
+
+
 " 後処理
 " ====================================================================================================
 
