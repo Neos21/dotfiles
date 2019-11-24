@@ -42,7 +42,7 @@ if [ "$(uname)" == 'Darwin' ]; then
   
   # Maven
   export M2_HOME='/usr/local/apache-maven-3.5.3'
-  PATH="$M2_HOME/bin:${PATH}"
+  PATH="${M2_HOME}/bin:${PATH}"
   
   # Homebrew PATH
   PATH="/usr/local/bin:${PATH}"
@@ -70,7 +70,7 @@ fi
 # History
 # ================================================================================
 
-export HISTCONTROL=ignoreboth
+export HISTCONTROL='ignoreboth'
 export HISTTIMEFORMAT='%F %T '
 
 
