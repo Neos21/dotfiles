@@ -4,11 +4,13 @@
   
   "diffEditor.ignoreTrimWhitespace": false,
   
-  "editor.fontFamily": "MeiryoKe_Gothic, 'Ricty Diminished', 'Osaka－等幅', 'Osaka-等幅', Osaka-mono, 'ＭＳ ゴシック', 'MS Gothic', 'Courier New', Courier, Monaco, Menlo, Consolas, 'Lucida Console', monospace",
+  "editor.codeLens": false,
+  "editor.fontFamily": "MeiryoKe_Gothic, monospace",
   "editor.fontSize": 13,
   "editor.minimap.enabled": false,
   "editor.renderWhitespace": "all",
   "editor.scrollBeyondLastLine": false,
+  "editor.suggestSelection": "first",
   "editor.tabSize": 2,
   "editor.trimAutoWhitespace": false,
   
@@ -18,9 +20,20 @@
   "files.eol": "\n",
   "files.trimTrailingWhitespace": false,
   
+  "git.ignoreMissingGitWarning": true,
+  
   "html.autoClosingTags": false,
   "html.format.extraLiners": "",
   "html.format.indentInnerHtml": true,
+  
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  
+  "merge-conflict.codeLens.enabled": false,
+  
+  "problems.autoReveal": false,
+  "problems.decorations.enabled": false,
+  
+  "python.venvPath": ".venv",
   
   "scss.lint.duplicateProperties": "warning",
   "scss.lint.zeroUnits": "warning",
@@ -30,12 +43,40 @@
   },
   
   "sync.autoUpload": true,
+  "sync.forceUpload": true,
   "sync.gist": "0c0563760f02b0382400ae9e06a37feb",
+  "sync.quietSync": true,
   
-  "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.fontFamily": "Menlo, MeiryoKe_Gothic, monospace",
+  "terminal.integrated.shell.windows": "C:\\git-sdk-64\\usr\\bin\\bash.exe",
   "terminal.integrated.shellArgs.windows": ["-l"],
   
+  "terraform.codelens.enabled": false,
+  
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  
+  "workbench.colorCustomizations": {
+    "terminal.foreground"       : "#f0f0f0",
+    "terminal.background"       : "#0e1012",
+    "terminal.ansiBlack"        : "#646464",
+    "terminal.ansiBrightBlack"  : "#646464",
+    "terminal.ansiRed"          : "#f00000",
+    "terminal.ansiBrightRed"    : "#f00000",
+    "terminal.ansiGreen"        : "#00c800",
+    "terminal.ansiBrightGreen"  : "#00c800",
+    "terminal.ansiYellow"       : "#ffff00",
+    "terminal.ansiBrightYellow" : "#ffff00",
+    "terminal.ansiBlue"         : "#008cff",
+    "terminal.ansiBrightBlue"   : "#008cff",
+    "terminal.ansiMagenta"      : "#ff00f0",
+    "terminal.ansiBrightMagenta": "#ff00f0",
+    "terminal.ansiCyan"         : "#00f0f0",
+    "terminal.ansiBrightCyan"   : "#00f0f0",
+    "terminal.ansiWhite"        : "#ffffff",
+    "terminal.ansiBrightWhite"  : "#ffffff"
+  },
   "workbench.colorTheme": "Neos21",
-  "workbench.startupEditor": "newUntitledFile",
-  "workbench.iconTheme": "material-icon-theme"
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.startupEditor": "newUntitledFile"
 }
