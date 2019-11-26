@@ -108,6 +108,8 @@ if &t_Co <= 8
   hi Comment         ctermfg=0           
   hi StatusLine      ctermfg=0  ctermbg=7
   hi LineNr          ctermfg=0           
+  hi NonText         ctermfg=0           
+  hi SpecialKey      ctermfg=0           
   hi CursorLineNr    ctermfg=1           
   hi Number          ctermfg=1           
   hi Function        ctermfg=2           
