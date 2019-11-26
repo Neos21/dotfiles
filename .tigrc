@@ -7,7 +7,7 @@
 set main-view = date id author commit-title:graph=yes,refs=yes
 
 # Colour Settings
-color default white 234
+color default white black
 color cursor default magenta
 color date cyan default
 color delimiter cyan default
