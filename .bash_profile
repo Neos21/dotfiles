@@ -104,6 +104,13 @@ export GIT_PS1_SHOWDIRTYSTATE='true'
 export GIT_PS1_SHOWUNTRACKEDFILES='true'
 
 
+# Language Specific
+# ================================================================================
+
+# pipenv
+export PIPENV_VENV_IN_PROJECT='true'
+
+
 # My Commands : Export PATH
 # ================================================================================
 

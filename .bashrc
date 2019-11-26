@@ -243,6 +243,17 @@ alias nunp='npm unpublish'
 alias nn='npm run ng'
 
 
+# Alias : pipenv
+# ================================================================================
+
+alias p='pipenv'
+alias pi='pipenv install'
+alias pr='pipenv run'
+alias prs='pipenv run start'
+alias psh='pipenv shell'
+alias pu='pipenv uninstall'
+
+
 # Alias : VSCode
 # ================================================================================
 
