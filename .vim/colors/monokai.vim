@@ -29,7 +29,7 @@ hi CursorColumn                  ctermbg=236                                   g
 hi ColorColumn                   ctermbg=236                                   guibg=#232526               
 hi LineNr          ctermfg=250   ctermbg=236                    guifg=#465457  guibg=#232526               
 hi NonText         ctermfg=59                                   guifg=#465457                              
-hi SpecialKey      ctermfg=81                                   guifg=#66d9ef                 gui=none     
+hi SpecialKey      ctermfg=59                                   guifg=#465457                 gui=none     
 hi Character       ctermfg=144                                  guifg=#e6db74                              
 hi Boolean         ctermfg=135                                  guifg=#ae81ff                              
 hi Number          ctermfg=135                                  guifg=#ae81ff                              
