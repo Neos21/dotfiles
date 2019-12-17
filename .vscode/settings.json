@@ -10,6 +10,7 @@
   "editor.fontFamily": "MeiryoKe_Gothic, monospace",
   "editor.fontSize": 13,
   "editor.formatOnSave": false,
+  "editor.hover.enabled": false,
   "editor.minimap.enabled": false,
   "editor.renderControlCharacters": true,
   "editor.renderWhitespace": "all",
