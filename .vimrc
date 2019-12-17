@@ -20,6 +20,40 @@ set clipboard&
 set clipboard^=unnamed
 " クリップボード連携を有効にした時に BackSpace (Delete) が効かなくなるので設定する
 set backspace=indent,eol,start
+" Esc 連打で :nohlsearch が出ないようにする
+nnoremap <Esc><Esc> <Esc>
+" コマンドラインウィンドウを開かないようにする
+nnoremap q: <Esc>
+
+
+" ファイラ
+" ------------------------------------------------------------
+
+" netrw プラグインを有効にする
+filetype plugin on
+
+" 画面上部の情報を非表示にする
+let g:netrw_banner=0
+" 表示形式をツリー形式にする
+let g:netrw_liststyle=3
+" サイズを K, M, G で表示する
+let g:netrw_sizestyle="H"
+" 日付フォーマットを yyyy-mm-dd(曜日) hh:mm:ss で表示する
+let g:netrw_timefmt="%Y-%m-%d(%a) %H:%M:%S"
+" プレビューウィンドウを垂直分割で表示する
+let g:netrw_preview=1
+" v でファイルを開くときは右側に開く
+let g:netrw_altv=1
+" o でファイルを開くときは下側に開く
+let g:netrw_alto=1
+" netrw 中の t (新しいタブで開く) キーを無効化しメタキーが動作するようにする
+augroup netrw_mapping
+  autocmd!
+  autocmd filetype netrw call NetrwMapping()
+augroup END
+function! NetrwMapping()
+  noremap <buffer> t <C-w>
+endfunction
 
 
 " 見た目
@@ -123,5 +157,7 @@ nnoremap <C-z> u
 " Ctrl + y でやり直す (Ctrl + r)
 nnoremap <C-y> <C-r>
 
-" Esc 連打で :nohlsearch が出ないようにする
-nnoremap <Esc><Esc> <Esc>
+" 新しいウィンドウを右に開く
+set splitright
+" 新しいウィンドウを下に開く
+set splitbelow
