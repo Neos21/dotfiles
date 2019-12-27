@@ -90,6 +90,7 @@ nnoremap k gk
 " ------------------------------------------------------------
 
 " 不可視文字を可視化する
+"set list listchars=tab:\▸\-
 set list listchars=tab:\▸\-,space:·,trail:·
 " Tab 文字を半角スペースにする
 set expandtab
