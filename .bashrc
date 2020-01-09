@@ -167,6 +167,10 @@ alias sshls='grep -rh '\''^Host '\'' "${HOME}/.ssh/" | grep -v '\''*'\'' | sed '
 # SSH 接続先で使いたい PS1 プロンプトをコピペ用に出力する
 alias echops1='echo '\''export PS1="\n\[\033[31m\]\u@\h \[\033[35m\]\D{%F %T} \[\033[33m\]\w\[\033[0m\]\n$ "'\'''
 
+# 事故防止
+alias dd='echo '\''No dd command available.'\'''  # ファイルコピーを行う dd コマンドを無効化しておく
+alias chmod='chmod --preserve-root'  # ルートディレクトリからの再帰的実行を回避する
+
 
 # Alias : Git
 # ================================================================================
