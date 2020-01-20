@@ -77,7 +77,8 @@ export HISTTIMEFORMAT='%F %T '
 # Visual Editor
 # ================================================================================
 
-export VISUAL='vi'
+export EDITOR='vim'
+export VISUAL='vim'
 
 
 # Git Completion
