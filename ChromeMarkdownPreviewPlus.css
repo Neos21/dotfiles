@@ -13,8 +13,16 @@
 }
 
 /* Perfect Yu Gothic */
-@font-face { font-family: "Yu Gothic"        ; src: local("Yu Gothic Medium"), local("YuGothic-Medium");                    }
-@font-face { font-family: "Yu Gothic"        ; src: local("Yu Gothic Bold")  , local("YuGothic-Bold")  ; font-weight: bold; }
+@font-face {
+  font-family: "Yu Gothic";
+  src: local("Yu Gothic Medium"), local("YuGothic-Medium");
+}
+
+@font-face {
+  font-family: "Yu Gothic";
+  src: local("Yu Gothic Bold"), local("YuGothic-Bold");
+  font-weight: bold;
+}
 
 /* ページ全体のスタイルを設定する */
 html {
