@@ -74,6 +74,12 @@ export HISTCONTROL='ignoreboth'
 export HISTTIMEFORMAT='%F %T '
 
 
+# Visual Editor
+# ================================================================================
+
+export VISUAL='vi'
+
+
 # Git Completion
 # ================================================================================
 
