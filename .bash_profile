@@ -7,7 +7,7 @@
 # ================================================================================
 
 if [ "$(uname)" == 'Darwin' ]; then
-  # echo '[MacOS] .bash_profile'
+  #echo '[MacOS] .bash_profile'
   # ==============================================================================
   
   # Nodebrew
@@ -51,8 +51,19 @@ if [ "$(uname)" == 'Darwin' ]; then
   
   
   # ------------------------------------------------------------------------------
+elif  [ "$(uname)" == 'Linux' ]; then
+  #echo '[Linux] .bash_profile'
+  # ==============================================================================
+  
+  # Nodebrew
+  PATH="${HOME}/.nodebrew/current/bin:${PATH}"
+  
+  # Customize --------------------------------------------------------------------
+  
+  
+  # ------------------------------------------------------------------------------
 else
-  # echo '[Windows] .bash_profile'
+  #echo '[Windows] .bash_profile'
   # ==============================================================================
   
   # WinPTY
@@ -84,11 +95,11 @@ export VISUAL='vim'
 # Git Completion
 # ================================================================================
 
-# test -r "${HOME}/.git-completion.bash" &&
+#test -r "${HOME}/.git-completion.bash" &&
 . "${HOME}/.git-completion.bash"
 
 # My Aliases
-# if type __git_complete 1>/dev/null 2>/dev/null; then
+#if type __git_complete 1>/dev/null 2>/dev/null; then
   # Branch
   __git_complete gbd _git_branch
   # Checkout
@@ -104,7 +115,7 @@ export VISUAL='vim'
   __git_complete gdfwoc _git_diff
   # Merge
   __git_complete gm _git_merge
-# fi
+#fi
 
 # Git Prompt
 export GIT_PS1_SHOWDIRTYSTATE='true'
@@ -121,13 +132,13 @@ export PIPENV_VENV_IN_PROJECT='true'
 # My Commands : Export PATH
 # ================================================================================
 
-export PATH="${HOME}/bin:${PATH}"
+export PATH="${HOME}/bin:${HOME}/.local/bin:${PATH}"
 
 
 # Source .bashrc
 # ================================================================================
 
-# test -r "${HOME}/.bashrc" &&
+#test -r "${HOME}/.bashrc" &&
 . "${HOME}/.bashrc"
 
 

@@ -7,11 +7,12 @@
 # ================================================================================
 
 if [ "$(uname)" == 'Darwin' ]; then
-  # echo '[MacOS] .bashrc'
+  #echo '[MacOS] .bashrc'
   # ==============================================================================
   
   # Git Prompt
-  test -r "${HOME}/.git-prompt.sh" && . "${HOME}/.git-prompt.sh"
+  #test -r "${HOME}/.git-prompt.sh" &&
+  . "${HOME}/.git-prompt.sh"
   export PS1='\n\[\033[32m\]\u@\h \[\033[35m\]\D{%F %T} \[\033[33m\]\w\[\033[36m\]$(__git_ps1)\[\033[0m\]\n$ '
   
   # ls
@@ -69,8 +70,67 @@ if [ "$(uname)" == 'Darwin' ]; then
   alias cds='cd "${HOME}/Documents/Dev/Sandboxes/" && pwd && ls'
   
   # ------------------------------------------------------------------------------
+elif  [ "$(uname)" == 'Linux' ]; then
+  #echo '[Linux] .bashrc'
+  # ==============================================================================
+  
+  # Ubuntu 18.04 Original .bashrc ------------------------------------------------
+  
+  # append to the history file, don't overwrite it
+  shopt -s histappend
+  
+  # for setting history length see HISTSIZE and HISTFILESIZE in bash(1)
+  HISTSIZE=1000
+  HISTFILESIZE=2000
+  
+  # check the window size after each command and, if necessary, update the values of LINES and COLUMNS.
+  shopt -s checkwinsize
+  
+  # make less more friendly for non-text input files, see lesspipe(1)
+  [ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
+  
+  # enable color support of ls and also add handy aliases
+  if [ -x /usr/bin/dircolors ]; then
+    test -r ~/.dircolors && eval "$(dircolors -b ~/.dircolors)" || eval "$(dircolors -b)"
+    alias ls='ls -F --color=auto --show-control-chars --time-style=long-iso'
+    alias grep='grep --color=auto'
+    alias fgrep='fgrep --color=auto'
+    alias egrep='egrep --color=auto'
+  fi
+  
+  # Add an "alert" alias for long running commands.  Use like so: sleep 10; alert
+  alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
+  
+  # enable programmable completion features (you don't need to enable this, if it's already enabled in /etc/bash.bashrc and /etc/profile sources /etc/bash.bashrc).
+  if ! shopt -oq posix; then
+    if [ -f /usr/share/bash-completion/bash_completion ]; then
+      . /usr/share/bash-completion/bash_completion
+    elif [ -f /etc/bash_completion ]; then
+      . /etc/bash_completion
+    fi
+  fi
+  
+  # ------------------------------------------------------------------------------
+  
+  # Git Prompt
+  #test -r "${HOME}/.git-prompt.sh" &&
+  . "${HOME}/.git-prompt.sh"
+  export PS1='\n\[\033[32m\]\u@\h \[\033[35m\]\D{%F %T} \[\033[33m\]\w\[\033[36m\]$(__git_ps1)\[\033[0m\]\n$ '
+  
+  # Nodebrew
+  alias nb='nodebrew'
+  
+  # Customize --------------------------------------------------------------------
+  
+  # cd Aliases
+  alias cdb='cd "${HOME}/Dev/BitBucket/" && pwd && ls'
+  alias cdev='cd "${HOME}/Dev/" && pwd && ls'
+  alias cdgh='cd "${HOME}/Dev/GitHub/" && pwd && ls'
+  alias cds='cd "${HOME}/Dev/Sandboxes/" && pwd && ls'
+  
+  # ------------------------------------------------------------------------------
 else
-  # echo '[Windows] .bashrc'
+  #echo '[Windows] .bashrc'
   # ==============================================================================
   
   # Git Prompt : 標準の __git_ps1 が Windows 環境で遅いので簡易版を自作した
@@ -84,7 +144,7 @@ else
     # どうしてもパフォーマンスが出ないのでブランチ名だけ出すことにする
     echo " [$branch_name]"
   }
-  # test -r "${HOME}/.git-prompt.sh" && . "${HOME}/.git-prompt.sh"
+  #test -r "${HOME}/.git-prompt.sh" && . "${HOME}/.git-prompt.sh"
   export PS1='\n\[\033[32m\]\u@\h \[\033[35m\]\D{%F %T} \[\033[33m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\]\n$ '
   
   # ls
@@ -126,12 +186,14 @@ alias quit='exit'
 alias cls='reset'
 alias tc='clear && tmux clear-history'
 
+alias r='sudo su -'
+
 # ls
-alias la='ls -a'
+alias la='ls -A'
 alias ll='ls -l'
-alias lal='ls -la'
-alias lla='ls -la'
-alias la1='ls -a -1'
+alias lal='ls -lA'
+alias lla='ls -lA'
+alias la1='ls -A -1'
 alias ls1='ls -1'
 
 # cd

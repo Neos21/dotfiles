@@ -15,9 +15,13 @@ set autoread
 set hidden
 " 入力中のコマンドをステータスに表示する
 set showcmd
-" クリップボード連携を有効にする (MacOS の場合は unnamedplus ではなく unnamed で有効にできた・vi ではなく vim を使うこと)
+" クリップボード連携を有効にする (Windows・MacOS の場合は unnamedplus ではなく unnamed を使用・vi ではなく vim を使う)
 set clipboard&
-set clipboard^=unnamed
+if has("unix")
+  set clipboard=unnamedplus
+else
+  set clipboard^=unnamed
+endif
 " クリップボード連携を有効にした時に BackSpace (Delete) が効かなくなるので設定する
 set backspace=indent,eol,start
 " Esc 連打で :nohlsearch が出ないようにする

@@ -7,7 +7,7 @@
   "diffEditor.ignoreTrimWhitespace": false,
   
   "editor.codeLens": false,
-  "editor.fontFamily": "MeiryoKe_Gothic, monospace",
+  "editor.fontFamily": "MeiryoKe_Gothic, 'Noto Sans Mono CJK JP', monospace",
   "editor.fontSize": 13,
   "editor.formatOnSave": false,
   "editor.hover.enabled": false,
@@ -39,7 +39,7 @@
   
   "json.format.enable": false,
   
-  "markdown.preview.fontFamily": "MeiryoKe_Gothic, monospace",
+  "markdown.preview.fontFamily": "MeiryoKe_Gothic, 'Noto Sans Mono CJK JP', monospace",
   
   "markdownlint.config": {
     "//": "MD003", "header-style": { "style": "atx" },
@@ -77,7 +77,7 @@
   "sync.quietSync": true,
   
   "terminal.integrated.cursorBlinking": true,
-  "terminal.integrated.fontFamily": "Menlo, MeiryoKe_Gothic, monospace",
+  "terminal.integrated.fontFamily": "Menlo, MeiryoKe_Gothic, 'Noto Sans Mono CJK JP', monospace",
   "terminal.integrated.scrollback": 8000,
   "terminal.integrated.shell.windows": "C:\\git-sdk-64\\usr\\bin\\bash.exe",
   "terminal.integrated.shellArgs.windows": ["-l"],
