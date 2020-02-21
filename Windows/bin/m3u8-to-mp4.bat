@@ -8,7 +8,7 @@ rem このバッチファイルがあるフォルダに .mp4 ファイルを書き出す
 rem 
 rem 要 ffmpeg。「choco install ffmpeg」などでインストールしておくこと
 rem 
-rem Author : Neo (@Neos21) : http://neos21.hatenablog.com/entry/2017/09/09/080000
+rem Author : Neo (@Neos21) : https://neos21.hatenablog.com/entry/2017/09/09/080000
 rem ================================================================================
 
 echo .m3u8 ファイルを元に .mp4 ファイルに結合して書き出すバッチ
