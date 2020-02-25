@@ -16,9 +16,6 @@ if [ "$(uname)" == 'Darwin' ]; then
   # VSCode
   PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:${PATH}"
   
-  # PostgreSQL
-  PATH="/Library/PostgreSQL/11/bin:${PATH}"
-  
   # RBEnv
   eval "$(rbenv init - 2> /dev/null)"
   

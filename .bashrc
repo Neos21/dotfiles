@@ -212,9 +212,6 @@ alias grepinr='grep -inR'
 # df : バイト表示を単位変換する
 alias df='df -h'
 
-# PostgreSQL : パスワードは .pgpass (pgpass.conf) で設定
-alias mpsql='psql -U postgres --dbname=my_local_db'
-
 # vi = vim
 alias vi='vim'
 
