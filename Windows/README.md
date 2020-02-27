@@ -77,7 +77,7 @@
     - 参考 : <https://chocolatey.org/docs/installation>
 
 ```ps1
-> Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 ```
 
 ### Chocolatey ツールのインストール
@@ -87,21 +87,22 @@
 
 ```ps1
 # どの環境でも必須と思われるモノ
-> choco install googlechrome firefox thunderbird tor-browser -y
-> choco install google-backup-and-sync -y
-> choco install lhaplus 7zip -y
-> choco install notepadplusplus vscode -y
-> choco install git cmder jq -y
-> choco install jdk8 python2 python ruby ruby2.devkit kubernetes-cli -y
-> choco install autohotkey mactype ccleaner avastfreeantivirus chocolateygui -y
-> choco install flashplayerplugin adobeshockwaveplayer adobereader foxitreader -y
-> choco install mpc-hc vlc k-litecodecpackfull -y
+choco install googlechrome firefox thunderbird tor-browser -y
+choco install google-backup-and-sync -y
+choco install lhaplus 7zip -y
+choco install notepadplusplus vscode -y
+choco install git cmder jq -y
+choco install jdk8 python2 python ruby ruby2.devkit kubernetes-cli -y
+choco install autohotkey mactype avastfreeantivirus chocolateygui -y
+choco install flashplayerplugin adobeshockwaveplayer adobereader foxitreader -y
+choco install mpc-hc vlc k-litecodecpackfull -y
+choco install vcxsrv -y
 
 # Galleria のみで良さそうなモノ
-> choco install itunes dropbox evernote mp3gain-gui handbrake -y
+choco install itunes dropbox evernote mp3gain-gui handbrake -y
 
 # 必要に応じて入れれば良いモノ
-> choco install virtualbox sqlite sqlitebrowser sysinternals slack -y
+choco install virtualbox sqlite sqlitebrowser sysinternals slack -y
 
 # 以下はインストールしない
 # - インストールに失敗したことがあるので使わない : glaryutilities-free qttabbar
@@ -133,15 +134,11 @@
 - Git
     - `C:\Program Files\Git\etc\profile` ファイルの内容を次の内容に差し替える
         - <https://github.com/Neos21/optimize-git-for-windows/blob/master/Git%20For%20Windows%20v2.20.1/profile%E3%80%80v2%20%E3%82%B3%E3%83%A1%E3%83%B3%E3%83%88%E3%82%A2%E3%82%A6%E3%83%88%E3%82%92%E9%99%A4%E5%8E%BB%E3%83%BB%E5%AE%8C%E6%88%90%E7%89%88>
-- Cmder
-    - エクスポートしておいた設定ファイルをインポートする
 - AutoHotKey
     - `C:\Neos21\Tools\NeosAutoHotKey\` 配下に `NeosAutoHotKey.ahk` 一式を用意し、スタートアップに追加する
 - MacType
     - `NeosMacType.ini` をインポートし設定する
     - Cmder と Excel のプロセスは除外する
-- CCleaner
-    - 余計な機能を無効化する
 - Avast Free Anti Virus
     - 「パスワードマネージャ」以外のコンポーネントをアンインストールする
     - パスワードマネージャにログインし Chrome と Firefox に連携させる
@@ -153,3 +150,8 @@
     - アカウントにログインし設定する : `C:\Neos21\Home\Data\Dropbox\`
 - Evernote
     - アカウントにログインし設定する : `C:\Neos21\Home\Data\Evernote\`
+
+
+## WSL の設定
+
+[WSL.md](./WSL.md) を参照。
