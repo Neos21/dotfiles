@@ -16,7 +16,6 @@
 	quotepath = false
 [credential]
 	helper = store --file ~/.gitconfig-credential
-	helper = osxkeychain
 [fetch]
 	prune = true
 [filter "lfs"]
