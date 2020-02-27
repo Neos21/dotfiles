@@ -163,7 +163,7 @@ sudo service dbus restart
 export DISPLAY="$(cat /etc/resolv.conf|grep nameserver|awk '{print $2}'):0"
 
 # Launch VcXsrv
-/mnt/c/Program\ Files/VcXsrv/vcxsrv.exe :0 -ac &
+/mnt/c/Program\ Files/VcXsrv/vcxsrv.exe :0 -ac -keyhook &
 
 # Start GNOME Session
 XDG_CURRENT_DESKTOP=ubuntu:GNOME XDG_SESSION_TYPE=x11 gnome-session
