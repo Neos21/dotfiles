@@ -7,8 +7,8 @@
 - 再起動する
 - 入力メソッド `im-config` で Fcitx を選択する (`$ im-config -n fcitx`)
 - 再起動する
-- Fcitx 設定で「英語 (US)」と「Mozc」を選択、Alt で「入力メソッドをオンに / オフに」設定する
-- 設定 → 地域と言語 → 入力ソース (``gnome-control-center region`) も念のため「英語 (US)」→「mozc-jp」にしておく
+- Fcitx 設定 (`fcitx-configtool`) で「英語 (US)」と「Mozc」を選択、Alt で「入力メソッドをオンに / オフに」設定する
+- 設定 → 地域と言語 → 入力ソース (`gnome-control-center region`) は「英語 (US)」のみにしておくと「en」「ja」などの余計なアプリインジケータが表示されなくなる
 
 
 ## その他のキー設定
@@ -28,7 +28,7 @@
     - 選択領域のスクリーンショットをピクチャフォルダーに保存する : 無効
 - 左 Super キー単独押しで「アクティビティ画面」が開くのを無効化する
     - Ubuntu ソフトウェア : GNOME Tweaks (`gnome-tweaks`)
-    - キーボード → アクティビティ画面のショートカット : 右 Super
+    - キーボード → アクティビティ画面のショートカット : 右 Super (ThinkPad X250 で左 Win キーの空打ちを無効化するため)
 - CapsLock を Ctrl キーにする
     - GNOME Tweaks → キーボード → 「追加のレイアウトオプション」→ 「Ctrl position」 → 「CapsLock を Ctrl として扱う」
 
@@ -56,13 +56,31 @@
   # 以下のファイルを開いてディレクトリ名を英語表記に書き換える
   vi ~/.config/user-dirs.dirs
   # 不要な日本語ディレクトリを削除する
-  rmdir ダウンロード テンプレート デスクトップ ドキュメント  ビデオ ピクチャ ミュージック 公開
+  rmdir ダウンロード テンプレート デスクトップ ドキュメント ビデオ ピクチャ ミュージック 公開
+  # 以下のようにしても良い
+  mv ダウンロード Downloads
+  mv テンプレート Templates
+  mv デスクトップ Desktop
+  mv ドキュメント Documents
+  mv ビデオ Videos
+  mv ピクチャ Pictures
+  mv ミュージック Music
+  mv 公開 Public
+  sed -i 's/ダウンロード/Downloads/g' ~/.config/user-dirs.dirs
+  sed -i 's/テンプレート/Templates/g' ~/.config/user-dirs.dirs
+  sed -i 's/デスクトップ/Desktop/g' ~/.config/user-dirs.dirs
+  sed -i 's/ドキュメント/Documents/g' ~/.config/user-dirs.dirs
+  sed -i 's/ビデオ/Videos/g' ~/.config/user-dirs.dirs
+  sed -i 's/ピクチャ/Pictures/g' ~/.config/user-dirs.dirs
+  sed -i 's/ミュージック/Music/g' ~/.config/user-dirs.dirs
+  sed -i 's/公開/Public/g' ~/.config/user-dirs.dirs
   ```
 
 
 ## テキストエディタ
 
 - 標準搭載の Gedit で十分
+- フォントを Noto Sans Mono CJK JP にし、カラーテーマを設定する
 
 
 ## 端末 (ターミナル)
@@ -77,22 +95,26 @@
 
 ## Ubuntu ソフトウェアからインストールする
 
-- Fcitx
-- Fcitx 設定
-- Seahorse
-- Menu Editor
+- Fcitx (`fcitx`)
+- Fcitx 設定 (`fcitx-configtool`)
+- Seahorse (`seahorse`)
+- Menu Editor (`menulibre`)
 - GNOME Tweaks (`gnome-tweaks`)
 - Files (`nemo`)
-    - ```sh
-      # デフォルトのファイラに置き換える
-      xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search
-      gsettings set org.gnome.desktop.background show-desktop-icons false
-      gsettings set org.nemo.desktop show-desktop-icons true
-      ```
-- Chromium
-- Font Manager
-- GIMP
-- VLC
+- Chromium (`chromium-browser`)
+- Font Manager (`font-manager`)
+- GIMP (`gimp`)
+- VLC (`vlc`)
+
+```sh
+# コマンドラインでインストールする
+sudo apt install -y fcitx fcitx-configtool seahorse menulibre gnome-tweaks nemo chromium-browser font-manager gimp vlc
+
+# Nemo をデフォルトのファイラに置き換える
+xdg-mime default nemo.desktop inode/directory application/x-gnome-saved-search
+gsettings set org.gnome.desktop.background show-desktop-icons false
+gsettings set org.nemo.desktop show-desktop-icons true
+```
 
 
 ## コマンドラインでインストールする
@@ -105,9 +127,8 @@ sudo apt install -y tree jq vim-gnome tmux
 ## GNOME Shell 拡張機能
 
 - セットアップ
-    - `Alt + F2` を押下してコマンド入力欄を表示し `apturl apt:chrome-gnome-shell` と入力してインストールする
     - Chrome に GNOME Shell 拡張機能をインストールする
-    - `$ sudo apt-get install chrome-gnome-shell` でアダプタをインストールする
+    - `$ sudo apt install -y chrome-gnome-shell` でアダプタをインストールする (もしくは `Alt + F2` から `apturl apt:chrome-gnome-shell` と入力してもよい)
     - <https://extensions.gnome.org/> にアクセスすると拡張機能の管理ができるようになる
 - [Appfolders Management extension](https://extensions.gnome.org/extension/1217/appfolders-manager/)
     - アプリケーション一覧を自由にフォルダ分けする
@@ -141,8 +162,7 @@ sudo apt install -y tree jq vim-gnome tmux
 
 [ESC to close overview from applications list](https://extensions.gnome.org/extension/1122/esc-to-close-overview-from-applications-list/) のソースコードを以下のように修正する。
 
-- `~/.local/share/gnome-shell/extensions/ESC_to_close_overview@daniel.badawi.me/extension.js
-
+- `~/.local/share/gnome-shell/extensions/ESC_to_close_overview@daniel.badawi.me/extension.js`
 
 ```javascript
 const Clutter = imports.gi.Clutter;
@@ -201,7 +221,7 @@ function init() {
                         Shell.ActionMode.OVERVIEW,
                         Main.overview.viewSelector._toggleAppsPage.bind(Main.overview.viewSelector));
   // ↑ 追加ココマデ
-
+  
 	Main.overview.viewSelector._onStageKeyPress = esc;
 }
 
@@ -256,7 +276,16 @@ sudo apt install brave-browser
 ### Chrome
 
 - 公式サイトより追加パッケージをダウンロードできる。Ubuntu ソフトウェアで読み込んでインストールできる
-- キーリング : 空文字で登録可能。「Seahorse」で確認・設定できる
+
+```sh
+# Chrome
+curl https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list
+sudo apt update
+sudo apt install -y google-chrome-stable
+```
+
+- キーリング : Chrome にログインすると初回に表示される。空文字で登録可能。「Seahorse」で確認・設定できる
 
 
 ### Chrome Remote Desktop
@@ -342,8 +371,8 @@ sudo systemctl restart chrome-remote-desktop.service
 
 ```sh
 sudo add-apt-repository ppa:alessandro-strada/ppa
-sudo apt-get update
-sudo apt-get install google-drive-ocamlfuse
+sudo apt update
+sudo apt install google-drive-ocamlfuse
 
 google-drive-ocamlfuse
 # ブラウザが開くのでサインインし認証する

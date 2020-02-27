@@ -117,6 +117,11 @@ elif  [ "$(uname)" == 'Linux' ]; then
   . "${HOME}/.git-prompt.sh"
   export PS1='\n\[\033[32m\]\u@\h \[\033[35m\]\D{%F %T} \[\033[33m\]\w\[\033[36m\]$(__git_ps1)\[\033[0m\]\n$ '
   
+  # apt
+  alias apt='sudo apt'
+  alias apt-get='sudo apt-get'
+  alias aptup='sudo apt update && sudo apt upgrade -y && sudo apt dist-upgrade -y && sudo apt autoremove -y'
+  
   # Nodebrew
   alias nb='nodebrew'
   
@@ -155,6 +160,11 @@ else
   
   # start = open
   alias open='start'
+  
+  # WinPTY
+  alias node='winpty node.exe'
+  alias npm='winpty npm'
+  alias docker='winpty docker'
   
   # Open App
   alias chrome='cmd //c start chrome.exe'
@@ -223,7 +233,7 @@ alias rrc='.  "${HOME}/.bashrc"'
 
 # SSH Config のリストを表示する
 alias sshls='grep -rh '\''^Host '\'' "${HOME}/.ssh/" | grep -v '\''*'\'' | sed '\''s/Host /ssh /'\'' | sort'
-# SSH 接続先で使いたい PS1 プロンプトをコピペ用に出力する
+# SSH 接続先や root でで使いたい PS1 プロンプトをコピペ用に出力する
 alias echops1='echo '\''export PS1="\n\[\033[31m\]\u@\h \[\033[35m\]\D{%F %T} \[\033[33m\]\w\[\033[0m\]\n$ "'\'''
 
 # 事故防止
@@ -403,7 +413,7 @@ alias kds='kubectl describe service'
 alias kdsc='kubectl describe secret'
 alias ke='kubectl edit'
 alias kes='kubectl edit service'
-alias kesh='kubectl exec -ti'
+alias kesh='kubectl exec -it'
 alias kg='kubectl get'
 alias kgd='kubectl get deployment'
 alias kgn='kubectl get node'
@@ -424,11 +434,6 @@ alias td='terraform destroy'
 alias ti='terraform init'
 alias tp='terraform plan'
 alias tpd='terraform plan -destroy'
-
-
-# --------------------------------------------------------------------------------
-# Customize
-# --------------------------------------------------------------------------------
 
 
 # --------------------------------------------------------------------------------

@@ -166,12 +166,12 @@ export DISPLAY="$(cat /etc/resolv.conf|grep nameserver|awk '{print $2}'):0"
 /mnt/c/Program\ Files/VcXsrv/vcxsrv.exe :0 -ac &
 
 # Start GNOME Session
-XDG_SESSION_TYPE=x11 gnome-session
+XDG_CURRENT_DESKTOP=ubuntu:GNOME XDG_SESSION_TYPE=x11 gnome-session
 
 # After End GNOME, Kill VcXsrv
 /mnt/c/Windows/System32/taskkill.exe /IM vcxsrv.exe /T /F
 EOL
 
 # 起動スクリプトに権限を付与する。コレで以降は `$ startu` で VcXsrv と GNOME を同時起動できるようになる
-sudo chmod 777 ~/bin/start-ubuntu
+sudo chmod 777 ~/bin/startu
 ```
