@@ -96,7 +96,7 @@ choco install jdk8 python2 python ruby ruby2.devkit kubernetes-cli -y
 choco install autohotkey mactype avastfreeantivirus chocolateygui -y
 choco install flashplayerplugin adobeshockwaveplayer adobereader foxitreader -y
 choco install mpc-hc vlc k-litecodecpackfull -y
-choco install vcxsrv -y
+choco install vcxsrv wsltty -y
 
 # Galleria のみで良さそうなモノ
 choco install itunes dropbox evernote mp3gain-gui handbrake -y
@@ -150,6 +150,8 @@ choco install virtualbox sqlite sqlitebrowser sysinternals slack -y
     - アカウントにログインし設定する : `C:\Neos21\Home\Data\Dropbox\`
 - Evernote
     - アカウントにログインし設定する : `C:\Neos21\Home\Data\Evernote\`
+- WSL TTY
+    - `.minttyrc` を `%APPDATA\wsltty\config` (`C:\Users\Neo\AppData\Roaming\wsltty\config`) にコピーする
 
 
 ## WSL の設定
