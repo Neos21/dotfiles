@@ -61,6 +61,17 @@ if [ "$(uname)" == 'Darwin' ]; then
   alias cotbp='open -a CotEditor "${HOME}/.bash_profile"'
   alias cotrc='open -a CotEditor "${HOME}/.bashrc"'
   
+  # ghi : GitHub Issues CLI
+  alias hl='ghi list -- Neos21'
+  alias hoc='ghi open --label '\''Corredor'\'' -- Neos21'
+  alias hom='ghi open --label '\''Murga'\'' -- Neos21'
+  alias hoe='ghi open --label '\''El Mylar'\'' -- Neos21'
+  function ho()  { ghi open    "$@" -- Neos21 ; }
+  function hs()  { ghi show    "$@" -- Neos21 ; }
+  function he()  { ghi edit    "$@" -- Neos21 ; }
+  function hcl() { ghi close   "$@" -- Neos21 ; }
+  function hc()  { ghi comment "$@" -- Neos21 ; }
+  
   # Customize --------------------------------------------------------------------
   
   # cd Aliases
@@ -128,10 +139,10 @@ elif  [ "$(uname)" == 'Linux' ]; then
   # Customize --------------------------------------------------------------------
   
   # cd Aliases
-  alias cdb='cd "${HOME}/Dev/BitBucket/" && pwd && ls'
-  alias cdev='cd "${HOME}/Dev/" && pwd && ls'
-  alias cdgh='cd "${HOME}/Dev/GitHub/" && pwd && ls'
-  alias cds='cd "${HOME}/Dev/Sandboxes/" && pwd && ls'
+  alias cdb='cd "${HOME}/Documents/Dev/BitBucket/" && pwd && ls'
+  alias cdev='cd "${HOME}/Documents/Dev/" && pwd && ls'
+  alias cdgh='cd "${HOME}/Documents/Dev/GitHub/" && pwd && ls'
+  alias cds='cd "${HOME}/Documents/Dev/Sandboxes/" && pwd && ls'
   
   # ------------------------------------------------------------------------------
 else

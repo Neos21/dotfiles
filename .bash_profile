@@ -10,6 +10,9 @@ if [ "$(uname)" == 'Darwin' ]; then
   #echo '[MacOS] .bash_profile'
   # ==============================================================================
   
+  # For Catalina
+  export BASH_SILENCE_DEPRECATION_WARNING='1'
+  
   # Nodebrew
   PATH="${HOME}/.nodebrew/current/bin:${PATH}"
   
