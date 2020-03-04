@@ -136,6 +136,9 @@ elif  [ "$(uname)" == 'Linux' ]; then
   # Nodebrew
   alias nb='nodebrew'
   
+  # 事故防止
+  alias chmod='chmod --preserve-root'  # ルートディレクトリからの再帰的実行を回避する
+  
   # Customize --------------------------------------------------------------------
   
   # cd Aliases
@@ -181,6 +184,9 @@ else
   alias chrome='cmd //c start chrome.exe'
   alias firefox='cmd //c start firefox.exe'
   alias npp='cmd //c start notepad++.exe'
+  
+  # 事故防止
+  alias chmod='chmod --preserve-root'  # ルートディレクトリからの再帰的実行を回避する
   
   # Customize --------------------------------------------------------------------
   
@@ -249,7 +255,6 @@ alias echops1='echo '\''export PS1="\n\[\033[31m\]\u@\h \[\033[35m\]\D{%F %T} \[
 
 # 事故防止
 alias dd='echo '\''No dd command available.'\'''  # ファイルコピーを行う dd コマンドを無効化しておく
-alias chmod='chmod --preserve-root'  # ルートディレクトリからの再帰的実行を回避する
 
 
 # Alias : Git
