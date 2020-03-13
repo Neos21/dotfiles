@@ -209,10 +209,7 @@ fi
 # ================================================================================
 
 alias quit='exit'
-
 alias cls='reset'
-alias tc='clear && tmux clear-history'
-
 alias r='sudo su -'
 
 # ls
@@ -255,6 +252,10 @@ alias echops1='echo '\''export PS1="\n\[\033[31m\]\u@\h \[\033[35m\]\D{%F %T} \[
 
 # 事故防止
 alias dd='echo '\''No dd command available.'\'''  # ファイルコピーを行う dd コマンドを無効化しておく
+
+# Tmux
+alias tc='clear && tmux clear-history'
+alias tq='tmux kill-session'
 
 
 # Alias : Git

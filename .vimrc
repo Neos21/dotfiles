@@ -16,10 +16,16 @@ set hidden
 " 入力中のコマンドをステータスに表示する
 set showcmd
 " クリップボード連携を有効にする (Windows・MacOS の場合は unnamedplus ではなく unnamed を使用・vi ではなく vim を使う)
-set clipboard&
-if has("unix")
+if has("mac")
+  "echo 'mac'
+  set clipboard&
+  set clipboard^=unnamed
+elseif has("unix")
+  "echo 'unix'
   set clipboard=unnamedplus
 else
+  "echo 'win'
+  set clipboard&
   set clipboard^=unnamed
 endif
 " クリップボード連携を有効にした時に BackSpace (Delete) が効かなくなるので設定する
