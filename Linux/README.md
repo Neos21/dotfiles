@@ -4,6 +4,7 @@
 ## 日本語入力環境
 
 - `$ sudo apt install -y fcitx fcitx-configtool fcitx-mozc` で Fcitx-Mozc をインストールする
+    - `fcitx-configtool` がうまくインストールできないようであれば「Ubuntu ソフトウェア」からインストールする
 - 再起動する
 - 入力メソッド `im-config` で Fcitx を選択する (`$ im-config -n fcitx`)
 - 再起動する
@@ -85,7 +86,7 @@
 
 ## 端末 (ターミナル)
 
-- Xterm スキームをベースにカラーリングを設定する。青色は `#0080ff` あたりがオススメ
+- Xterm スキームをベースにカラーリングを設定する。青色は `#0088ff` あたりがオススメ
 - フォントは特に指定しなくても全角文字もちゃんと見えている
 - `$ visudo` 時のエディタを Vi にする
     - `$ sudo update-alternatives --set editor /usr/bin/vim.basic`
@@ -120,7 +121,7 @@ gsettings set org.nemo.desktop show-desktop-icons true
 ## コマンドラインでインストールする
 
 ```sh
-sudo apt install -y tree jq vim-gnome tmux
+sudo apt install -y tree jq vim-gnome tmux git tig
 ```
 
 
@@ -265,11 +266,11 @@ function disable() {
 - <https://brave-browser.readthedocs.io/en/latest/installing-brave.html#linux>
 
 ```sh
-sudo apt install apt-transport-https curl
+sudo apt install -y apt-transport-https curl
 curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
 echo 'deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main' | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 sudo apt update
-sudo apt install brave-browser
+sudo apt install -y brave-browser
 ```
 
 
@@ -370,9 +371,9 @@ sudo systemctl restart chrome-remote-desktop.service
 ### google-drive-ocamlfuse
 
 ```sh
-sudo add-apt-repository ppa:alessandro-strada/ppa
+sudo add-apt-repository -y ppa:alessandro-strada/ppa
 sudo apt update
-sudo apt install google-drive-ocamlfuse
+sudo apt install -y google-drive-ocamlfuse
 
 google-drive-ocamlfuse
 # ブラウザが開くのでサインインし認証する

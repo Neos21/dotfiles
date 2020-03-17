@@ -133,6 +133,10 @@ elif  [ "$(uname)" == 'Linux' ]; then
   alias apt-get='sudo apt-get'
   alias aptup='sudo apt update && sudo apt upgrade -y && sudo apt dist-upgrade -y && sudo apt autoremove -y'
   
+  # Python3
+  alias python='/usr/bin/python3.7'
+  alias pip='/usr/bin/pip3'
+  
   # Nodebrew
   alias nb='nodebrew'
   
