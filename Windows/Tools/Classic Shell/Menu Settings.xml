@@ -1,0 +1,56 @@
+<?xml version="1.0"?>
+<Settings component="StartMenu" version="4.3.1">
+	<ShiftClick value="ClassicMenu"/>
+	<ShiftWin value="ClassicMenu"/>
+	<ControlPanelCategories value="0"/>
+	<ConfirmLogOff value="1"/>
+	<ProgramsStyle value="Cascade"/>
+	<ProgramsMenuDelay value="300"/>
+	<RecentPrograms value="None"/>
+	<RecentMetroApps value="0"/>
+	<EnableJumplists value="0"/>
+	<ShutdownCommand value="CommandShutdownBox"/>
+	<MinMainHeight value="1"/>
+	<StartScreenShortcut value="0"/>
+	<HighlightNew value="0"/>
+	<MenuDelay value="100"/>
+	<InfotipDelay value="100,4000"/>
+	<MainMenuAnimate value="0"/>
+	<GlassOverride value="0"/>
+	<SkinW7 value="Windows Aero"/>
+	<SkinVariationW7 value=""/>
+	<SkinOptionsW7>
+		<Line>USER_IMAGE=1</Line>
+		<Line>SMALL_ICONS=1</Line>
+		<Line>LARGE_FONT=0</Line>
+		<Line>DISABLE_MASK=0</Line>
+		<Line>WHITE_SUBMENUS=1</Line>
+	</SkinOptionsW7>
+	<EnableStartButton value="1"/>
+	<StartButtonType value="CustomButton"/>
+	<StartButtonPath value="%SystemDrive%\Neos21\Tools\Classic Shell\Se7en Orb.png"/>
+	<StartButtonAlign value="0"/>
+	<CustomTaskbar value="1"/>
+	<TaskbarLook value="Transparent"/>
+	<TaskbarOpacity value="80"/>
+	<SkipMetro value="1"/>
+	<MenuItems7>
+		<Line>Item1.Command=control_panel</Line>
+		<Line>Item1.Settings=TRACK_RECENT</Line>
+		<Line>Item2.Command=pc_settings</Line>
+		<Line>Item2.Settings=TRACK_RECENT</Line>
+		<Line>Item3.Command=admin</Line>
+		<Line>Item3.Settings=TRACK_RECENT</Line>
+		<Line>Item4.Command=run</Line>
+		<Line>Item5.Command=separator</Line>
+		<Line>Item6.Command=user_files</Line>
+		<Line>Item7.Command=user_documents</Line>
+		<Line>Item8.Command=computer</Line>
+		<Line>Item9.Command=separator</Line>
+	</MenuItems7>
+	<DisablePinExt value="1"/>
+	<SoundMain value=""/>
+	<SoundPopup value=""/>
+	<SoundCommand value=""/>
+	<SoundDrop value=""/>
+</Settings>

@@ -9,63 +9,48 @@
     - システムの詳細設定 → 「詳細設定」タブ → 「パフォーマンス」欄の「設定」ボタン → 「視覚効果」タブでカスタム
 
 
-## ホームディレクトリ整備
-
-- `C:\Neos21\`
-    - `0\` : 一時データ置き場
-    - `Home\`
-        - `About\` : 任意データを格納する場所
-        - `Data\` : Google Drive、Dropbox、Evernote の同期ディレクトリを配置する
-        - `Recovery\` : リカバリ関連データ
-    - `Dev\`
-        - `GitHub\`
-        - `SandBoxes\`
-        - `【PC 名】\` : その PC に何かインストールするなどして作業した記録の置き場
-    - `Tools\`
-
-
-## フォントのインストール
-
-- メイリオ改をダウンロード・インストールする
-    - MeiryoKe Gothic : <https://github.com/Neos21/japanese-monospaced-fonts/raw/master/meiryo-ke-gothic/MeiryoKeGothic.ttf>
-        - <https://unpkg.com/@japanese-monospaced-fonts/meiryo-ke-gothic@1.0.0/MeiryoKeGothic.ttf>
-    - MeiryoKe Gothic Bold : <https://github.com/Neos21/japanese-monospaced-fonts/raw/master/meiryo-ke-gothic/MeiryoKeGothic-Bold.ttf>
-        - <https://unpkg.com/@japanese-monospaced-fonts/meiryo-ke-gothic@1.0.0/MeiryoKeGothic-Bold.ttf>
-    - MeiryoKe Console : <https://github.com/Neos21/japanese-monospaced-fonts/raw/master/meiryo-ke-console/MeiryoKeConsole.ttf>
-        - <https://unpkg.com/@japanese-monospaced-fonts/meiryo-ke-console@1.0.0/MeiryoKeConsole.ttf>
-
-
-## Dotfiles の配置・設定
-
-- [dotfiles](https://github.com/Neos21/dotfiles) リポジトリをダウンロードする
-    - `$ git clone https://github.com/Neos21/dotfiles.git`
-    - Zip : <https://github.com/Neos21/dotfiles/archive/master.zip>
-- Dotfiles をユーザホーム (`C:\Users\Neo\`) に配置する
-- `Enable Photo Viewer.reg`、`Remove Explorer Menu.reg`、`Caps Lock To Ctrl.reg` を実行する
-    - CapsLock は Ctrl キーの動作をするようになる
-- コマンドプロンプトのエイリアス設定 : `Win + R` から `regedit` を起動し、`HKEY_LOCAL_MACHINE\Software\Microsoft\Command Processor\` キーに移動する。文字列 `AutoRun` を作成し、値に `doskey /macrofile=%USERPROFILE%\Macros.txt` と設定する
-
-
 ## 手動インストール
 
 - Google 日本語入力
     - 次の URL よりインストーラをダウンロードしインストールする : <https://www.google.co.jp/ime/>
     - 各種設定を変更
     - 辞書登録 : エクスポートしておいたユーザ辞書をインポートする
-- [QTTabBar](http://qttabbar-ja.wikidot.com/)
-    - 次の URL よりインストーラをダウンロードしインストールする : <http://qttabbar-ja.wdfiles.com/local--files/qttabbar/QTTabBar_1038.zip>
-    - エクスポートしておいた設定ファイルをインポートする
-- Glary Utilities 5
-    - 次の URL よりインストーラをダウンロードしインストールする : <https://www.glarysoft.com/glary-utilities/>
+- Google Drive バックアップと同期
+    - 次の URL よりインストーラをダウンロードしインストールする : <https://www.google.com/intl/ja_ALL/drive/download/backup-and-sync/>
+    - `C:\Neos21\Home\Data\Google Drive\` で同期する
 - Git SDK
     - 次の URL よりインストーラをダウンロードする : <https://github.com/git-for-windows/build-extra/releases>
     - `C:\git-sdk-64\` にインストールし、1度起動する
     - `C:\git-sdk-64\.git\` ディレクトリを削除する
     - `C:\git-sdk-64\etc\profile` ファイルを次のファイルの内容に変更する
         - <https://raw.githubusercontent.com/Neos21/optimize-git-for-windows/master/Git%20SDK%20v1.0.7/profile%E3%80%80v2%20%E3%82%B3%E3%83%A1%E3%83%B3%E3%83%88%E3%82%A2%E3%82%A6%E3%83%88%E3%82%92%E9%99%A4%E5%8E%BB%E3%83%BB%E5%AE%8C%E6%88%90%E7%89%88>
+- [Classic Shell]
+    - インストール後、日本語化 DLL を設定し、設定ファイルをインポートする
 - [Magnet Window](https://www.vector.co.jp/soft/dl/winnt/util/se175660.html)
+    - インストール後、設定ファイルをコピーする
+- [QTTabBar](http://qttabbar-ja.wikidot.com/)
+    - 次の URL よりインストーラをダウンロードしインストールする : <http://qttabbar-ja.wdfiles.com/local--files/qttabbar/QTTabBar_1038.zip>
+    - 設定ファイルをインポートする
+- Glary Utilities 5
+    - 次の URL よりインストーラをダウンロードしインストールする : <https://www.glarysoft.com/glary-utilities/>
+- [Windows10 フォントが汚いので一発変更!](https://forest.watch.impress.co.jp/library/software/win10fontchg/)
+- [ShellExView 1.40](https://shellexview.soft32.com/old-version/47138/1.40/)
+    - 最新版は `$ choco install -y shexview`
+- [Universal Watermark Disabler](https://winaero.com/download.php?view.1794)
 - Office
 - Adobe Creative Cloud (Photoshop・Illustrator・Premiere Pro・After Effects・Audition・Lightroom)
+- フォント : メイリオ改、Noto Sans CJK JP、Noto Sans Mono CJK JP
+- WSL : [WSL.md](./WSL.md) を参照
+
+
+## Dotfiles の配置・設定
+
+- 初回は以下を実行して改行コードの自動変換をしないようにしておく
+    - `$ git config --global core.autocrlf false`
+- [dotfiles](https://github.com/Neos21/dotfiles) リポジトリをダウンロードする
+    - `$ git clone https://Neos21@github.com/Neos21/dotfiles.git`
+- Dotfiles をユーザホーム配下にコピーする
+- `Recovery/` 配下の `Windows.sh` および `.reg` を実行していく
 
 
 ## Chocolatey
@@ -87,27 +72,27 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.We
 
 ```ps1
 # どの環境でも必須と思われるモノ
-choco install googlechrome firefox thunderbird tor-browser -y
-choco install google-backup-and-sync -y
-choco install lhaplus 7zip -y
-choco install notepadplusplus vscode -y
-choco install git cmder jq -y
-choco install jdk8 python2 python ruby ruby2.devkit kubernetes-cli -y
-choco install autohotkey mactype avastfreeantivirus chocolateygui -y
-choco install flashplayerplugin adobeshockwaveplayer adobereader foxitreader -y
-choco install mpc-hc vlc k-litecodecpackfull -y
-choco install vcxsrv wsltty -y
+choco install -y googlechrome firefox brave microsoft-edge
+choco install -y lhaplus 7zip
+choco install -y notepadplusplus vscode
+choco install -y git jq winaero-tweaker
+choco install -y autohotkey mactype avastfreeantivirus chocolateygui
+choco install -y jdk8 python2 python ruby ruby2.devkit kubernetes-cli nodist
+choco install -y flashplayerplugin adobeshockwaveplayer adobereader foxitreader
+choco install -y mpc-hc vlc k-litecodecpackfull
+choco install -y microsoft-windows-terminal vcxsrv wsltty
 
 # Galleria のみで良さそうなモノ
-choco install itunes dropbox evernote mp3gain-gui handbrake -y
+choco install -ythunderbird itunes evernote mp3gain-gui handbrake
 
 # 必要に応じて入れれば良いモノ
-choco install virtualbox sqlite sqlitebrowser sysinternals slack -y
+choco install -y rbtray
+choco install -y virtualbox sqlite sqlitebrowser sysinternals slack tor-browser
 
 # 以下はインストールしない
-# - インストールに失敗したことがあるので使わない : glaryutilities-free qttabbar
+# - インストールに失敗したことがあるので使わない : glaryutilities-free qttabbar google-backup-and-sync
 # - 古いので使わない : googledrive googlejapaneseinput
-# - もう使用しない : icloud
+# - もう使用しない : icloud dropbox
 ```
 
 ### インストール後の設定
@@ -118,12 +103,11 @@ choco install virtualbox sqlite sqlitebrowser sysinternals slack -y
 - Firefox
     - Sync アカウントにログインし拡張機能などを同期する
     - フォント、Stylish、AdBlock などを設定する
-- Thunderbird
-    - 各メールアカウントを設定する
-- Tor Browser
-    - 正常に起動するか確認する
-- Google Backup And Sync
-    - Google アカウントにログインし設定する : `C:\Neos21\Home\Data\Google Drive\`
+- Brave
+    - フォント、Stylish、AdBlock などを設定する
+- Chromium Edge
+    - Microsoft アカウントにログインし拡張機能などを同期する
+    - フォント、Stylish、AdBlock などを設定する
 - Lhaplus
     - デスクトップに圧縮・解凍アイコンを生成しコンテキストメニューを設定する
 - NotePad++
@@ -138,22 +122,22 @@ choco install virtualbox sqlite sqlitebrowser sysinternals slack -y
     - `C:\Neos21\Tools\NeosAutoHotKey\` 配下に `NeosAutoHotKey.ahk` 一式を用意し、スタートアップに追加する
 - MacType
     - `NeosMacType.ini` をインポートし設定する
-    - Cmder と Excel のプロセスは除外する
 - Avast Free Anti Virus
     - 「パスワードマネージャ」以外のコンポーネントをアンインストールする
     - パスワードマネージャにログインし Chrome と Firefox に連携させる
 - MPC-HC
     - `C:\Neos21\Recovery\MPC-HC\` に `toolbar.bmp` を配置し、コレをツールバーに使用させる
-- iTunes
-    - Apple ID アカウントにログインし、イコライザを設定する
-- Dropbox
-    - アカウントにログインし設定する : `C:\Neos21\Home\Data\Dropbox\`
-- Evernote
-    - アカウントにログインし設定する : `C:\Neos21\Home\Data\Evernote\`
+- Nodist
+    - `$ nodist dist` でインストール可能なバージョンを確認する
+    - `$ nodist global 【バージョン】` でインストールしつつグローバルに設定する
+    - `$ nodist npm match` で Node.js のバージョンに合わせた npm を設定する
+- Windows Terminal
+    - 設定ファイルをコピーする
 - WSL TTY
     - `.minttyrc` を `%APPDATA\wsltty\config` (`C:\Users\Neo\AppData\Roaming\wsltty\config`) にコピーする
-
-
-## WSL の設定
-
-[WSL.md](./WSL.md) を参照。
+- Thunderbird
+    - 各メールアカウントを設定する
+- iTunes
+    - Apple ID アカウントにログインし、イコライザを設定する
+- Evernote
+    - アカウントにログインし設定する : `C:\Neos21\Home\Data\Evernote\`

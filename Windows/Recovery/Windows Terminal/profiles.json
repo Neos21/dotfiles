@@ -1,0 +1,66 @@
+// For documentation on these settings, see: https://aka.ms/terminal-documentation
+{
+  "$schema": "https://aka.ms/terminal-profiles-schema",
+  "defaultProfile": "{eeeeeeee-2222-1111-0000-000000000000}",
+  "profiles": {
+    "defaults": {
+      // Put settings here that you want to apply to all profiles
+    },
+    "list": [
+      {
+        "guid"             : "{eeeeeeee-2222-1111-0000-000000000000}",
+        "name"             : "Git SDK",
+        "colorscheme"      : "Neo's Color Scheme",
+        "commandline"      : "C:\\git-sdk-64\\usr\\bin\\bash.exe --login",
+        "icon"             : "C:\\git-sdk-64\\msys2.ico",
+        "startingDirectory": "~"
+      },
+      {
+        "guid"             : "{2c4de342-38b7-51cf-b940-2309a097f518}",
+        "name"             : "Ubuntu",
+        "source"           : "Windows.Terminal.Wsl",
+        "colorscheme"      : "Neo's Color Scheme"
+      },
+      {
+        "guid"             : "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
+        "name"             : "Windows PowerShell",
+        "commandline"      : "powershell.exe"
+      },
+      {
+        "guid"             : "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
+        "name"             : "cmd",
+        "commandline"      : "cmd.exe"
+      },
+      {
+        "guid"             : "{b453ae62-4e3d-5e58-b989-0a998ec441b8}",
+        "name"             : "Azure Cloud Shell",
+        "source"           : "Windows.Terminal.Azure"
+      }
+    ]
+  },
+  "schemes": [
+    {
+      "name"        : "Neo's Color Scheme",
+      "foreground"  : "#ffffff",
+      "background"  : "#000000",
+      "black"       : "#646464",
+      "brightBlack" : "#646464",
+      "red"         : "#f00000",
+      "brightRed"   : "#f00000",
+      "green"       : "#00dc00",
+      "brightGreen" : "#00dc00",
+      "yellow"      : "#ffff00",
+      "brightYellow": "#ffff00",
+      "blue"        : "#008cff",
+      "brightBlue"  : "#008cff",
+      "purple"      : "#ff00f0",
+      "brightPurple": "#ff00f0",
+      "cyan"        : "#00f0f0",
+      "brightCyan"  : "#00f0f0",
+      "white"       : "#ffffff",
+      "brightWhite" : "#ffffff"
+    }
+  ],
+  // To unbind a default keybinding, set the command to "unbound"
+  "keybindings": []
+}

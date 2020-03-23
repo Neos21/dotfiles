@@ -40,10 +40,6 @@
 !i:: Send, ^i     ; Ctrl + i
 !o:: Send, ^o     ; Ctrl + o
 !p:: Send, ^p     ; Ctrl + p
-<!Left:: Send, {Home}    ; 左 Alt +         ← =         Home
-<!+Left:: Send, +{Home}  ; 左 Alt + Shift + ← = Shift + Home
-<!Right:: Send, {End}    ; 左 Alt +         → =         End
-<!+Right:: Send, +{End}  ; 左 Alt + Shift + → = Shift + End
 
 
 ; Alt 単独で IME を切り替える

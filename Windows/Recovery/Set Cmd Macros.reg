@@ -1,0 +1,6 @@
+Windows Registry Editor Version 5.00
+
+; コマンドプロンプトのエイリアス設定
+
+[HKEY_LOCAL_MACHINE\Software\Microsoft\Command Processor]
+"AutoRun"="doskey /macrofile=%USERPROFILE%\Macros.txt"
