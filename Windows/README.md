@@ -24,8 +24,9 @@
     - `C:\git-sdk-64\.git\` ディレクトリを削除する
     - `C:\git-sdk-64\etc\profile` ファイルを次のファイルの内容に変更する
         - <https://raw.githubusercontent.com/Neos21/optimize-git-for-windows/master/Git%20SDK%20v1.0.7/profile%E3%80%80v2%20%E3%82%B3%E3%83%A1%E3%83%B3%E3%83%88%E3%82%A2%E3%82%A6%E3%83%88%E3%82%92%E9%99%A4%E5%8E%BB%E3%83%BB%E5%AE%8C%E6%88%90%E7%89%88>
-- [Classic Shell]
-    - インストール後、日本語化 DLL を設定し、設定ファイルをインポートする
+- [Classic Shell](http://www.classicshell.net/)
+    - 公式サイトからインストーラと日本語化 DLL をダウンロードする
+	- 本体インストール後、日本語化 DLL を配置し、設定ファイルをインポートする
 - [Magnet Window](https://www.vector.co.jp/soft/dl/winnt/util/se175660.html)
     - インストール後、設定ファイルをコピーする
 - [QTTabBar](http://qttabbar-ja.wikidot.com/)
@@ -83,7 +84,7 @@ choco install -y mpc-hc vlc k-litecodecpackfull
 choco install -y microsoft-windows-terminal vcxsrv wsltty
 
 # Galleria のみで良さそうなモノ
-choco install -ythunderbird itunes evernote mp3gain-gui handbrake
+choco install -y thunderbird itunes evernote mp3gain-gui handbrake
 
 # 必要に応じて入れれば良いモノ
 choco install -y rbtray
