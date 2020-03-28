@@ -12,8 +12,11 @@
 
 ## インストールするソフト
 
-- App Store : Xcode・CotEditor・Office (Word・Excel・PowerPoint)・Slack
-    - Xcode Command Line Tools (`$ xcode-select --install`)
+- App Store
+    - Xcode : Xcode Command Line Tools (`$ xcode-select --install`)
+    - CotEditor
+    - Office (Word・Excel・PowerPoint)
+    - Slack
 - 個別
     - [英かな](https://ei-kana.appspot.com/) … Cmd に英かなの動作をさせる
     - [Karabiner-Elements](https://pqrs.org/osx/karabiner/) … 日本語キーボードで英かなに Cmd の動作をさせる
@@ -27,6 +30,8 @@
     - [Chrome](https://www.google.com/intl/ja_jp/chrome/)
     - [Firefox](https://www.mozilla.org/ja/firefox/new/)
     - [Chromium Edge](https://www.microsoft.com/en-us/edge)
+    - [Nodebrew](https://github.com/hokaccha/nodebrew)
+        - `$ curl -L git.io/nodebrew | perl - setup`
 
 
 ## Homebrew
@@ -39,15 +44,14 @@ $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/
 $ brew doctor
 
 # どの環境でも必要そう
-$ brew install python
-$ brew install rbenv ruby-build
+$ brew install python rbenv ruby-build
 $ brew install git tig ghi
 $ brew install vim tmux reattach-to-user-namespace
-$ brew install gnu-sed moreutils dateutils
-$ brew install bat colordiff jq kubernetes-cli nkf shellcheck tree watch
+$ brew install gnu-sed moreutils dateutils binutils
+$ brew install bat colordiff iproute2mac jq kubernetes-cli nkf nmap shellcheck tree w3m watch wget
 
 # 必要に応じて入れる
-$ brew install go locust mecab thefuck tldr w3m
+$ brew install go locust mecab thefuck tldr htop mysql postgresql
 
 # k9s
 $ brew tap derailed/k9s

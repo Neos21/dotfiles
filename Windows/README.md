@@ -26,7 +26,7 @@
         - <https://raw.githubusercontent.com/Neos21/optimize-git-for-windows/master/Git%20SDK%20v1.0.7/profile%E3%80%80v2%20%E3%82%B3%E3%83%A1%E3%83%B3%E3%83%88%E3%82%A2%E3%82%A6%E3%83%88%E3%82%92%E9%99%A4%E5%8E%BB%E3%83%BB%E5%AE%8C%E6%88%90%E7%89%88>
 - [Classic Shell](http://www.classicshell.net/)
     - 公式サイトからインストーラと日本語化 DLL をダウンロードする
-	- 本体インストール後、日本語化 DLL を配置し、設定ファイルをインポートする
+    - 本体インストール後、日本語化 DLL を配置し、設定ファイルをインポートする
 - [Magnet Window](https://www.vector.co.jp/soft/dl/winnt/util/se175660.html)
     - インストール後、設定ファイルをコピーする
 - [QTTabBar](http://qttabbar-ja.wikidot.com/)
