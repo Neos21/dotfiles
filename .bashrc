@@ -128,10 +128,17 @@ elif  [ "$(uname)" == 'Linux' ]; then
   . "${HOME}/.git-prompt.sh"
   export PS1='\n\[\033[32m\]\u@\h \[\033[35m\]\D{%F %T} \[\033[33m\]\w\[\033[36m\]$(__git_ps1)\[\033[0m\]\n$ '
   
+  # start・open = xdg-open
+  alias start='xdg-open'
+  alias open='xdg-open'
+  
   # apt
   alias apt='sudo apt'
   alias apt-get='sudo apt-get'
   alias aptup='sudo apt update && sudo apt upgrade -y && sudo apt dist-upgrade -y && sudo apt autoremove -y'
+  
+  # For ThinkPad TrackPad Not Working
+  alias rt='sudo modprobe -r psmouse && sudo modprobe psmouse'
   
   # Python3
   alias python='/usr/bin/python3.7'
