@@ -1,0 +1,32 @@
+MSYS2_PATH=/usr/local/bin:/usr/bin:/bin
+MANPATH=/usr/local/man:/usr/share/man:/usr/man:/share/man
+INFOPATH=/usr/local/info:/usr/share/info:/usr/info:/share/info
+ORIGINAL_PATH="$PATH"
+
+MSYSTEM=MSYS
+MSYSTEM_PREFIX=/usr
+MSYSTEM_CARCH=x86_64
+MSYSTEM_CHOST=x86_64-pc-msys
+# MINGW_CHOST=x86_64-w64-mingw32
+# MINGW_PREFIX=/mingw64
+# MINGW_PACKAGE_PREFIX=mingw-w64-x86_64
+CONFIG_SITE=/etc/config.site
+
+PKG_CONFIG_PATH=/usr/lib/pkgconfig:/usr/share/pkgconfig:/lib/pkgconfig
+
+ORIGINAL_TMP=/tmp
+ORIGINAL_TEMP=/tmp
+TMPDIR=/tmp
+
+# HOSTNAME="$(exec /usr/bin/hostname)"
+HOSTNAME=Neos-Windows
+
+# DISPLAY=needs-to-be-defined
+# SSH_ASKPASS=/mingw64/libexec/git-core/git-gui--askpass
+
+PS1='\n$ '
+LANG=ja_JP.UTF-8
+TZ=Asia/Tokyo
+PATH="$HOME/bin:$MSYS2_PATH:/opt/bin:$ORIGINAL_PATH:/usr/bin/vendor_perl:/usr/bin/core_perl"
+
+export PATH MANPATH INFOPATH PKG_CONFIG_PATH LANG TZ TMP TEMP TMPDIR HOSTNAME PS1 SHELL ORIGINAL_TMP ORIGINAL_TEMP ORIGINAL_PATH MSYSTEM MSYSTEM_PREFIX MSYSTEM_CARCH MSYSTEM_CHOST CONFIG_SITE
