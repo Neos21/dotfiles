@@ -10,7 +10,7 @@
       {
         "guid"             : "{eeeeeeee-2222-1111-0000-000000000000}",
         "name"             : "Git SDK",
-        "colorscheme"      : "Neo's Color Scheme",
+        "colorScheme"      : "Neo's Color Scheme",
         "commandline"      : "C:\\git-sdk-64\\usr\\bin\\bash.exe --login",
         "icon"             : "C:\\git-sdk-64\\msys2.ico",
         "startingDirectory": "~"
@@ -19,7 +19,7 @@
         "guid"             : "{2c4de342-38b7-51cf-b940-2309a097f518}",
         "name"             : "Ubuntu",
         "source"           : "Windows.Terminal.Wsl",
-        "colorscheme"      : "Neo's Color Scheme"
+        "colorScheme"      : "Neo's Color Scheme"
       },
       {
         "guid"             : "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
@@ -45,8 +45,8 @@
       "background"  : "#000000",
       "black"       : "#646464",
       "brightBlack" : "#646464",
-      "red"         : "#f00000",
-      "brightRed"   : "#f00000",
+      "red"         : "#ff0000",
+      "brightRed"   : "#ff0000",
       "green"       : "#00ff00",
       "brightGreen" : "#00ff00",
       "yellow"      : "#ffff00",
