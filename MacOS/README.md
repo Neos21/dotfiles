@@ -21,7 +21,6 @@
     - [英かな](https://ei-kana.appspot.com/) … Cmd に英かなの動作をさせる
     - [Karabiner-Elements](https://pqrs.org/osx/karabiner/) … 日本語キーボードで英かなに Cmd の動作をさせる
     - [HyperSwitch](https://bahoom.com/hyperswitch)
-    - [SizeUp](http://www.irradiatedsoftware.com/sizeup/)
     - [Day-O 2](https://shauninman.com/archive/2016/10/20/day_o_2_mac_menu_bar_clock)
     - [Google 日本語入力](https://www.google.co.jp/ime/)
     - [Google Backup And Sync](https://www.google.com/intl/ja_ALL/drive/download/)
@@ -49,6 +48,7 @@ $ brew install git tig ghi
 $ brew install vim tmux reattach-to-user-namespace
 $ brew install gnu-sed moreutils dateutils binutils
 $ brew install bat colordiff iproute2mac jq kubernetes-cli nkf nmap shellcheck tree w3m watch wget
+$ brew cask install rectangle mounty
 
 # 必要に応じて入れる
 $ brew install go locust mecab thefuck tldr htop mysql postgresql
