@@ -147,6 +147,12 @@ elif  [ "$(uname)" == 'Linux' ]; then
   # Nodebrew
   alias nb='nodebrew'
   
+  # Clipboard
+  if type xclip > /dev/null 2>&1; then
+    alias pbcopy='xclip -selection c'
+    alias pbpaste='xclip -selection c -o'
+  fi
+  
   # 事故防止
   alias chmod='chmod --preserve-root'  # ルートディレクトリからの再帰的実行を回避する
   
@@ -195,6 +201,14 @@ else
   alias chrome='cmd //c start chrome.exe'
   alias firefox='cmd //c start firefox.exe'
   alias npp='cmd //c start notepad++.exe'
+  
+  # Clipboard
+  if ! type pbcopy.exe > /dev/null 2>&1; then
+    alias pbcopy='cat > /dev/clipboard'
+  fi
+  if ! type pbpaste.exe > /dev/null 2>&1; then
+    alias pbpaste='cat /dev/clipboard'
+  fi
   
   # 事故防止
   alias chmod='chmod --preserve-root'  # ルートディレクトリからの再帰的実行を回避する
