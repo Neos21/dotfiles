@@ -156,6 +156,11 @@ elif  [ "$(uname)" == 'Linux' ]; then
   # 事故防止
   alias chmod='chmod --preserve-root'  # ルートディレクトリからの再帰的実行を回避する
   
+  # WSL 用の調整
+  if [[ "$(uname -r)" == *microsoft* ]]; then
+    export PS1='\n\[\033[31m\][WSL] \[\033[32m\]\u@\h \[\033[35m\]\D{%F %T} \[\033[33m\]\w\[\033[36m\]$(__git_ps1)\[\033[0m\]\n$ '
+  fi
+  
   # Customize --------------------------------------------------------------------
   
   # cd Aliases
