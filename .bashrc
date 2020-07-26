@@ -145,6 +145,9 @@ elif [ "$(uname)" == 'Linux' ]; then
   # Nodebrew
   PATH="${HOME}/.nodebrew/current/bin:${PATH}"
   
+  # Homebrew Linuxbrew
+  test -d '/home/linuxbrew/.linuxbrew' && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+  
   # ------------------------------------------------------------------------------
   
   # Git Prompt
