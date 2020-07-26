@@ -398,11 +398,11 @@ google-drive-ocamlfuse ~/Documents/Home/GoogleDrive
 ```sh
 curl -L git.io/nodebrew | perl - setup
 
-vi ~/.bash_profile
+vi ~/.bashrc
   # nodebrew
   export PATH="${HOME}/.nodebrew/current/bin:${PATH}"
 
-source ~/.bash_profile
+source ~/.bashrc
 
 nodebrew install 12.16.0
 nodebrew use 12.16.0

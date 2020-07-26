@@ -175,3 +175,16 @@ EOL
 # 起動スクリプトに権限を付与する。コレで以降は `$ startu` で VcXsrv と GNOME を同時起動できるようになる
 sudo chmod 777 ~/bin/startu
 ```
+
+
+## 各種ツールのインストール
+
+```sh
+$ sudo apt install -y tree jq tmux git tig
+
+# Nodebrew
+$ curl -L git.io/nodebrew | perl - setup
+$ vi ~/.bashrc
+  # nodebrew
+  export PATH="${HOME}/.nodebrew/current/bin:${PATH}"
+```

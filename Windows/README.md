@@ -18,11 +18,6 @@
 - Google Drive バックアップと同期
     - 次の URL よりインストーラをダウンロードしインストールする : <https://www.google.com/intl/ja_ALL/drive/download/backup-and-sync/>
     - `C:\Neos21\Clouds\Google Drive\` で同期する
-- Git SDK
-    - 次の URL よりインストーラをダウンロードする : <https://github.com/git-for-windows/build-extra/releases>
-    - `C:\git-sdk-64\` にインストールし、1度起動する
-    - `C:\git-sdk-64\.git\` ディレクトリを削除する
-    - `C:\git-sdk-64\etc\profile` ファイルを差し替える ([参考](https://raw.githubusercontent.com/Neos21/optimize-git-for-windows/master/Git%20SDK%20v1.0.7/profile%E3%80%80v2%20%E3%82%B3%E3%83%A1%E3%83%B3%E3%83%88%E3%82%A2%E3%82%A6%E3%83%88%E3%82%92%E9%99%A4%E5%8E%BB%E3%83%BB%E5%AE%8C%E6%88%90%E7%89%88))
 - [Classic Shell](http://www.classicshell.net/)
     - 公式サイトからインストーラと日本語化 DLL をダウンロードする
     - 本体インストール後、日本語化 DLL を配置し、設定ファイルをインポートする
@@ -51,7 +46,7 @@
 - [dotfiles](https://github.com/Neos21/dotfiles) リポジトリをダウンロードする
     - `$ git clone https://Neos21@github.com/Neos21/dotfiles.git`
 - Dotfiles をユーザホーム配下にコピーする
-- `Recovery/` 配下の `Windows.sh` および `.reg` を実行していく
+- `Recovery/` 配下の `.reg` を実行していく
 
 
 ## Chocolatey
@@ -76,9 +71,8 @@ Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.We
 choco install -y googlechrome firefox brave microsoft-edge
 choco install -y lhaplus 7zip
 choco install -y notepadplusplus vscode
-choco install -y git jq winaero-tweaker
+choco install -y winaero-tweaker
 choco install -y autohotkey mactype avastfreeantivirus chocolateygui
-choco install -y nodist jdk8 python2 python ruby ruby2.devkit
 choco install -y flashplayerplugin adobeshockwaveplayer adobereader foxitreader
 choco install -y mpc-hc vlc k-litecodecpackfull
 choco install -y microsoft-windows-terminal vcxsrv
@@ -87,6 +81,7 @@ choco install -y microsoft-windows-terminal vcxsrv
 choco install -y itunes evernote mp3gain-gui handbrake
 
 # 必要に応じて入れれば良いモノ
+choco install -y nodist jdk8 python2 python ruby ruby2.devkit
 choco install -y rbtray
 choco install -y virtualbox vagrant sqlite sqlitebrowser sysinternals slack tor-browser
 choco install -y kubernetes-cli gradle terraform
@@ -117,8 +112,6 @@ choco install -y kubernetes-cli gradle terraform
     - Markdown にシンタックスハイライトが付いてしまった場合は削除する
 - VSCode
     - Setting Sync をインストールし、同期設定をダウンロードする (GitHub Token と Gist ID が必要)
-- Git
-    - `C:\Program Files\Git\etc\profile` ファイルを差し替える ([参考](https://github.com/Neos21/optimize-git-for-windows/blob/master/Git%20For%20Windows%20v2.20.1/profile%E3%80%80v2%20%E3%82%B3%E3%83%A1%E3%83%B3%E3%83%88%E3%82%A2%E3%82%A6%E3%83%88%E3%82%92%E9%99%A4%E5%8E%BB%E3%83%BB%E5%AE%8C%E6%88%90%E7%89%88))
 - AutoHotKey
     - `C:\Neos21\Tools\NeosAutoHotKey\` 配下に `NeosAutoHotKey.ahk` 一式を用意し、スタートアップに追加する
 - MacType
@@ -128,10 +121,6 @@ choco install -y kubernetes-cli gradle terraform
     - パスワードマネージャにログインし Chrome と Firefox に連携させる
 - MPC-HC
     - `C:\Neos21\Tools\MPC-HC\` に `toolbar.bmp` を配置し、コレをツールバーに使用させる
-- Nodist
-    - `$ nodist dist` でインストール可能なバージョンを確認する
-    - `$ nodist global 【バージョン】` でインストールしつつグローバルに設定する
-    - `$ nodist npm match` で Node.js のバージョンに合わせた npm を設定する
 - Windows Terminal
     - 設定ファイルをコピーする
 - iTunes

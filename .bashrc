@@ -10,6 +10,28 @@ if [ "$(uname)" == 'Darwin' ]; then
   #echo '[MacOS] .bashrc'
   # ==============================================================================
   
+  # For Catalina
+  export BASH_SILENCE_DEPRECATION_WARNING='1'
+  
+  # RBEnv
+  eval "$(rbenv init - 2> /dev/null)"
+  # Nodebrew
+  PATH="${HOME}/.nodebrew/current/bin:${PATH}"
+  # VSCode
+  PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:${PATH}"
+  # Python3
+  PATH="/usr/local/opt/python/libexec/bin:${PATH}"
+  
+  # Java
+  export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_65.jdk/Contents/Home"
+  export _JAVA_OPTIONS='-Dfile.encoding=UTF-8'
+  PATH="${JAVA_HOME}/bin:${PATH}"
+  
+  # Homebrew PATH
+  PATH="/usr/local/bin:${PATH}"
+  
+  # ------------------------------------------------------------------------------
+  
   # Git Prompt
   #test -r "${HOME}/.git-prompt.sh" &&
   . "${HOME}/.git-prompt.sh"
@@ -35,9 +57,6 @@ if [ "$(uname)" == 'Darwin' ]; then
   alias chrome='open -a "Google Chrome"'
   alias firefox='open -a Firefox'
   alias cot='open -a CotEditor'
-  
-  # Nodebrew
-  alias nb='nodebrew'
   
   # Sudo コマンドの補完を有効にする
   complete -cf sudo
@@ -81,7 +100,7 @@ if [ "$(uname)" == 'Darwin' ]; then
   alias cds='cd "${HOME}/Documents/Dev/Sandboxes/" && pwd && ls'
   
   # ------------------------------------------------------------------------------
-elif  [ "$(uname)" == 'Linux' ]; then
+elif [ "$(uname)" == 'Linux' ]; then
   #echo '[Linux] .bashrc'
   # ==============================================================================
   
@@ -123,6 +142,11 @@ elif  [ "$(uname)" == 'Linux' ]; then
   
   # ------------------------------------------------------------------------------
   
+  # Nodebrew
+  PATH="${HOME}/.nodebrew/current/bin:${PATH}"
+  
+  # ------------------------------------------------------------------------------
+  
   # Git Prompt
   #test -r "${HOME}/.git-prompt.sh" &&
   . "${HOME}/.git-prompt.sh"
@@ -135,6 +159,7 @@ elif  [ "$(uname)" == 'Linux' ]; then
   # apt
   alias apt='sudo apt'
   alias apt-get='sudo apt-get'
+  alias aptlist='sudo dpkg -l'
   alias aptup='sudo apt update && sudo apt upgrade -y && sudo apt dist-upgrade -y && sudo apt autoremove -y'
   
   # For ThinkPad TrackPad Not Working
@@ -156,9 +181,22 @@ elif  [ "$(uname)" == 'Linux' ]; then
   # 事故防止
   alias chmod='chmod --preserve-root'  # ルートディレクトリからの再帰的実行を回避する
   
-  # WSL 用の調整
+  # For root User ----------------------------------------------------------------
+  
+  if [ "$(whoami)" == "root" ] ; then
+    # Git Prompt
+    export PS1='\n\[\033[31m\]\u@\h \[\033[35m\]\D{%F %T} \[\033[33m\]\w\[\033[36m\]$(__git_ps1)\[\033[0m\]\n$ '
+  fi
+  
+  # For WSL ----------------------------------------------------------------------
+  
   if [[ "$(uname -r)" == *microsoft* ]]; then
-    export PS1='\n\[\033[31m\][WSL] \[\033[32m\]\u@\h \[\033[35m\]\D{%F %T} \[\033[33m\]\w\[\033[36m\]$(__git_ps1)\[\033[0m\]\n$ '
+    # Git Prompt
+    if [ "$(whoami)" == "root" ] ; then
+      export PS1='\n\[\033[31m\][WSL] \u@\h \[\033[35m\]\D{%F %T} \[\033[33m\]\w\[\033[36m\]$(__git_ps1)\[\033[0m\]\n$ '
+    else
+      export PS1='\n\[\033[31m\][WSL] \[\033[32m\]\u@\h \[\033[35m\]\D{%F %T} \[\033[33m\]\w\[\033[36m\]$(__git_ps1)\[\033[0m\]\n$ '
+    fi
   fi
   
   # Customize --------------------------------------------------------------------
@@ -171,7 +209,7 @@ elif  [ "$(uname)" == 'Linux' ]; then
   
   # ------------------------------------------------------------------------------
 else
-  #echo '[Windows] .bashrc'
+  echo '[Windows] .bashrc (Deprecated)'
   # ==============================================================================
   
   # Git Prompt : 標準の __git_ps1 が Windows 環境で遅いので簡易版を自作した
@@ -231,6 +269,68 @@ fi
 
 
 # --------------------------------------------------------------------------------
+# Environment Variables
+# --------------------------------------------------------------------------------
+
+
+# History
+# ================================================================================
+
+export HISTCONTROL='ignoreboth'
+export HISTTIMEFORMAT='%F %T '
+
+
+# Visual Editor
+# ================================================================================
+
+export EDITOR='vim'
+export VISUAL='vim'
+
+
+# Git Completion
+# ================================================================================
+
+#test -r "${HOME}/.git-completion.bash" &&
+. "${HOME}/.git-completion.bash"
+
+# My Aliases
+#if type __git_complete 1>/dev/null 2>/dev/null; then
+  # Branch
+  __git_complete gbd _git_branch
+  # Checkout
+  __git_complete gco _git_checkout
+  # Diff
+  __git_complete gdf _git_diff
+  __git_complete gdfc _git_diff
+  __git_complete gdfn _git_diff
+  __git_complete gdfnc _git_diff
+  __git_complete gdfw _git_diff
+  __git_complete gdfwc _git_diff
+  __git_complete gdfwo _git_diff
+  __git_complete gdfwoc _git_diff
+  # Merge
+  __git_complete gm _git_merge
+#fi
+
+# Git Prompt
+export GIT_PS1_SHOWDIRTYSTATE='true'
+export GIT_PS1_SHOWUNTRACKEDFILES='true'
+
+
+# Language Specific
+# ================================================================================
+
+# pipenv
+export PIPENV_VENV_IN_PROJECT='true'
+
+
+# My Commands : Export PATH
+# ================================================================================
+
+export PATH="${HOME}/bin:${HOME}/.local/bin:${PATH}"
+
+
+# --------------------------------------------------------------------------------
 # Alias
 # --------------------------------------------------------------------------------
 
@@ -240,6 +340,7 @@ fi
 
 alias quit='exit'
 alias cls='reset'
+alias sudo='sudo '
 alias r='sudo su -'
 
 # ls
@@ -362,6 +463,9 @@ alias nunp='npm unpublish'
 
 # For Angular CLI
 alias nn='npm run ng'
+
+# Nodebrew
+alias nb='nodebrew'
 
 
 # Alias : pipenv

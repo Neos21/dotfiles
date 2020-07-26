@@ -13,6 +13,8 @@ function check_diff() {
 check_diff '.bash_profile'
 check_diff '.bashrc'
 check_diff '.gitconfig'
+check_diff '.inputrc'
+check_diff '.npmrc'
 check_diff '.tigrc'
 check_diff '.tmux.conf'
 check_diff '.vimrc'

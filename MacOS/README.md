@@ -66,7 +66,7 @@ $ brew install knqyf263/trivy/trivy
 
 ```sh
 # rbenv を読み込むよう設定する
-$ echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
+$ echo 'eval "$(rbenv init -)"' >> ~/.bashrc
 
 # 必要なツールがインストールできていることを確認する
 $ rbenv -v
