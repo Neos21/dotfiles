@@ -15,8 +15,6 @@ if [ "$(uname)" == 'Darwin' ]; then
   
   # RBEnv
   eval "$(rbenv init - 2> /dev/null)"
-  # Nodebrew
-  PATH="${HOME}/.nodebrew/current/bin:${PATH}"
   # VSCode
   PATH="/Applications/Visual Studio Code.app/Contents/Resources/app/bin:${PATH}"
   # Python3
@@ -142,14 +140,6 @@ elif [ "$(uname)" == 'Linux' ]; then
   
   # ------------------------------------------------------------------------------
   
-  # Nodebrew
-  PATH="${HOME}/.nodebrew/current/bin:${PATH}"
-  
-  # Homebrew Linuxbrew
-  test -d '/home/linuxbrew/.linuxbrew' && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
-  
-  # ------------------------------------------------------------------------------
-  
   # Git Prompt
   #test -r "${HOME}/.git-prompt.sh" &&
   . "${HOME}/.git-prompt.sh"
@@ -172,9 +162,6 @@ elif [ "$(uname)" == 'Linux' ]; then
   alias python='/usr/bin/python3.7'
   alias pip='/usr/bin/pip3'
   
-  # Nodebrew
-  alias nb='nodebrew'
-  
   # Clipboard
   if type xclip > /dev/null 2>&1; then
     alias pbcopy='xclip -selection c'
@@ -184,18 +171,25 @@ elif [ "$(uname)" == 'Linux' ]; then
   # 事故防止
   alias chmod='chmod --preserve-root'  # ルートディレクトリからの再帰的実行を回避する
   
-  # For root User ----------------------------------------------------------------
+  # ------------------------------------------------------------------------------
   
-  if [ "$(whoami)" == "root" ] ; then
+  if [ "$(whoami)" == 'root' ] ; then
+    # For root User --------------------------------------------------------------
+    
     # Git Prompt
     export PS1='\n\[\033[31m\]\u@\h \[\033[35m\]\D{%F %T} \[\033[33m\]\w\[\033[36m\]$(__git_ps1)\[\033[0m\]\n$ '
+  else
+    # For General Users Only -----------------------------------------------------
+    
+    # Homebrew Linuxbrew
+    test -d '/home/linuxbrew/.linuxbrew' && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
   fi
   
   # For WSL ----------------------------------------------------------------------
   
   if [[ "$(uname -r)" == *microsoft* ]]; then
     # Git Prompt
-    if [ "$(whoami)" == "root" ] ; then
+    if [ "$(whoami)" == 'root' ] ; then
       export PS1='\n\[\033[31m\][WSL] \u@\h \[\033[35m\]\D{%F %T} \[\033[33m\]\w\[\033[36m\]$(__git_ps1)\[\033[0m\]\n$ '
     else
       export PS1='\n\[\033[31m\][WSL] \[\033[32m\]\u@\h \[\033[35m\]\D{%F %T} \[\033[33m\]\w\[\033[36m\]$(__git_ps1)\[\033[0m\]\n$ '
@@ -227,7 +221,7 @@ else
     echo " [$branch_name]"
   }
   #test -r "${HOME}/.git-prompt.sh" && . "${HOME}/.git-prompt.sh"
-  export PS1='\n\[\033[32m\]\u@\h \[\033[35m\]\D{%F %T} \[\033[33m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\]\n$ '
+  export PS1='\n\[\033[31m\][Windows Deprecated] \[\033[32m\]\u@\h \[\033[35m\]\D{%F %T} \[\033[33m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\]\n$ '
   
   # ls
   alias ls='ls -F --color=auto --show-control-chars --time-style=long-iso'
@@ -238,16 +232,6 @@ else
   # start = open
   alias open='start'
   
-  # WinPTY
-  alias node='winpty node.exe'
-  alias npm='winpty npm'
-  alias docker='winpty docker'
-  
-  # Open App
-  alias chrome='cmd //c start chrome.exe'
-  alias firefox='cmd //c start firefox.exe'
-  alias npp='cmd //c start notepad++.exe'
-  
   # Clipboard
   if ! type pbcopy.exe > /dev/null 2>&1; then
     alias pbcopy='cat > /dev/clipboard'
@@ -255,17 +239,6 @@ else
   if ! type pbpaste.exe > /dev/null 2>&1; then
     alias pbpaste='cat /dev/clipboard'
   fi
-  
-  # 事故防止
-  alias chmod='chmod --preserve-root'  # ルートディレクトリからの再帰的実行を回避する
-  
-  # Customize --------------------------------------------------------------------
-  
-  # cd Aliases
-  alias cdb='cd '\''/c/Neos21/Dev/BitBucket/'\'' && pwd && ls'
-  alias cdev='cd '\''/c/Neos21/Dev/'\'' && pwd && ls'
-  alias cdgh='cd '\''/c/Neos21/Dev/GitHub/'\'' && pwd && ls'
-  alias cds='cd '\''/c/Neos21/Dev/Sandboxes/'\'' && pwd && ls'
   
   # ------------------------------------------------------------------------------
 fi
@@ -323,7 +296,10 @@ export GIT_PS1_SHOWUNTRACKEDFILES='true'
 # Language Specific
 # ================================================================================
 
-# pipenv
+# Node.js : Nodebrew
+PATH="${HOME}/.nodebrew/current/bin:${PATH}"
+
+# Python : pipenv
 export PIPENV_VENV_IN_PROJECT='true'
 
 
@@ -381,11 +357,8 @@ alias rrc='.  "${HOME}/.bashrc"'
 
 # SSH Config のリストを表示する
 alias sshls='grep -rh '\''^Host '\'' "${HOME}/.ssh/" | grep -v '\''*'\'' | sed '\''s/Host /ssh /'\'' | sort'
-# SSH 接続先や root でで使いたい PS1 プロンプトをコピペ用に出力する
+# SSH 接続先や root で使いたい PS1 プロンプトをコピペ用に出力する
 alias echops1='echo '\''export PS1="\n\[\033[31m\]\u@\h \[\033[35m\]\D{%F %T} \[\033[33m\]\w\[\033[0m\]\n$ "'\'''
-
-# 事故防止
-alias dd='echo '\''No dd command available.'\'''  # ファイルコピーを行う dd コマンドを無効化しておく
 
 # Tmux
 alias tc='clear && tmux clear-history'
@@ -447,7 +420,7 @@ function gplf() {
 alias tiga='tig --all'
 
 
-# Alias : Node
+# Alias : Node.js
 # ================================================================================
 
 alias n='npm'
@@ -471,7 +444,7 @@ alias nn='npm run ng'
 alias nb='nodebrew'
 
 
-# Alias : pipenv
+# Alias : Python
 # ================================================================================
 
 alias p='pipenv'
@@ -538,7 +511,7 @@ function de() {
   fi
   docker start "$1" > /dev/null
   if [ "$#" -eq 1 ]; then
-    docker exec -it "$1" 'bash'
+    docker exec -it "$1" 'bash' || docker exec -it "$1" 'ash' || docker exec -it "$1" 'sh'
   else
     docker exec -it "$@"  # ex. 【Container ID or Container Name】 bash
   fi
@@ -565,19 +538,51 @@ alias kdd='kubectl describe deployment'
 alias kdn='kubectl describe node'
 alias kdp='kubectl describe pod'
 alias kds='kubectl describe service'
-alias kdsc='kubectl describe secret'
+alias kdse='kubectl describe secret'
 alias ke='kubectl edit'
 alias kes='kubectl edit service'
-alias kesh='kubectl exec -it'
 alias kg='kubectl get'
+alias kgj='kubectl get -o json'
+alias kgy='kubectl get -o yaml'
 alias kgd='kubectl get deployment'
+alias kgdj='kubectl get deployment -o json'
+alias kgdy='kubectl get deployment -o yaml'
 alias kgn='kubectl get node'
+alias kgnj='kubectl get node -o json'
+alias kgny='kubectl get node -o yaml'
 alias kgp='kubectl get pod'
+alias kgpj='kubectl get pod -o json'
 alias kgpw='kubectl get pod -o wide'
+alias kgpy='kubectl get pod -o yaml'
 alias kgs='kubectl get service'
-alias kgsc='kubectl get secret'
+alias kgsj='kubectl get service -o json'
+alias kgsy='kubectl get service -o yaml'
+alias kgse='kubectl get secret'
+alias kgsej='kubectl get secret -o json'
+alias kgsey='kubectl get secret -o yaml'
 alias kl='kubectl logs'
+alias klf='kubectl logs -f'
 alias kp='kubectl proxy'
+
+function kesh() {
+  if [ "$#" -eq 0 ]; then
+    echo '[kesh : kubectl exec function] Requires at least 1 argument.'
+    return 1
+  fi
+  if [ "$#" -eq 1 ]; then
+    kubectl exec -it "$1" -- 'bash' || kubectl exec -it "$1" -- 'ash' || kubectl exec -it "$1" 'sh'
+  else
+    kubectl exec -it "$@"  # ex. 【Pod Name】 -- bash
+  fi
+}
+
+function kgsed() {
+  if [ "$#" -eq 0 ]; then
+    echo '[kgsed : kubectl get secred decode function] Requires at least 1 argument.'
+    return 1
+  fi
+  kubectl get secret "$1" -o json | jq -r '.data | to_entries | map({ (.key|tostring): (.value|@base64d) }) | add'
+}
 
 
 # Alias : Terraform

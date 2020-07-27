@@ -182,6 +182,12 @@ sudo chmod 777 ~/bin/startu
 ```sh
 $ sudo apt install -y tree jq tmux git tig
 
+# Homebrew Linuxbrew
+$ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+$ vi ~/.bashrc
+  # General Users Only
+  test -d '/home/linuxbrew/.linuxbrew' && eval "$(/home/linuxbrew/.linuxbrew/bin/brew shellenv)"
+
 # Nodebrew
 $ curl -L git.io/nodebrew | perl - setup
 $ vi ~/.bashrc
