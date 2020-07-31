@@ -47,7 +47,7 @@ $ brew install python rbenv ruby-build
 $ brew install git tig ghi
 $ brew install vim tmux reattach-to-user-namespace
 $ brew install gnu-sed moreutils dateutils binutils
-$ brew install bat colordiff iproute2mac jq kubernetes-cli nkf nmap shellcheck tree w3m watch wget
+$ brew install bat colordiff exa iproute2mac jq kubernetes-cli nkf nmap ripgrep shellcheck tree w3m watch wget ydiff
 $ brew cask install rectangle mounty
 
 # 必要に応じて入れる

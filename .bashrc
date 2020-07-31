@@ -336,6 +336,9 @@ alias ...='cd ../.. && pwd && ls'
 alias -- -='cd - && ls'
 alias -- --='cd - && ls'
 
+# mkdir && cd
+function mkcd() { mkdir -p "$@" && cd $_; }
+
 # カレントディレクトリ配下の .DS_Store を全て消す
 alias delds='find . -name '\''.DS_Store'\'' -delete'
 

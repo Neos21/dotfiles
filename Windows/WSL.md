@@ -193,4 +193,7 @@ $ curl -L git.io/nodebrew | perl - setup
 $ vi ~/.bashrc
   # nodebrew
   export PATH="${HOME}/.nodebrew/current/bin:${PATH}"
+
+# wsl-open
+$ npm install -g wsl-open
 ```
