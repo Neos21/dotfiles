@@ -194,6 +194,12 @@ elif [ "$(uname)" == 'Linux' ]; then
     else
       export PS1='\n\[\033[31m\][WSL] \[\033[32m\]\u@\h \[\033[35m\]\D{%F %T} \[\033[33m\]\w\[\033[36m\]$(__git_ps1)\[\033[0m\]\n$ '
     fi
+    
+    # wsl-open
+    if type wsl-open > /dev/null 2>&1; then
+      alias start='wsl-open'
+      alias open='wsl-open'
+    fi
   fi
   
   # Customize --------------------------------------------------------------------
