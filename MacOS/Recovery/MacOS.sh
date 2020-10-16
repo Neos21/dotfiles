@@ -21,6 +21,7 @@ sudo defaults write /Library/Preferences/com.apple.loginwindow AdminHostInfo Hos
 
 defaults -currentHost write -globalDomain AppleFontSmoothing -int 2    # 外部ディスプレイでアンチエイリアスを有効にする (サブピクセルレンダリングを「中」レベルで設定する)
 
+defaults write -g AppleSpacesSwitchOnActivate -bool false    # アプリケーションの切り替えで、アプリケーションのウインドウが開いている操作スペースに移動
 defaults write -g NSAutomaticWindowAnimationsEnabled -bool false    # ファイルを開くときのアニメーションを無効にする
 defaults write -g NSInitialToolTipDelay -int 0    # ツールチップ表示までのタイムラグをなくす
 defaults write -g NSWindowResizeTime 0.1    # ダイアログ表示やウィンドウリサイズ速度を高速化する
@@ -38,6 +39,10 @@ defaults write NSGlobalDomain NSNavPanelExpandedStateForSaveMode -bool true    #
 defaults write NSGlobalDomain NSWindowResizeTime -float 0.001    # コンソールアプリケーションの画面サイズ変更を高速にする
 defaults write NSGlobalDomain WebKitDeveloperExtras -bool true    # Safari のコンテキストメニューに Web インスペクタを追加する
 
+defaults write com.apple.ActivityMonitor ShowCategory -int 0    # 全てのプロセスを表示する
+defaults write com.apple.ActivityMonitor SortColumn -string "CPUUsage"    # CPU 使用率でソートする
+defaults write com.apple.ActivityMonitor SortDirection -int 0
+
 defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" -int 40    # Bluetooth ヘッドフォン・ヘッドセットの音質を向上させる
 
 defaults write com.apple.CrashReporter DialogType -string "none"    # クラッシュレポートを無効化する
@@ -52,6 +57,8 @@ defaults write com.apple.dock autohide-delay -float 0    # Dock が表示され�
 defaults write com.apple.dock largesize -int 80    # Dock の拡大時のサイズを指定する
 defaults write com.apple.dock magnification -bool true    # Dock の拡大を有効にする
 defaults write com.apple.dock mcx-expose-disabled -bool true    # Mission Control を使用不可にする
+defaults write com.apple.dock mru-spaces -bool false    # 「最新の使用状況に基づいて操作スペースを自動的に並べ替える」を無効化する
+defaults write com.apple.dock show-recents -bool false    # Dock に最近のアプリを表示しない
 defaults write com.apple.dock tilesize -int 35    # Dock の通常サイズを指定する
 defaults write com.apple.dock wvous-tl-corner -int 10    # ディスプレイ左上でディスプレイをスリープする
 
@@ -64,9 +71,9 @@ defaults write com.apple.finder AnimateWindowZoom -bool false    # フォルダ�
 defaults write com.apple.finder AppleShowAllFiles YES    # 不可視ファイルを表示する
 defaults write com.apple.finder FXDefaultSearchScope -string "SCcf"    # 検索時にデフォルトでカレントディレクトリを検索する
 defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false    # 拡張子変更時の警告を無効化する
-defaults write com.apple.Finder FXPreferredViewStyle Nlsv    # 常にリストビューにする
+defaults write com.apple.finder FXPreferredViewStyle Nlsv    # 常にリストビューにする
 defaults write com.apple.finder QLEnableTextSelection -bool true    # クイックルックでテキストを選択可能にする
-defaults write com.apple.Finder QuitMenuItem -bool true    # Finder を終了させる項目を追加する
+defaults write com.apple.finder QuitMenuItem -bool true    # Finder を終了させる項目を追加する
 defaults write com.apple.finder ShowPathbar -bool true    # パスバーを表示する
 defaults write com.apple.finder ShowStatusBar -bool true    # ステータスバーを表示する
 defaults write com.apple.finder ShowTabView -bool true    # タブバーを表示する
@@ -85,7 +92,9 @@ defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebK
 defaults write com.apple.Safari com.apple.Safari.ContentPageGroupIdentifier.WebKit2DeveloperExtrasEnabled -bool true    # Safari の開発・デバッグメニューを有効にする
 defaults write com.apple.Safari IncludeDevelopMenu -bool true    # Safari の開発・デバッグメニューを有効にする
 defaults write com.apple.Safari IncludeInternalDebugMenu -bool true    # Safari の開発・デバッグメニューを有効にする
+defaults write com.apple.Safari ShowFavoritesBar -bool false    # お気に入りバーを非表示にしておく
 defaults write com.apple.Safari ShowFullURLInSmartSearchField -bool true    # アドレスバーに完全な URL を表示する
+defaults write com.apple.Safari ShowSidebarInTopSites -bool false    # トップサイトバーを非表示にしておく
 defaults write com.apple.Safari ShowStatusBar -bool true    # ステータスバーを表示する
 defaults write com.apple.Safari SuppressSearchSuggestions -bool true    # 検索クエリを Apple へ送信しない
 defaults write com.apple.Safari UniversalSearchEnabled -bool false    # 検索クエリを Apple へ送信しない
@@ -96,6 +105,9 @@ defaults write com.apple.screencapture disable-shadow -bool true    # スクリ�
 defaults write com.apple.screencapture type -string "png"    # スクリーンショットの保存形式を PNG にする
 
 defaults write com.apple.terminal StringEncodings -array 4    # UTF-8 のみを使用する
+
+# ディスプレイごとに個別の操作スペース：オン (オフにするには defaults write com.apple.spaces spans-displays -bool true とする)
+defaults delete com.apple.spaces spans-displays
 
 killall Dock
 killall Finder
