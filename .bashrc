@@ -21,14 +21,12 @@ if [ "$(uname)" == 'Darwin' ]; then
   PATH="/usr/local/opt/python/libexec/bin:${PATH}"
   
   # Java
-  export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk1.8.0_65.jdk/Contents/Home"
+  export JAVA_HOME="$(/usr/libexec/java_home -v 1.8)"
   export _JAVA_OPTIONS='-Dfile.encoding=UTF-8'
   PATH="${JAVA_HOME}/bin:${PATH}"
   
   # Homebrew PATH
   PATH="/usr/local/bin:${PATH}"
-  
-  # ------------------------------------------------------------------------------
   
   # Git Prompt
   #test -r "${HOME}/.git-prompt.sh" &&
@@ -54,7 +52,6 @@ if [ "$(uname)" == 'Darwin' ]; then
   # Open App
   alias chrome='open -a "Google Chrome"'
   alias firefox='open -a Firefox'
-  alias cot='open -a CotEditor'
   
   # Sudo コマンドの補完を有効にする
   complete -cf sudo
@@ -69,14 +66,8 @@ if [ "$(uname)" == 'Darwin' ]; then
     fi
   }
   
-  # CotEditor で開いているファイルを VSCode で開く
-  alias cotvs='open -a '\''Visual Studio Code'\'' "$(osascript -e '\''tell application "CotEditor" to get path of document 1'\'')"'
-  # CotEditor で開いているファイルを Chrome で開く
-  alias cotchrome='open -a '\''Google Chrome'\'' "$(osascript -e '\''tell application "CotEditor" to get path of document 1'\'')"'
-  
-  # CotEditor で開く
-  alias cotbp='open -a CotEditor "${HOME}/.bash_profile"'
-  alias cotrc='open -a CotEditor "${HOME}/.bashrc"'
+  alias cbp='code --add "${HOME}/.bash_profile"'
+  alias crc='code --add "${HOME}/.bashrc"'
   
   # ghi : GitHub Issues CLI
   alias hl='ghi list -- Neos21'
@@ -96,6 +87,16 @@ if [ "$(uname)" == 'Darwin' ]; then
   alias cdev='cd "${HOME}/Documents/Dev/" && pwd && ls'
   alias cdgh='cd "${HOME}/Documents/Dev/GitHub/" && pwd && ls'
   alias cds='cd "${HOME}/Documents/Dev/Sandboxes/" && pwd && ls'
+  
+  # CotEditor
+  alias cot='open -a CotEditor'
+  # CotEditor で開いているファイルを VSCode で開く
+  alias cotvs='open -a '\''Visual Studio Code'\'' "$(osascript -e '\''tell application "CotEditor" to get path of document 1'\'')"'
+  # CotEditor で開いているファイルを Chrome で開く
+  alias cotchrome='open -a '\''Google Chrome'\'' "$(osascript -e '\''tell application "CotEditor" to get path of document 1'\'')"'
+  # CotEditor で開く
+  alias cotbp='open -a CotEditor "${HOME}/.bash_profile"'
+  alias cotrc='open -a CotEditor "${HOME}/.bashrc"'
   
   # ------------------------------------------------------------------------------
 elif [ "$(uname)" == 'Linux' ]; then
@@ -171,8 +172,6 @@ elif [ "$(uname)" == 'Linux' ]; then
   # 事故防止
   alias chmod='chmod --preserve-root'  # ルートディレクトリからの再帰的実行を回避する
   
-  # ------------------------------------------------------------------------------
-  
   if [ "$(whoami)" == 'root' ] ; then
     # For root User --------------------------------------------------------------
     
@@ -212,7 +211,7 @@ elif [ "$(uname)" == 'Linux' ]; then
   
   # ------------------------------------------------------------------------------
 else
-  echo '[Windows] .bashrc (Deprecated)'
+  #echo '[Windows] .bashrc'
   # ==============================================================================
   
   # Git Prompt : 標準の __git_ps1 が Windows 環境で遅いので簡易版を自作した
@@ -227,7 +226,7 @@ else
     echo " [$branch_name]"
   }
   #test -r "${HOME}/.git-prompt.sh" && . "${HOME}/.git-prompt.sh"
-  export PS1='\n\[\033[31m\][Windows Deprecated] \[\033[32m\]\u@\h \[\033[35m\]\D{%F %T} \[\033[33m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\]\n$ '
+  export PS1='\n\[\033[31m\][Windows] \[\033[32m\]\u@\h \[\033[35m\]\D{%F %T} \[\033[33m\]\w\[\033[36m\]`__git_ps1`\[\033[0m\]\n$ '
   
   # ls
   alias ls='ls -F --color=auto --show-control-chars --time-style=long-iso'
@@ -245,6 +244,22 @@ else
   if ! type pbpaste.exe > /dev/null 2>&1; then
     alias pbpaste='cat /dev/clipboard'
   fi
+  
+  # 事故防止
+  alias chmod='chmod --preserve-root'  # ルートディレクトリからの再帰的実行を回避する
+  
+  # Open App
+  alias chrome='cmd //c start chrome.exe'
+  alias firefox='cmd //c start firefox.exe'
+  alias npp='cmd //c start notepad++.exe'
+  
+  # Customize --------------------------------------------------------------------
+  
+  # cd Aliases
+  alias cdb='cd "${HOME}/Documents/Dev/BitBucket/" && pwd && ls'
+  alias cdev='cd "${HOME}/Documents/Dev/" && pwd && ls'
+  alias cdgh='cd "${HOME}/Documents/Dev/GitHub/" && pwd && ls'
+  alias cds='cd "${HOME}/Documents/Dev/Sandboxes/" && pwd && ls'
   
   # ------------------------------------------------------------------------------
 fi
@@ -336,6 +351,20 @@ alias lla='ls -lA'
 alias la1='ls -A -1'
 alias ls1='ls -1'
 
+# exa
+if type exa > /dev/null 2>&1; then
+  alias lla='ls -A'
+  alias lll='ls -l'
+  alias llal='ls -lA'
+  alias lla1='ls -A -1'
+  alias lls1='ls -1'
+  alias la='exa -la'
+  alias ll='exa -ll'
+  alias lal='exa -la'
+  alias la1='exa -la1'
+  alias ls1='exa -1'
+fi
+
 # cd
 alias ..='cd .. && pwd && ls'
 alias ...='cd ../.. && pwd && ls'
@@ -368,6 +397,9 @@ alias rrc='.  "${HOME}/.bashrc"'
 alias sshls='grep -rh '\''^Host '\'' "${HOME}/.ssh/" | grep -v '\''*'\'' | sed '\''s/Host /ssh /'\'' | sort'
 # SSH 接続先や root で使いたい PS1 プロンプトをコピペ用に出力する
 alias echops1='echo '\''export PS1="\n\[\033[31m\]\u@\h \[\033[35m\]\D{%F %T} \[\033[33m\]\w\[\033[0m\]\n$ "'\'''
+
+# 事故防止
+alias dd='echo '\''No dd command available.'\'''  # ファイルコピーを行う dd コマンドを無効化しておく
 
 # Tmux
 alias tc='clear && tmux clear-history'
@@ -550,20 +582,20 @@ alias kds='kubectl describe service'
 alias kdse='kubectl describe secret'
 alias ke='kubectl edit'
 alias kes='kubectl edit service'
-alias kg='kubectl get'
+alias kg='kubectl get -o wide'
 alias kgj='kubectl get -o json'
 alias kgy='kubectl get -o yaml'
-alias kgd='kubectl get deployment'
+alias kgd='kubectl get deployment -o wide'
 alias kgdj='kubectl get deployment -o json'
 alias kgdy='kubectl get deployment -o yaml'
-alias kgn='kubectl get node'
+alias kgn='kubectl get node -o wide'
 alias kgnj='kubectl get node -o json'
 alias kgny='kubectl get node -o yaml'
-alias kgp='kubectl get pod'
+alias kgp='kubectl get pod -o wide'
+alias kgpc='kubectl get pod -o wide --sort-by=.metadata.creationTimestamp'
 alias kgpj='kubectl get pod -o json'
-alias kgpw='kubectl get pod -o wide'
 alias kgpy='kubectl get pod -o yaml'
-alias kgs='kubectl get service'
+alias kgs='kubectl get service -o wide'
 alias kgsj='kubectl get service -o json'
 alias kgsy='kubectl get service -o yaml'
 alias kgse='kubectl get secret'
