@@ -256,10 +256,10 @@ else
   # Customize --------------------------------------------------------------------
   
   # cd Aliases
-  alias cdb='cd "${HOME}/Documents/Dev/BitBucket/" && pwd && ls'
-  alias cdev='cd "${HOME}/Documents/Dev/" && pwd && ls'
-  alias cdgh='cd "${HOME}/Documents/Dev/GitHub/" && pwd && ls'
-  alias cds='cd "${HOME}/Documents/Dev/Sandboxes/" && pwd && ls'
+  alias cdb='cd '\''/c/Neos21/Dev/BitBucket/'\'' && pwd && ls'
+  alias cdev='cd '\''/c/Neos21/Dev/'\'' && pwd && ls'
+  alias cdgh='cd '\''/c/Neos21/Dev/GitHub/'\'' && pwd && ls'
+  alias cds='cd '\''/c/Neos21/Dev/Sandboxes/'\'' && pwd && ls'
   
   # ------------------------------------------------------------------------------
 fi
