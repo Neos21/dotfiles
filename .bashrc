@@ -71,9 +71,6 @@ if [ "$(uname)" == 'Darwin' ]; then
   
   # ghi : GitHub Issues CLI
   alias hl='ghi list -- Neos21'
-  alias hoc='ghi open --label '\''Corredor'\'' -- Neos21'
-  alias hom='ghi open --label '\''Murga'\'' -- Neos21'
-  alias hoe='ghi open --label '\''El Mylar'\'' -- Neos21'
   function ho()  { ghi open    "$@" -- Neos21 ; }
   function hs()  { ghi show    "$@" -- Neos21 ; }
   function he()  { ghi edit    "$@" -- Neos21 ; }
