@@ -196,6 +196,22 @@ elif [ "$(uname)" == 'Linux' ]; then
       alias start='wsl-open'
       alias open='wsl-open'
     fi
+    
+    # Clipboard
+    if type pbcopy > /dev/null 2>&1; then
+      unalias pbcopy
+    fi
+    if type pbpaste > /dev/null 2>&1; then
+      unalias pbpaste
+    fi
+    function pbcopy() {
+      # /mnt/c/Windows/System32/clip.exe
+      tee <&0 | clip.exe
+    }
+    function pbpaste() {
+      # /mnt/c/WINDOWS/System32/WindowsPowerShell/v1.0/powershell.exe
+      powershell.exe Get-Clipboard | sed 's/\r$//' | sed -z '$ s/\n$//'
+    }
   fi
   
   # Customize --------------------------------------------------------------------
@@ -616,7 +632,7 @@ function kesh() {
 
 function kgsed() {
   if [ "$#" -eq 0 ]; then
-    echo '[kgsed : kubectl get secred decode function] Requires at least 1 argument.'
+    echo '[kgsed : kubectl get secret decode function] Requires at least 1 argument.'
     return 1
   fi
   kubectl get secret "$1" -o json | jq -r '.data | to_entries | map({ (.key|tostring): (.value|@base64d) }) | add'
