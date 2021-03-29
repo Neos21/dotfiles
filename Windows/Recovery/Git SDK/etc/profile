@@ -1,0 +1,36 @@
+MSYS2_PATH=/usr/local/bin:/usr/bin:/bin
+MANPATH=/usr/local/man:/usr/share/man:/usr/man:/share/man
+INFOPATH=/usr/local/info:/usr/share/info:/usr/info:/share/info
+ORIGINAL_PATH="$PATH"
+
+MSYSTEM=MSYS
+MSYSTEM_PREFIX=/usr
+MSYSTEM_CARCH=x86_64
+MSYSTEM_CHOST=x86_64-pc-msys
+CONFIG_SITE=/etc/config.site
+
+PKG_CONFIG_PATH=/usr/lib/pkgconfig:/usr/share/pkgconfig:/lib/pkgconfig
+
+ORIGINAL_TMP=/tmp
+ORIGINAL_TEMP=/tmp
+TMPDIR=/tmp
+
+HOSTNAME=Neos-Windows  # "$(exec /usr/bin/hostname)"
+
+PS1='\n$ '
+LANG=ja_JP.UTF-8
+TZ=Asia/Tokyo
+PATH="$HOME/bin:$MSYS2_PATH:/opt/bin:$ORIGINAL_PATH:/usr/bin/vendor_perl:/usr/bin/core_perl"
+
+if [ "$(pwd)" = '/' ]; then
+  cd "${HOME}"
+fi
+
+export PATH MANPATH INFOPATH PKG_CONFIG_PATH LANG TZ TMP TEMP TMPDIR HOSTNAME PS1 SHELL ORIGINAL_TMP ORIGINAL_TEMP ORIGINAL_PATH MSYSTEM MSYSTEM_PREFIX MSYSTEM_CARCH MSYSTEM_CHOST CONFIG_SITE
+case "$TMP" in *\\*) TMP="$(cygpath -m "$TMP")";; esac
+case "$TEMP" in *\\*) TEMP="$(cygpath -m "$TEMP")";; esac
+test -d "$TMPDIR" || test ! -d "$TMP" || {
+  TMPDIR="$TMP"
+  export TMPDIR
+}
+

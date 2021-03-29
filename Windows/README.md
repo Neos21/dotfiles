@@ -35,6 +35,7 @@
 - [Docker For Windows](https://docs.docker.com/docker-for-windows/install/)
 - Office
 - Adobe Creative Cloud (Photoshop・Illustrator・Premiere Pro・After Effects・Audition・Lightroom)
+- [T-Clock Redux](https://github.com/White-Tiger/T-Clock/releases)
 - フォント : メイリオ改、Noto Sans CJK JP、Noto Sans Mono CJK JP
 - WSL : __[WSL.md](./WSL.md)__ を参照
 
