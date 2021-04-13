@@ -462,6 +462,10 @@ function gplf() {
   git pull
 }
 
+function opug() {
+  open "$(git config remote.origin.url | sed 's!//.*@!//!')"
+}
+
 # tig
 alias tiga='tig --all'
 
@@ -523,7 +527,7 @@ function ca() {
 function cr() {
   if [ "$#" -eq 0 ]; then
     code --reuse-window .
-  else 
+  else
     code --reuse-window "$@"
   fi
 }
