@@ -69,14 +69,6 @@ if [ "$(uname)" == 'Darwin' ]; then
   alias cbp='code --add "${HOME}/.bash_profile"'
   alias crc='code --add "${HOME}/.bashrc"'
   
-  # ghi : GitHub Issues CLI
-  alias hl='ghi list -- Neos21'
-  function ho()  { ghi open    "$@" -- Neos21 ; }
-  function hs()  { ghi show    "$@" -- Neos21 ; }
-  function he()  { ghi edit    "$@" -- Neos21 ; }
-  function hcl() { ghi close   "$@" -- Neos21 ; }
-  function hc()  { ghi comment "$@" -- Neos21 ; }
-  
   # Customize --------------------------------------------------------------------
   
   # cd Aliases
@@ -515,7 +507,7 @@ alias pu='pipenv uninstall'
 function c() {
   if [ "$#" -eq 0 ]; then
     code .
-  else 
+  else
     code "$@"
   fi
 }
@@ -523,7 +515,7 @@ function c() {
 function ca() {
   if [ "$#" -eq 0 ]; then
     code --add .
-  else 
+  else
     code --add "$@"
   fi
 }
@@ -636,6 +628,11 @@ function kgsed() {
     return 1
   fi
   kubectl get secret "$1" -o json | jq -r '.data | to_entries | map({ (.key|tostring): (.value|@base64d) }) | add'
+}
+
+# ex. `$ kubectl get secret example-secret -o json | kdecode | jq -r '.["tls.crt"]'`
+function kdecode() {
+  jq '.data | to_entries | map({ (.key|tostring): (.value|@base64d) }) | add'
 }
 
 
