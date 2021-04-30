@@ -132,6 +132,7 @@ choco install -y  mpc-hc        vlc          mp3gain-gui    handbrake        ava
 - Git SDK
     - 一度起動しておく
     - `C:\git-sdk-64\etc\` 配下の `profile` を退避し、軽量版の `profile` を配置する
+    - `C:\git-sdk-64.git\` を削除しておく
 - iTunes
     - Shift を押しながらアプリを起動し、`Music` ディレクトリの `iTunes Library.itl` を選択する。こうしないと iTunes フォルダを変更できない
     - Apple ID アカウントにログインし、イコライザを設定する
