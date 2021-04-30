@@ -18,6 +18,8 @@ echo "User Home : [${HOME}]"
 
 copy_file '.bash_profile'
 copy_file '.bashrc'
+copy_file '.git-completion.bash'
+copy_file '.git-prompt.sh'
 copy_file '.gitconfig'
 copy_file '.inputrc'
 copy_file '.npmrc'

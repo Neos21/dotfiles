@@ -3,8 +3,13 @@
 
 ## 事前準備
 
-1. Windows10 Pro Insider Preview を有効にする。
-2. Microsoft Store で Ubuntu をダウンロードし、以下のとおり初回起動の設定を済ませる。以降、初期ユーザは `neo` のテイで記載する。
+1. Microsoft Store で Ubuntu をダウンロードする。初回は WSL がインストールされていないので、以下のページを参考にインストールする
+    - <https://aka.ms/wsl2-install>
+        - <https://docs.microsoft.com/ja-jp/windows/wsl/install-win10>
+    - `PS> dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart`
+    - `PS> dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart`
+    - 再起動する
+2. Ubuntu を起動し以下のとおり初回起動の設定を済ませる。以降、初期ユーザは `neo` のテイで記載する
    ```sh
    Installing, this may take a few minutes...
    Please create a default UNIX user account. The username does not need to match your Windows username.
@@ -19,21 +24,30 @@
    
    neo@Neos-Windows:~$ exit
    ```
-3. __管理者権限で起動した PowerShell__ で WSL のバージョンを上げる。
-   ```ps1
-   PS> wsl -l -v
-     NAME      STATE           VERSION
-   * Ubuntu    Running         1
-   
-   PS> wsl --set-version Ubuntu 2
-   Conversion in progress, this may take a few minutes...
-   For information on key differences with WSL 2 please visit https://aka.ms/wsl2
-   Conversion complete.
-   
-   PS> wsl -l -v
-     NAME      STATE           VERSION
-   * Ubuntu    Stopped         2
-   ```
+3. __管理者権限で起動した PowerShell__ で WSL のバージョンを上げる
+    - ```ps1
+      PS> wsl -l -v
+        NAME      STATE           VERSION
+      * Ubuntu    Running         1
+      
+      PS C:\WINDOWS\system32> wsl --set-version Ubuntu 2
+      変換中です。この処理には数分かかることがあります...
+      WSL 2 との主な違いについては、https://aka.ms/wsl2 を参照してください
+      WSL 2 を実行するには、カーネル コンポーネントの更新が必要です。詳細については https://aka.ms/wsl2kernel を参照してください
+      ```
+    - <https://aka.ms/wsl2kernel>
+        - https://docs.microsoft.com/ja-jp/windows/wsl/install-win10#step-4---download-the-linux-kernel-update-package
+        - 「x64 マシン用 WSL2 Linux カーネル更新プログラム パッケージ」(`wsl_update_x64.msi`) をダウンロードしインストールする
+    - ```ps1
+      PS> wsl --set-version Ubuntu 2
+      変換中です。この処理には数分かかることがあります...
+      WSL 2 との主な違いについては、https://aka.ms/wsl2 を参照してください
+      変換が完了しました。
+      
+      PS> wsl -l -v
+        NAME      STATE           VERSION
+      * Ubuntu    Stopped         2
+      ```
 4. 今後、設定反映のために再起動を行う場合は、以下も実施しておくと良い。
    ```ps1
    PS> wsl --shutdown
@@ -92,7 +106,11 @@ sudo dpkg-reconfigure tzdata
 
 # 日本語 man を入れる
 sudo apt install -y manpages-ja manpages-ja-dev
+```
 
+### VcXsrv で接続する GNOME デスクトップ環境の構築手順
+
+```sh
 # 日本語フォントを入れる : MS 英文フォントは EURA の同意を求められる
 sudo apt install -y fonts-noto fonts-ipafont fonts-ipaexfont fonts-vlgothic fonts-takao ttf-mscorefonts-installer
 
@@ -193,6 +211,9 @@ $ curl -L git.io/nodebrew | perl - setup
 $ vi ~/.bashrc
   # nodebrew
   export PATH="${HOME}/.nodebrew/current/bin:${PATH}"
+$ nodebrew ls-remote
+$ nodebrew install v14.16.1
+$ nodebrew use v14.16.1
 
 # wsl-open
 $ npm install -g wsl-open
