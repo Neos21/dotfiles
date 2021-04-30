@@ -119,7 +119,7 @@ choco install -y  mpc-hc        vlc          mp3gain-gui    handbrake        ava
     - スタートアップに追加する
 - T-Clock Redux
     - フォントを「Noto Sans Mono CJK JP」にする
-    - 書式を `yyyy-mm-dd (ddd) hh:nn:ss` にする
+    - 書式を `yyyy-mm-dd (ddd) HH:nn:ss` にする
     - スタートアップに追加する (アプリ内からスタートアップ起動を選択すると「スタートアップ」ディレクトリにショートカットが追加される)
 - Avast Free Anti Virus
     - 「パスワードマネージャ」コンポーネントをインストールしてログインしブラウザに連携させる
@@ -134,7 +134,7 @@ choco install -y  mpc-hc        vlc          mp3gain-gui    handbrake        ava
     - `C:\git-sdk-64\etc\` 配下の `profile` を退避し、軽量版の `profile` を配置する
     - `C:\git-sdk-64.git\` を削除しておく
 - iTunes
-    - Shift を押しながらアプリを起動し、`Music` ディレクトリの `iTunes Library.itl` を選択する。こうしないと iTunes フォルダを変更できない
+    - Shift キーを押しながらアプリを起動し、`Music` ディレクトリの `iTunes Library.itl` を選択する。こうしないと iTunes フォルダを変更できない
     - Apple ID アカウントにログインし、イコライザを設定する
 - MPC-HC
     - `C:\Program Files\MPC-HC\` に `toolbar.bmp` を配置し、コレをツールバーに使用させる
