@@ -32,6 +32,12 @@
 	ff = only
 [push]
 	default = current
+[ssh]
+	postBuffer = 16M
+[http]
+	postBuffer = 16M
+[init]
+	defaultBranch = master
 
 
 # --------------------------------------------------------------------------------
