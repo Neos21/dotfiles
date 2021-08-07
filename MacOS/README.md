@@ -37,7 +37,7 @@
 
 - <https://brew.sh/index_ja>
 
-```sh
+```bash
 # インストール
 $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
 $ brew doctor
@@ -64,7 +64,7 @@ $ brew install knqyf263/trivy/trivy
 
 ### rbenv
 
-```sh
+```bash
 # rbenv を読み込むよう設定する
 $ echo 'eval "$(rbenv init -)"' >> ~/.bashrc
 

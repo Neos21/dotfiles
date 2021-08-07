@@ -10,7 +10,7 @@
     - `PS> dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart`
     - 再起動する
 2. Ubuntu を起動し以下のとおり初回起動の設定を済ませる。以降、初期ユーザは `neo` のテイで記載する
-   ```sh
+   ```bash
    Installing, this may take a few minutes...
    Please create a default UNIX user account. The username does not need to match your Windows username.
    For more information visit: https://aka.ms/wslusers
@@ -58,7 +58,7 @@
 
 ## Ubuntu 18.04 の初期設定
 
-```sh
+```bash
 # sudo をパスワードなしで実行できるようにする
 # sudo update-alternatives --config editor で設定しても良い
 sudo update-alternatives --set editor /usr/bin/vim.basic
@@ -110,7 +110,7 @@ sudo apt install -y manpages-ja manpages-ja-dev
 
 ### VcXsrv で接続する GNOME デスクトップ環境の構築手順
 
-```sh
+```bash
 # 日本語フォントを入れる : MS 英文フォントは EURA の同意を求められる
 sudo apt install -y fonts-noto fonts-ipafont fonts-ipaexfont fonts-vlgothic fonts-takao ttf-mscorefonts-installer
 
@@ -197,7 +197,7 @@ sudo chmod 777 ~/bin/startu
 
 ## 各種ツールのインストール
 
-```sh
+```bash
 $ sudo apt install -y tree jq tmux git tig
 
 # Homebrew Linuxbrew

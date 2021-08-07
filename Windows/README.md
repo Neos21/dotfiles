@@ -133,7 +133,7 @@ choco install -y  mpc-hc        vlc          mp3gain-gui    handbrake        ava
     - 一度起動しておく
     - `C:\git-sdk-64\etc\` 配下の `profile` を退避し、軽量版の `profile` を配置する
     - `C:\git-sdk-64.git\` を削除しておく
-    - ```sh
+    - ```bash
       $ nodist dist
       $ nodist add v14.16.1
       $ nodist global v14.16.1

@@ -1,6 +1,6 @@
 # ChromeOS Linux (Debian Buster) リカバリ手順
 
-```sh
+```bash
 # apt を最新化する
 $ sudo apt update
 $ sudo apt upgrade -y

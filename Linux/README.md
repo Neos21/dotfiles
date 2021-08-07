@@ -50,7 +50,7 @@
 - 体感速度向上 : アニメーションを無効化する
     - `$ gsettings set org.gnome.desktop.interface enable-animations false`
 - ホームディレクトリ配下のサブディレクトリを英語表記にする
-  ```sh
+  ```bash
   # 英語表記のディレクトリを作る (既存ディレクトリをリネームしたりしても良い)
   cd ~/
   mkdir Desktop Downloads Templates Public Documents Music Pictures Videos
@@ -107,7 +107,7 @@
 - GIMP (`gimp`)
 - VLC (`vlc`)
 
-```sh
+```bash
 # コマンドラインでインストールする
 sudo apt install -y fcitx fcitx-configtool seahorse menulibre gnome-tweaks nemo chromium-browser font-manager gimp vlc
 
@@ -120,7 +120,7 @@ gsettings set org.nemo.desktop show-desktop-icons true
 
 ## コマンドラインでインストールする
 
-```sh
+```bash
 sudo apt install -y tree jq vim-gnome tmux git tig
 ```
 
@@ -265,7 +265,7 @@ function disable() {
 
 - <https://brave-browser.readthedocs.io/en/latest/installing-brave.html#linux>
 
-```sh
+```bash
 sudo apt install -y apt-transport-https curl
 curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
 echo 'deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main' | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
@@ -278,7 +278,7 @@ sudo apt install -y brave-browser
 
 - 公式サイトより追加パッケージをダウンロードできる。Ubuntu ソフトウェアで読み込んでインストールできる
 
-```sh
+```bash
 # Chrome
 curl https://dl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
 echo 'deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main' | sudo tee /etc/apt/sources.list.d/google-chrome.list
@@ -295,7 +295,7 @@ sudo apt install -y google-chrome-stable
 - `$ touch ~/.chrome-remote-desktop-session` でとりあえず動作するようになる ([参考](https://qiita.com/Boiling_Water/items/75ef825d6c73be6a5370))
 - コレだとホストと異なるセッションに接続してしまうので、以下のとおり起動スクリプトを修正する ([参考](https://qiita.com/k_ikasumipowder/items/c173fb92cf12c75b2375))
 
-```sh
+```bash
 # リモートデスクトップを停止する
 sudo systemctl stop chrome-remote-desktop.service
 
@@ -363,14 +363,14 @@ FIRST_X_DISPLAY_NUMBER = 0  # 先ほどメモした値
 
 ココまで編集が終わったら保存し、Chrome リモートデスクトップを再起動する。
 
-```sh
+```bash
 sudo systemctl restart chrome-remote-desktop.service
 ```
 
 
 ### google-drive-ocamlfuse
 
-```sh
+```bash
 sudo add-apt-repository -y ppa:alessandro-strada/ppa
 sudo apt update
 sudo apt install -y google-drive-ocamlfuse
@@ -395,7 +395,7 @@ google-drive-ocamlfuse ~/Documents/Home/GoogleDrive
 
 ### Node.js : Nodebrew
 
-```sh
+```bash
 curl -L git.io/nodebrew | perl - setup
 
 vi ~/.bashrc
