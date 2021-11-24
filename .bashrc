@@ -152,11 +152,22 @@ elif [ "$(uname)" == 'Linux' ]; then
   alias python='/usr/bin/python3.7'
   alias pip='/usr/bin/pip3'
   
+  # Rust
+  PATH="${PATH}:${HOME}/.cargo/bin"
+  source "${HOME}/.cargo/env"
+  
   # Clipboard
   if type xclip > /dev/null 2>&1; then
     alias pbcopy='xclip -selection c'
     alias pbpaste='xclip -selection c -o'
   fi
+  
+  # Deno
+  export DENO_INSTALL="${HOME}/.deno"
+  PATH="${DENO_INSTALL}/bin:${PATH}"
+  
+  # Deta.sh
+  PATH="${HOME}/.deta/bin:${PATH}"
   
   # 事故防止
   alias chmod='chmod --preserve-root'  # ルートディレクトリからの再帰的実行を回避する
