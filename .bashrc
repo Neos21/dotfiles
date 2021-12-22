@@ -384,6 +384,8 @@ fi
 # cd
 alias ..='cd .. && pwd && ls'
 alias ...='cd ../.. && pwd && ls'
+alias ....='cd ../../.. && pwd && ls'
+alias .....='cd ../../../.. && pwd && ls'
 alias -- -='cd - && ls'
 alias -- --='cd - && ls'
 
@@ -552,6 +554,8 @@ alias da='docker attach'
 alias db='docker build --no-cache --tag'
 alias di='docker images'
 alias dit='docker image tag'
+alias dlog='docker logs'
+alias dlf='docker logs -f'
 alias dpl='docker pull'
 alias dps='docker ps -a'
 alias dpush='docker push'
