@@ -39,7 +39,7 @@ pause > nul
 
 @rem 実行開始
 echo.
-ffmpeg -protocol_whitelist file,http,https,tcp,tls -i "%~1" -movflags faststart -c copy "%~n1.mp4"
+ffmpeg -protocol_whitelist file,http,https,tcp,tls -allowed_extensions ALL -i "%~1" -movflags faststart -c copy "%~n1.mp4"
 echo.
 echo 書き出し成功・終了
 pause > nul
