@@ -109,6 +109,22 @@ defaults write com.apple.terminal StringEncodings -array 4    # UTF-8 のみを�
 # ディスプレイごとに個別の操作スペース：オン (オフにするには defaults write com.apple.spaces spans-displays -bool true とする)
 defaults delete com.apple.spaces spans-displays
 
+# Localized ファイルを削除する
+sudo rm /Applications/.localized
+sudo rm /Applications/Utilities/.localized
+sudo rm /Library/.localized
+sudo rm /Users/.localized
+sudo rm /Users/Shared/.localized
+rm ~/Applications/.localized
+rm ~/Desktop/.localized
+rm ~/Documents/.localized
+rm ~/Downloads/.localized
+rm ~/Library/.localized
+rm ~/Public/.localized
+# 以下2つは SIP 保護機能を解除しないといけないので断念
+#sudo rm /System/.localized
+#sudo rm /System/Library/.localized
+
 killall Dock
 killall Finder
 killall SystemUIServer
