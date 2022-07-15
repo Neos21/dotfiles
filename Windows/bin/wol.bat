@@ -1,11 +1,11 @@
 @Echo Off
 
+Rem ================================================================================
 Rem Wake On LAN Script
-
+Rem ================================================================================
 
 Rem MAC Address
 Set MAC_ADDRESS=XX:XX:XX:XX:XX:XX
-
 
 Rem Hyphen To Colon
 Set MAC_ADDRESS=%MAC_ADDRESS:-=:%

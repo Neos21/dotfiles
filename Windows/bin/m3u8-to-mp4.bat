@@ -1,45 +1,44 @@
-@echo off
+@Echo Off
 
-rem ================================================================================
-rem .m3u8 ファイルを元に .mp4 ファイルに結合して書き出すバッチ
-rem 
-rem このバッチファイルに .m3u8 ファイルをドラッグ・アンド・ドロップすると
-rem このバッチファイルがあるフォルダに .mp4 ファイルを書き出す
-rem 
-rem 要 ffmpeg。「choco install ffmpeg」などでインストールしておくこと
-rem 
-rem Author : Neo (@Neos21) : http://neos21.hatenablog.com/entry/2017/09/09/080000
-rem ================================================================================
+Rem ================================================================================
+Rem .m3u8 ファイルを元に .mp4 ファイルに結合して書き出すバッチ
+Rem 
+Rem このバッチファイルに .m3u8 ファイルをドラッグ・アンド・ドロップすると
+Rem このバッチファイルがあるフォルダに .mp4 ファイルを書き出す
+Rem 
+Rem - 要 ffmpeg。「choco install ffmpeg」などでインストールしておくこと
+Rem - https://neos21.net/blog/2017/09/09-01.html
+Rem ================================================================================
 
-echo .m3u8 ファイルを元に .mp4 ファイルに結合して書き出すバッチ
-echo.
-echo.
+Echo .m3u8 ファイルを元に .mp4 ファイルに結合して書き出すバッチ
+Echo.
+Echo.
 
-@rem このバッチファイルがある場所をカレントフォルダにする
-pushd "%~dp0"
+Rem このバッチファイルがある場所をカレントフォルダにする
+Pushd "%~dp0"
 
-if "%~1" == "" (
-  echo ファイルが指定されていないよ・中止
-  pause > nul
-  exit
+If "%~1" == "" (
+  Echo ファイルが指定されていないよ・中止
+  Pause > Nul
+  Exit
 )
 
-if not "%~x1" == ".m3u8" (
-  echo 拡張子が m3u8 じゃないよ不正だよ・中止
-  pause > nul
-  exit
+If Not "%~x1" == ".m3u8" (
+  Echo 拡張子が m3u8 じゃないよ不正だよ・中止
+  Pause > Nul
+  Exit
 )
 
-@rem 実行確認
-echo ・対象ファイル … "%~1"
-echo ・保存フォルダ … "%~dp0"
-echo.
-echo 実行しますか？
-pause > nul
+Rem 実行確認
+Echo ・対象ファイル … "%~1"
+Echo ・保存フォルダ … "%~dp0"
+Echo.
+Echo 実行しますか？
+Pause > Nul
 
-@rem 実行開始
-echo.
+Rem 実行開始
+Echo.
 ffmpeg -protocol_whitelist file,http,https,tcp,tls -allowed_extensions ALL -i "%~1" -movflags faststart -c copy "%~n1.mp4"
-echo.
-echo 書き出し成功・終了
-pause > nul
+Echo.
+Echo 書き出し成功・終了
+Pause > Nul

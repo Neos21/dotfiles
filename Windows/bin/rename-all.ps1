@@ -50,10 +50,11 @@ foreach($targetFile in $targetFiles) {
     }
   }
   
-  if(! $selectedPropertyNo) {
+  if(!$selectedPropertyNo) {
     Write-Host "  プロパティ・もしくはプロパティの値がなかった・リネーム処理できない"
     continue
-  } else {
+  }
+  else {
     Write-Host "  No.$selectedPropertyNo : $selectedPropertyName [$selectedPropertyValue]"
   }
   

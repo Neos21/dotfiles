@@ -5,14 +5,13 @@ Option Explicit
 ' ================================================================================
 
 ' 登録したいキー : 空文字・存在しないキー文字列の場合はルートが開くようになる
-Dim targetRegPath
-targetRegPath = InputBox("開きたいレジストリキーを入力してください")
+Dim targetRegPath : targetRegPath = InputBox("開きたいレジストリキーを入力してください")
 
 ' 最後に開いていたレジストリキーを保存しているレジストリキー
 Const lastKey = "HKCU\Software\Microsoft\Windows\CurrentVersion\Applets\Regedit\LastKey"
 
-Dim WSHShell  : Set WSHShell   = CreateObject("WScript.Shell")
-Dim WMIService: Set WMIService = GetObject("winmgmts:{impersonationLevel=impersonate}!\\.\root\cimv2")
+Dim WSHShell   : Set WSHShell   = CreateObject("WScript.Shell")
+Dim WMIService : Set WMIService = GetObject("winmgmts:{impersonationLevel=impersonate}!\\.\root\cimv2")
 
 ' OS バージョンに合わせて登録したいキーのルートを付与する
 Dim regPath
@@ -23,8 +22,8 @@ Else
 End If
 
 ' 既に regedit が実行中の場合はいったん終了させる
-Dim processList: Set processList = WMIService.ExecQuery("SELECT * FROM Win32_Process WHERE Name = 'regedit.exe'")
-Dim process: For Each process In processList
+Dim processList : Set processList = WMIService.ExecQuery("SELECT * FROM Win32_Process WHERE Name = 'regedit.exe'")
+Dim process : For Each process In processList
   ' 最後のウインドウの位置とサイズを保存して終了させる
   WSHShell.AppActivate("レジストリ エディタ")
   WScript.Sleep(500)
@@ -45,19 +44,19 @@ Call WSHShell.Run("regedit.exe")
 ' OS バージョンを取得する
 Function DetectOSVersion()
   ' OS 情報を取得し、バージョン番号を抜き出す
-  Dim osData: Set osData = WMIService.ExecQuery("SELECT Version FROM Win32_OperatingSystem")
+  Dim osData : Set osData = WMIService.ExecQuery("SELECT Version FROM Win32_OperatingSystem")
   
   Dim rawVersion
-  Dim os: For Each os in osData
+  Dim os : For Each os in osData
     rawVersion = os.Version
   Next
   
   ' バージョン番号をピリオドで分割する
-  Dim versionNumbers: versionNumbers = Split(rawVersion, ".")
+  Dim versionNumbers : versionNumbers = Split(rawVersion, ".")
   
   ' 小数第1位までの値を格納する
   Dim osVersion
-  Dim i: For i = 0 To UBound(versionNumbers)
+  Dim i : For i = 0 To UBound(versionNumbers)
     If i > 1 Then
       Exit For
     End If

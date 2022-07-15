@@ -12,30 +12,39 @@
 - コントロールパネル
     - キーボード → 「速度」タブでカスタムする
     - システムの詳細設定 → 「詳細設定」タブ → 「パフォーマンス」欄の「設定」ボタン → 「視覚効果」タブでカスタムする
-- WSL : __[WSL.md](./WSL.md)__ を参照
 - `Recovery/` 配下の `.reg` を実行していく
+- WSL : __[WSL.md](./WSL.md)__ を参照
 
 
 ## Git SDK・Dotfiles のインストール
 
-- [Git SDK](https://github.com/git-for-windows/build-extra/releases)
+- [Git SDK](https://github.com/git-for-windows/build-extra/releases) を `C:\git-sdk-64\` にインストールする
     - 一度起動しておく
-    - `C:\git-sdk-64\etc\` 配下の `profile` を退避し、軽量版の `profile` を配置する
+    - `C:\git-sdk-64\etc\` 配下の `profile` を退避し、`Recovery/` 配下にある軽量版の `profile` を配置する
     - `C:\git-sdk-64.git\` を削除しておく
 
-### Dotfiles の配置・設定
+```bash
+# 初回は以下を実行して改行コードの自動変換をしないようにしておく
+# もしくは次の URL より `.gitconfig` だけ導入しておく : <https://raw.githubusercontent.com/Neos21/dotfiles/master/.gitconfig>
+$ git config --global core.autocrlf false
 
-Git SDK および WSL で初回実行する。
+# 必要なディレクトリを作成しておく
+$ mkdir -p /c/Neos21/0/
+$ mkdir -p /c/Neos21/Clouds/
+$ mkdir -p /c/Neos21/Home/
 
-- 初回は以下を実行して改行コードの自動変換をしないようにしておく
-    - `$ git config --global core.autocrlf false`
-    - もしくは次の URL より `.gitconfig` を取得しておく : <https://raw.githubusercontent.com/Neos21/dotfiles/master/.gitconfig>
-- [dotfiles](https://github.com/Neos21/dotfiles) リポジトリをダウンロードする
-    - Git SDK : `$ mkdir -p /c/Neos21/Dev/GitHub/ && cd $_`
-    - WSL : `$ mkdir -p /home/neo/Documents/Dev/GitHub/ && cd $_`
-    - `$ git clone https://Neos21@github.com/Neos21/dotfiles.git && cd $_`
-- Dotfiles をユーザホーム配下にコピーする
-    - `$ ./sync-dotfiles.sh`
+# 各種リポジトリを取得する
+$ mkdir -p /c/Neos21/Dev/GitHub/
+$ mkdir -p /c/Neos21/Dev/BitBucket/
+$ mkdir -p /c/Neos21/Dev/Sandboxes/
+
+# Dotfiles リポジトリを取得する
+$ cd /c/Neos21/Dev/GitHub/
+$ git clone https://Neos21@github.com/Neos21/dotfiles.git
+$ cd ./dotfiles/
+# Dotfiles をユーザホーム配下にコピーする
+$ ./sync-dotfiles.bash
+```
 
 
 ## Chocolatey
@@ -44,12 +53,12 @@ Git SDK および WSL で初回実行する。
 
 ```ps1
 # Chocolatey 本体をインストールする
-Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+PS> Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
 # どの環境でも必須と思われるモノ
-choco install -y  googlechrome  brave          firefox  notepadplusplus  vscode
-choco install -y  autohotkey    classic-shell  rbtray   winaero-tweaker
-choco install -y  7zip          nodist         mpc-hc   vlc              foxitreader
+PS> choco install -y  googlechrome  brave          firefox  notepadplusplus  vscode
+PS> choco install -y  autohotkey    classic-shell  rbtray   winaero-tweaker
+PS> choco install -y  7zip          nodist         mpc-hc   vlc              foxitreader
 
 # 必要に応じて入れるモノ
 # mactype evernote mp3gain-gui handbrake shexview sysinternals
@@ -68,7 +77,7 @@ choco install -y  7zip          nodist         mpc-hc   vlc              foxitre
 - Chrome
     - Gmail アカウントで設定同期する
     - Advanced Font Settings で Noto Sans 系を選択する
-    - Stylus、Markdown Preview Plus の設定をインポートする
+    - Stylus、Markdown Preview Plus の設定をインポートする (別リポジトリ参照)
 - Brave
     - 同期コードで設定同期する
     - 主な拡張機能の設定は Chrome と同様にする
@@ -79,16 +88,18 @@ choco install -y  7zip          nodist         mpc-hc   vlc              foxitre
     - Firefox アカウントで設定同期する
     - 主な拡張機能の設定は Chrome と同様にする
 - NotePad++
+    - 設定ファイルを配置する (別リポジトリ参照)
     - Markdown にシンタックスハイライトが付いてしまった場合は削除する
 - VSCode
     - Settings Sync 拡張機能をインストールし設定同期する
 - AutoHotKey
     - `Tools/` を参照・`NeosAutoHotKey.ahk` をスタートアップに追加する
 - Classic Shell
-    - 設定ファイルをインポートし `Se7en Orb.png` を参照する
-    - `C:\Program Files\Classic Shell\` に `ja-JP.dll` を配置する
+    - `Recovery/` 配下の設定ファイルをインポートし `Se7en Orb.png` を参照する
 - RBTray
     - スタートアップに追加する
+- Winaero Tweaker
+    - よしなに
 - Nodist
     ```bash
     $ nodist dist
@@ -103,7 +114,6 @@ choco install -y  7zip          nodist         mpc-hc   vlc              foxitre
 
 - MacType
     - `Recovery/` を参照・`NeosMacType.ini` をインポートし設定する
-    - ツール側の設定でスタートアップ起動するようにする
 - Evernote
     - アカウントにログインする
 
@@ -114,6 +124,7 @@ choco install -y  7zip          nodist         mpc-hc   vlc              foxitre
     - メイリオにする
 - [Google 日本語入力](https://www.google.co.jp/ime/)
     - 辞書をインポートする
+    - キー操作を ATOK にする
 - [Google Backup And Sync](https://www.google.com/intl/ja_ALL/drive/download/)
     - `C:\Neos21\Clouds\Google Drive\` で同期する
 - [Magnet Window](https://www.vector.co.jp/soft/dl/winnt/util/se175660.html)
@@ -129,12 +140,12 @@ choco install -y  7zip          nodist         mpc-hc   vlc              foxitre
     - WSL のセットアップ完了後にインストールする
     - DockerHub アカウントでログインする
 - Office
-- Adobe Creative Cloud (Photoshop・Illustrator・Premiere Pro・After Effects・Audition・Lightroom)
 
 ### 必要に応じてインストールする
 
 - [Dropbox](https://www.dropbox.com/ja/install)
     - `C:\Neos21\Clouds\Dropbox\` で同期する
+- Adobe Creative Cloud (Photoshop・Illustrator・Premiere Pro・After Effects・Audition・Lightroom)
 
 
 ## Microsoft Store からインストールする
@@ -146,4 +157,15 @@ choco install -y  7zip          nodist         mpc-hc   vlc              foxitre
 
 - iTunes
     - Shift キーを押しながらアプリを起動し、`Music` ディレクトリの `iTunes Library.itl` を選択する。こうしないと iTunes フォルダを変更できない
-    - Apple ID アカウントにログインし、イコライザを設定する
+    - Apple ID アカウントにログインする
+    - イコライザを設定する
+
+
+## Git より取得する
+
+```bash
+# Git SDK にて
+
+# 必要なモノだけ ~/.ssh/ に配置する
+$ mkdir -p /c/Users/Neo/.ssh/
+```

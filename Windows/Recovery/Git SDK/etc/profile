@@ -33,4 +33,3 @@ test -d "$TMPDIR" || test ! -d "$TMP" || {
   TMPDIR="$TMP"
   export TMPDIR
 }
-

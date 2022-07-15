@@ -26,7 +26,7 @@
 
 /* ページ全体のスタイルを設定する */
 html {
-  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, YuGothic, "Yu Gothic", "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, "Noto Sans JP", "Noto Sans CJK JP", YuGothic, "Yu Gothic", "Hiragino Sans", "Hiragino Kaku Gothic ProN", Meiryo, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   overflow-y: scroll;
   cursor: default;
   text-decoration-skip-ink: none;
@@ -120,7 +120,7 @@ address, dfn, em, var {
 
 /* 等幅フォントにする */
 pre, code, kbd, samp, var, textarea {
-  font-family: MeiryoKe_Gothic, Osaka-mono, "MS Gothic", "Courier New", monospace, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-family: "Noto Sans Mono CJK JP", MeiryoKe_Gothic, Osaka-mono, "MS Gothic", "Courier New", monospace, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 /* IE11 でフォントサイズが小さくなるのを直す */

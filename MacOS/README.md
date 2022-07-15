@@ -204,6 +204,11 @@ $ terraform -v
 ## Git より取得する
 
 ```bash
+# 必要なディレクトリを作成しておく
+$ mkdir -p ~/0/
+$ mkdir -p ~/Clouds/
+$ mkdir -p ~/Home/
+
 # 各種リポジトリを取得する
 $ mkdir -p ~/Documents/Dev/GitHub/
 $ mkdir -p ~/Documents/Dev/BitBucket/
