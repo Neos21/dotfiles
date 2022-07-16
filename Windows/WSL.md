@@ -7,6 +7,10 @@
     - <https://aka.ms/wsl2-install>
         - <https://docs.microsoft.com/ja-jp/windows/wsl/install-win10>
     - ```ps1
+      # 現在は以下で何とかなるかも
+      PS> wsl --install
+      
+      # 以前はこんなコマンドだった
       PS> dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
       PS> dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
       ```
@@ -108,6 +112,12 @@ $ sudo dpkg-reconfigure tzdata
 
 # 日本語 man を入れる
 $ sudo apt install -y manpages-ja manpages-ja-dev
+
+# 各種ディレクトリを作る・必要に応じて Git より取得する
+$ mkdir -p ~/Documents/Dev/GitHub/
+$ mkdir -p ~/Documents/Dev/BitBucket/
+$ mkdir -p ~/Documents/Dev/Sandboxes/
+$ mkdir -p ~/.ssh/
 ```
 
 ### VcXsrv で接続する GNOME デスクトップ環境の構築手順
@@ -214,8 +224,8 @@ $ vi ~/.bashrc
   # nodebrew
   export PATH="${HOME}/.nodebrew/current/bin:${PATH}"
 $ nodebrew ls-remote
-$ nodebrew install v14.16.1
-$ nodebrew use v14.16.1
+$ nodebrew install v18.6.0
+$ nodebrew use v18.6.0
 
 # wsl-open
 $ npm install -g wsl-open

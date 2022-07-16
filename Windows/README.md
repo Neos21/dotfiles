@@ -32,6 +32,7 @@ $ git config --global core.autocrlf false
 $ mkdir -p /c/Neos21/0/
 $ mkdir -p /c/Neos21/Clouds/
 $ mkdir -p /c/Neos21/Home/
+$ mkdir -p /c/Neos21/Tools/
 
 # 各種リポジトリを取得する
 $ mkdir -p /c/Neos21/Dev/GitHub/
@@ -44,6 +45,10 @@ $ git clone https://Neos21@github.com/Neos21/dotfiles.git
 $ cd ./dotfiles/
 # Dotfiles をユーザホーム配下にコピーする
 $ ./sync-dotfiles.bash
+
+# その他 Git より取得する
+# 必要なモノだけ ~/.ssh/ に配置する
+$ mkdir -p /c/Users/Neo/.ssh/
 ```
 
 
@@ -102,9 +107,10 @@ PS> choco install -y  7zip          nodist         mpc-hc   vlc              fox
     - よしなに
 - Nodist
     ```bash
+    # Git SDK で良い
     $ nodist dist
-    $ nodist add v14.16.1
-    $ nodist global v14.16.1
+    $ nodist add v18.6.0
+    $ nodist global v18.6.0
     $ nodist npm match
     ```
 - MPC-HC
@@ -159,13 +165,3 @@ PS> choco install -y  7zip          nodist         mpc-hc   vlc              fox
     - Shift キーを押しながらアプリを起動し、`Music` ディレクトリの `iTunes Library.itl` を選択する。こうしないと iTunes フォルダを変更できない
     - Apple ID アカウントにログインする
     - イコライザを設定する
-
-
-## Git より取得する
-
-```bash
-# Git SDK にて
-
-# 必要なモノだけ ~/.ssh/ に配置する
-$ mkdir -p /c/Users/Neo/.ssh/
-```
