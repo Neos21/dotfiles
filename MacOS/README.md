@@ -110,7 +110,7 @@ $ brew install git tig
 $ brew install vim tmux reattach-to-user-namespace
 $ brew install gnu-sed moreutils dateutils binutils
 $ brew install bat colordiff exa iproute2mac nkf nmap ripgrep shellcheck tree w3m watch wget htop ydiff
-$ brew install jq kubernetes-cli
+$ brew install jq kubernetes-cli kubectx
 
 # 必要に応じて入れる
 $ brew install ghi thefuck tldr
