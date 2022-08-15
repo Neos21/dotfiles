@@ -149,13 +149,15 @@ elif [ "$(uname)" == 'Linux' ]; then
   # For ThinkPad TrackPad Not Working
   alias rt='sudo modprobe -r psmouse && sudo modprobe psmouse'
   
-  # Python3
-  alias python='/usr/bin/python3.7'
-  alias pip='/usr/bin/pip3'
+  # Python
+  PATH="${PATH}:${HOME}/.poetry/bin"
+  
+  # Go Lang
+  PATH="${PATH}:/usr/local/go/bin"
   
   # Rust
   PATH="${PATH}:${HOME}/.cargo/bin"
-  source "${HOME}/.cargo/env"
+  test -r "${HOME}/.cargo/env" && source "${HOME}/.cargo/env"
   
   # Clipboard
   if type xclip > /dev/null 2>&1; then
