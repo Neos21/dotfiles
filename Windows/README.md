@@ -12,7 +12,6 @@
 - コントロールパネル
     - キーボード → 「速度」タブでカスタムする
     - システムの詳細設定 → 「詳細設定」タブ → 「パフォーマンス」欄の「設定」ボタン → 「視覚効果」タブでカスタムする
-- `Recovery/` 配下の `.reg` を実行していく
 - WSL : __[WSL.md](./WSL.md)__ を参照
 
 
@@ -48,7 +47,7 @@ $ ./sync-dotfiles.bash
 
 # その他 Git より取得する
 # 必要なモノだけ ~/.ssh/ に配置する
-$ mkdir -p /c/Users/Neo/.ssh/
+$ mkdir -p "${HOME}/.ssh/"
 ```
 
 
@@ -63,26 +62,22 @@ PS> Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointMa
 # どの環境でも必須と思われるモノ
 PS> choco install -y  googlechrome  brave          firefox  notepadplusplus  vscode
 PS> choco install -y  autohotkey    classic-shell  rbtray   winaero-tweaker
-PS> choco install -y  7zip          nodist         mpc-hc   vlc              foxitreader
+PS> choco install -y  7zip          mpc-hc         vlc      foxitreader
 
 # 必要に応じて入れるモノ
-# mactype evernote mp3gain-gui handbrake shexview sysinternals
-# kubernetes-cli terraform
-# jdk8 python2 python ruby ruby2.devkit gradle
-# virtualbox vagrant sqlite sqlitebrowser
-# slack tor-browser chocolateygui
+# mp3gain-gui handbrake
 
 # 以下はインストールしない
 # - インストールに失敗したことがあるので使わない or 別途インストールする : glaryutilities-free google-backup-and-sync dropbox
 # - Microstore Store からインストールする : microsoft-edge icloud itunes microsoft-windows-terminal
-# - バージョンが古いので使わない : googledrive googlejapaneseinput lhaplus
+# - バージョンが古いので使わない : googledrive googlejapaneseinput lhaplus nodist
 # - もう使用しない : k-litecodecpackfull vcxsrv
 ```
 
 - Chrome
     - Gmail アカウントで設定同期する
     - Advanced Font Settings で Noto Sans 系を選択する
-    - Stylus、Markdown Preview Plus の設定をインポートする (別リポジトリ参照)
+    - Stylus 等の設定をインポートする (別リポジトリ参照)
 - Brave
     - 同期コードで設定同期する
     - 主な拡張機能の設定は Chrome と同様にする
@@ -100,34 +95,17 @@ PS> choco install -y  7zip          nodist         mpc-hc   vlc              fox
 - AutoHotKey
     - `Tools/` を参照・`NeosAutoHotKey.ahk` をスタートアップに追加する
 - Classic Shell
-    - `Recovery/` 配下の設定ファイルをインポートし `Se7en Orb.png` を参照する
+    - `Recovery/` 配下の設定ファイルをインポートし PNG 画像を参照する
 - RBTray
     - スタートアップに追加する
 - Winaero Tweaker
     - よしなに
-- Nodist
-    ```bash
-    # Git SDK で良い
-    $ nodist dist
-    $ nodist add v18.6.0
-    $ nodist global v18.6.0
-    $ nodist npm match
-    ```
 - MPC-HC
     - `C:\Program Files\MPC-HC\` に `Recovery/` 配下の `toolbar.bmp` を配置し、コレをツールバーに使用させる
-
-### 必要に応じてインストールしたモノ
-
-- MacType
-    - `Recovery/` を参照・`NeosMacType.ini` をインポートし設定する
-- Evernote
-    - アカウントにログインする
 
 
 ## 個別にインストールする
 
-- [Windows10 フォントが汚いので一発変更!](https://forest.watch.impress.co.jp/library/software/win10fontchg/)
-    - メイリオにする
 - [Google 日本語入力](https://www.google.co.jp/ime/)
     - 辞書をインポートする
     - キー操作を ATOK にする
@@ -145,12 +123,16 @@ PS> choco install -y  7zip          nodist         mpc-hc   vlc              fox
 - [Docker](https://docs.docker.com/docker-for-windows/install/)
     - WSL のセットアップ完了後にインストールする
     - DockerHub アカウントでログインする
+- [nvm For Windows](https://github.com/coreybutler/nvm-windows/releases)
+    ```bash
+    # Git SDK で良い
+    $ nvm install v18.6.0
+    $ nvm use v18.6.0
+    ```
 - Office
 
 ### 必要に応じてインストールする
 
-- [Dropbox](https://www.dropbox.com/ja/install)
-    - `C:\Neos21\Clouds\Dropbox\` で同期する
 - Adobe Creative Cloud (Photoshop・Illustrator・Premiere Pro・After Effects・Audition・Lightroom)
 
 

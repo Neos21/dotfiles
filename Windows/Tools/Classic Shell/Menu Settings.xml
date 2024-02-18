@@ -15,24 +15,28 @@
 	<HighlightNew value="0"/>
 	<MenuDelay value="100"/>
 	<InfotipDelay value="100,4000"/>
+	<InvertMetroIcons value="0"/>
 	<MainMenuAnimate value="0"/>
-	<GlassOverride value="0"/>
+	<GlassOverride value="1"/>
+	<GlassColor value="13005312"/>
 	<SkinW7 value="Windows Aero"/>
 	<SkinVariationW7 value=""/>
 	<SkinOptionsW7>
 		<Line>USER_IMAGE=1</Line>
 		<Line>SMALL_ICONS=1</Line>
-		<Line>LARGE_FONT=0</Line>
-		<Line>DISABLE_MASK=0</Line>
-		<Line>WHITE_SUBMENUS=1</Line>
+		<Line>THICK_BORDER=0</Line>
+		<Line>SOLID_SELECTION=1</Line>
 	</SkinOptionsW7>
 	<EnableStartButton value="1"/>
 	<StartButtonType value="CustomButton"/>
-	<StartButtonPath value="%SystemDrive%\Neos21\Tools\Classic Shell\Se7en Orb.png"/>
-	<StartButtonAlign value="0"/>
+	<StartButtonPath value="E:\Dev\GitHub\dotfiles\Windows\Tools\Classic Shell\Se7en Orb.png"/>
+	<StartButtonSize value="80"/>
+	<StartButtonAlign value="1"/>
 	<CustomTaskbar value="1"/>
-	<TaskbarLook value="Transparent"/>
-	<TaskbarOpacity value="80"/>
+	<TaskbarLook value="Glass"/>
+	<TaskbarOpacity value="60"/>
+	<TaskbarColor value="16747317"/>
+	<TaskbarTexture value="E:\Dev\GitHub\dotfiles\Windows\Tools\Classic Shell\Windows Vista Taskbar.png"/>
 	<SkipMetro value="1"/>
 	<MenuItems7>
 		<Line>Item1.Command=control_panel</Line>
