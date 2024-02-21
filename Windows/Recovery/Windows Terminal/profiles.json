@@ -35,6 +35,12 @@
     "defaultProfile": "{2c4de342-38b7-51cf-b940-2309a097f518}",
     "disableAnimations": true,
     "minimizeToNotificationArea": true,
+    "newTabMenu": 
+    [
+        {
+            "type": "remainingProfiles"
+        }
+    ],
     "profiles": 
     {
         "defaults": 
@@ -47,28 +53,18 @@
             "colorScheme": "Neo's Color Scheme",
             "font": 
             {
-                "size": 13
-            }
+                "size": 13.0
+            },
+            "useAtlasEngine": true
         },
         "list": 
         [
             {
-                "bellStyle": 
-                [
-                    "window",
-                    "taskbar"
-                ],
-                "colorScheme": "Neo's Color Scheme",
-                "experimental.retroTerminalEffect": false,
-                "font": 
-                {
-                    "size": 13
-                },
+                "elevate": true,
                 "guid": "{2c4de342-38b7-51cf-b940-2309a097f518}",
                 "hidden": false,
                 "name": "Ubuntu",
-                "source": "Windows.Terminal.Wsl",
-                "startingDirectory": "//wsl$/Ubuntu/home/neo"
+                "source": "Windows.Terminal.Wsl"
             },
             {
                 "bellStyle": 
@@ -78,9 +74,10 @@
                 ],
                 "colorScheme": "Neo's Color Scheme",
                 "commandline": "C:\\git-sdk-64\\usr\\bin\\bash.exe --login",
+                "elevate": true,
                 "font": 
                 {
-                    "size": 13
+                    "size": 13.0
                 },
                 "guid": "{eeeeeeee-2222-1111-0000-000000000000}",
                 "icon": "C:\\git-sdk-64\\msys2.ico",
@@ -93,9 +90,10 @@
                     "window",
                     "taskbar"
                 ],
+                "elevate": true,
                 "font": 
                 {
-                    "size": 13
+                    "size": 13.0
                 },
                 "guid": "{61c54bbd-c2c6-5271-96e7-009a87ff44bf}",
                 "hidden": false,
@@ -108,9 +106,10 @@
                     "taskbar"
                 ],
                 "colorScheme": "Neo's Color Scheme",
+                "elevate": true,
                 "font": 
                 {
-                    "size": 13
+                    "size": 13.0
                 },
                 "guid": "{0caa0dad-35be-5f56-a8ff-afceeeaa6101}",
                 "hidden": false,
@@ -328,6 +327,29 @@
             "yellow": "#C4A000"
         },
         {
+            "background": "#300A24",
+            "black": "#171421",
+            "blue": "#0037DA",
+            "brightBlack": "#767676",
+            "brightBlue": "#08458F",
+            "brightCyan": "#2C9FB3",
+            "brightGreen": "#26A269",
+            "brightPurple": "#A347BA",
+            "brightRed": "#C01C28",
+            "brightWhite": "#F2F2F2",
+            "brightYellow": "#A2734C",
+            "cursorColor": "#FFFFFF",
+            "cyan": "#3A96DD",
+            "foreground": "#FFFFFF",
+            "green": "#26A269",
+            "name": "Ubuntu-ColorScheme",
+            "purple": "#881798",
+            "red": "#C21A23",
+            "selectionBackground": "#FFFFFF",
+            "white": "#CCCCCC",
+            "yellow": "#A2734C"
+        },
+        {
             "background": "#000000",
             "black": "#000000",
             "blue": "#000080",
@@ -352,5 +374,6 @@
         }
     ],
     "showTabsInTitlebar": true,
-    "useAcrylicInTabRow": false
+    "themes": [],
+    "useAcrylicInTabRow": true
 }

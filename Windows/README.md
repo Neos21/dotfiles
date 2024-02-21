@@ -91,7 +91,7 @@ PS> choco install -y  7zip          mpc-hc         vlc      foxitreader
     - 設定ファイルを配置する (別リポジトリ参照)
     - Markdown にシンタックスハイライトが付いてしまった場合は削除する
 - VSCode
-    - Settings Sync 拡張機能をインストールし設定同期する
+    - Sync Settings で設定同期する
 - AutoHotKey
     - `Tools/` を参照・`NeosAutoHotKey.ahk` をスタートアップに追加する
 - Classic Shell
@@ -126,6 +126,7 @@ PS> choco install -y  7zip          mpc-hc         vlc      foxitreader
 - [nvm For Windows](https://github.com/coreybutler/nvm-windows/releases)
     ```bash
     # Git SDK で良い
+    $ nvm list available
     $ nvm install v18.6.0
     $ nvm use v18.6.0
     ```
