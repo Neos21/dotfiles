@@ -1,0 +1,135 @@
+// 2025-01-07 時点のバックアップ : 実際は GitHub アカウントで同期しているのでソチラを利用すれば OK
+{
+  "bracketPairColorizer.depreciation-notice": false,
+  
+  "bracket-pair-colorizer-2.depreciation-notice": false,
+  
+  "css.lint.duplicateProperties": "warning",
+  "css.lint.zeroUnits": "warning",
+  
+  "diffEditor.maxComputationTime": 0,
+  
+  "editor.accessibilitySupport": "off",
+  "editor.bracketPairColorization.enabled": false,  // Bracket Pair Colorizer 同等機能だがカラーリングが違うので一旦無効化しておく
+  "editor.codeLens": false,
+  "editor.fontFamily": "MeiryoKe_Gothic, 'Noto Sans Mono CJK JP', monospace",
+  "editor.fontSize": 14,
+  "editor.minimap.enabled": false,
+  "editor.renderControlCharacters": true,
+  "editor.renderWhitespace": "all",
+  "editor.scrollBeyondLastLine": false,
+  "editor.suggestSelection": "first",
+  "editor.tabSize": 2,
+  "editor.trimAutoWhitespace": false,
+  "editor.unicodeHighlight.ambiguousCharacters": false,
+  "editor.unicodeHighlight.invisibleCharacters": false,
+  
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "explorer.fileNesting.patterns": {
+    "*.ts": "${capture}.js",
+    "*.js": "${capture}.js.map, ${capture}.min.js, ${capture}.d.ts",
+    "*.jsx": "${capture}.js",
+    "*.tsx": "${capture}.ts",
+    "tsconfig.json": "tsconfig.*.json",
+    "package.json": "package-lock.json, yarn.lock, pnpm-lock.yaml, bun.lockb",
+    "*.sqlite": "${capture}.${extname}-*",
+    "*.db": "${capture}.${extname}-*",
+    "*.sqlite3": "${capture}.${extname}-*",
+    "*.db3": "${capture}.${extname}-*",
+    "*.sdb": "${capture}.${extname}-*",
+    "*.s3db": "${capture}.${extname}-*"
+  },
+  
+  "extensions.ignoreRecommendations": true,
+  
+  "files.eol": "\n",
+  "files.trimTrailingWhitespace": false,
+  
+  "git.ignoreMissingGitWarning": true,
+  "git.openRepositoryInParentFolders": "never",
+  
+  "html.autoClosingTags": false,
+  "html.format.extraLiners": "",
+  "html.format.indentInnerHtml": true,
+  
+  "javascript.updateImportsOnFileMove.enabled": "never",
+  
+  "js/ts.implicitProjectConfig.experimentalDecorators": true,
+  
+  "merge-conflict.codeLens.enabled": false,
+  
+  "problems.autoReveal": false,
+  "problems.decorations.enabled": false,
+  
+  "python.venvPath": ".venv",
+  
+  "scss.lint.duplicateProperties": "warning",
+  "scss.lint.zeroUnits": "warning",
+  
+  "search.exclude": {
+    "**/node_modules": true
+  },
+  
+  "security.workspace.trust.untrustedFiles": "open",
+  
+  "telemetry.enableCrashReporter": false,
+  
+  "terminal.explorerKind": "both",
+  "terminal.external.windowsExec": "C:/git-sdk-64/usr/bin/bash.exe",
+  "terminal.integrated.automationProfile.windows": {
+    "path": "C:\\git-sdk-64\\usr\\bin\\bash.exe",
+    "args": ["-l"]
+  },
+  "terminal.integrated.cursorBlinking": true,
+  "terminal.integrated.enableMultiLinePasteWarning": false,
+  "terminal.integrated.fontFamily": "Menlo, MeiryoKe_Gothic, 'Noto Sans Mono CJK JP', monospace",
+  "terminal.integrated.fontWeight": "bold",
+  "terminal.integrated.shell.windows": "C:\\git-sdk-64\\usr\\bin\\bash.exe",
+  "terminal.integrated.shellArgs.windows": ["-l"],
+  "terminal.integrated.shellIntegration.decorationsEnabled": "never",
+  "terminal.integrated.defaultProfile.windows": "Git Bash",
+  
+  "typescript.preferences.importModuleSpecifier": "relative",
+  "typescript.updateImportsOnFileMove.enabled": "never",
+  
+  "update.showReleaseNotes": false,
+  
+  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+  
+  "window.customTitleBarVisibility": "windowed",
+  "window.customMenuBarAltFocus": false,
+  "window.menuBarVisibility": "visible",
+  "window.titleBarStyle": "custom",
+  
+  "workbench.activityBar.location": "hidden",
+  "workbench.colorCustomizations": {
+    "terminal.foreground"       : "#ffffff",
+    "terminal.background"       : "#000000",
+    "terminal.ansiBlack"        : "#646464",
+    "terminal.ansiBrightBlack"  : "#646464",
+    "terminal.ansiRed"          : "#ff0000",
+    "terminal.ansiBrightRed"    : "#ff0000",
+    "terminal.ansiGreen"        : "#00ff00",
+    "terminal.ansiBrightGreen"  : "#00ff00",
+    "terminal.ansiYellow"       : "#ffff00",
+    "terminal.ansiBrightYellow" : "#ffff00",
+    "terminal.ansiBlue"         : "#008cff",
+    "terminal.ansiBrightBlue"   : "#008cff",
+    "terminal.ansiMagenta"      : "#ff00ff",
+    "terminal.ansiBrightMagenta": "#ff00ff",
+    "terminal.ansiCyan"         : "#00ffff",
+    "terminal.ansiBrightCyan"   : "#00ffff",
+    "terminal.ansiWhite"        : "#ffffff",
+    "terminal.ansiBrightWhite"  : "#ffffff"
+  },
+  "workbench.colorTheme": "Neos21",
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "workbench.editorAssociations": {
+    "*.db": "default"
+  },
+  "workbench.iconTheme": "material-icon-theme",
+  "workbench.quickOpen.closeOnFocusLost": false,
+  "workbench.startupEditor": "newUntitledFile"
+}
