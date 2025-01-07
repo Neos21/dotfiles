@@ -11,8 +11,8 @@ $ sudo apt autoremove -y
 $ sudo apt install -y git tig tmux jq tree
 
 # 必要なファイル・ディレクトリを準備する
-$ mv ~/.profile ~/_ORIG-profile
-$ mv ~/.bashrc ~/_ORIG-bashrc
+$ mv ~/.profile ~/_RAW_profile
+$ mv ~/.bashrc ~/_RAW_bashrc
 $ mkdir -p ~/Documents/Dev/GitHub ~/Documents/Dev/BitBucket ~/Documents/Dev/Sandboxes
 
 # Dotfiles を配備する
@@ -33,9 +33,10 @@ $ fcitx-configtool
 $ fcitx-autostart
 
 # nvm をインストールする
-$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.37.2/install.sh | bash
+$ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 # ターミナルを再起動する
-$ nvm install 14.15.1
+$ nvm install v22.12.0
+$ nvm use v22.12.0
 # コレだけで Node.js・npm が使えるようになる
 ```
 

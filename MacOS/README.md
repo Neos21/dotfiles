@@ -205,15 +205,10 @@ $ terraform -v
 
 ```bash
 # 必要なディレクトリを作成しておく
-$ mkdir -p ~/0/
-$ mkdir -p ~/Clouds/
-$ mkdir -p ~/Home/
-$ mkdir -p ~/Tools/
+$ mkdir -p ~/0/ ~/Clouds/ ~/Home/ ~/Tools/
 
 # 各種リポジトリを取得する
-$ mkdir -p ~/Documents/Dev/GitHub/
-$ mkdir -p ~/Documents/Dev/BitBucket/
-$ mkdir -p ~/Documents/Dev/Sandboxes/
+$ mkdir -p ~/Documents/Dev/GitHub/ ~/Documents/Dev/BitBucket/ ~/Documents/Dev/Sandboxes/
 
 # その他 Git より取得する
 # 必要なモノだけ ~/.ssh/ に配置する

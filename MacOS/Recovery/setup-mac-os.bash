@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env/ bash
 
 # ================================================================================
 # 【For MacOS】setup-mac-os.bash : Setup MacOS

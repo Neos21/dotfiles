@@ -12,7 +12,7 @@
 - コントロールパネル
     - キーボード → 「速度」タブでカスタムする
     - システムの詳細設定 → 「詳細設定」タブ → 「パフォーマンス」欄の「設定」ボタン → 「視覚効果」タブでカスタムする
-- WSL : __[WSL.md](./WSL.md)__ を参照
+- WSL : **[WSL.md](./WSL.md)** を参照
 
 
 ## Git SDK・Dotfiles のインストール
@@ -28,15 +28,10 @@
 $ git config --global core.autocrlf false
 
 # 必要なディレクトリを作成しておく
-$ mkdir -p /c/Neos21/0/
-$ mkdir -p /c/Neos21/Clouds/
-$ mkdir -p /c/Neos21/Home/
-$ mkdir -p /c/Neos21/Tools/
+$ mkdir -p /c/Neos21/0/ /c/Neos21/Clouds/ /c/Neos21/Home/ /c/Neos21/Tools/
 
 # 各種リポジトリを取得する
-$ mkdir -p /c/Neos21/Dev/GitHub/
-$ mkdir -p /c/Neos21/Dev/BitBucket/
-$ mkdir -p /c/Neos21/Dev/Sandboxes/
+$ mkdir -p /c/Neos21/Dev/GitHub/ /c/Neos21/Dev/BitBucket/ /c/Neos21/Dev/Sandboxes/
 
 # Dotfiles リポジトリを取得する
 $ cd /c/Neos21/Dev/GitHub/
@@ -127,8 +122,8 @@ PS> choco install -y  7zip          mpc-hc         vlc      foxitreader
     ```bash
     # Git SDK で良い
     $ nvm list available
-    $ nvm install v18.6.0
-    $ nvm use v18.6.0
+    $ nvm install v22.12.0
+    $ nvm use v22.12.0
     ```
 - Office
 

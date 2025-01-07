@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # ファイルの差分をチェックする
 
@@ -12,7 +12,9 @@ function check_diff() {
 
 check_diff '.bash_profile'
 check_diff '.bashrc'
+check_diff '.bash_aliases'
 check_diff '.gitconfig'
+check_diff '.hushlogin'
 check_diff '.inputrc'
 check_diff '.npmrc'
 check_diff '.tigrc'
