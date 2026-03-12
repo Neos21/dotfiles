@@ -1,8 +1,26 @@
-// 2025-01-07 時点のバックアップ : 実際は GitHub アカウントで同期しているのでソチラを利用すれば OK
+// 2026-03-13 時点のバックアップ : 実際は GitHub アカウントで同期しているのでソチラを利用すれば OK
 {
   "bracketPairColorizer.depreciation-notice": false,
   
   "bracket-pair-colorizer-2.depreciation-notice": false,
+  
+  "chat.tools.terminal.autoApprove": {
+    "true": true
+  },
+  "chat.viewSessions.orientation": "stacked",
+  
+  "chatgpt.localeOverride": "ja-JP",
+  "chatgpt.runCodexInWindowsSubsystemForLinux": true,
+  
+  "codium.codeCompletion.enable": false,
+  "codium.commitMessage.format": "",
+  "codium.customInstructions.allMessages": "",
+  "codium.customInstructions.specificCommands": {},
+  "codium.editorButton": true,
+  "codium.git.showCommitNotification": false,
+  "codium.rag.maxRemoteSnippets": 5,
+  "codium.terminalAllowedCommands": [],
+  "codium.terminalBlockedCommands": [],
   
   "css.lint.duplicateProperties": "warning",
   "css.lint.zeroUnits": "warning",
@@ -12,18 +30,20 @@
   "editor.accessibilitySupport": "off",
   "editor.bracketPairColorization.enabled": false,  // Bracket Pair Colorizer 同等機能だがカラーリングが違うので一旦無効化しておく
   "editor.codeLens": false,
-  "editor.fontFamily": "MeiryoKe_Gothic, 'Noto Sans Mono CJK JP', monospace",
-  "editor.fontSize": 14,
+  "editor.fontFamily": "'M PLUS 1 Code Medium', 'Noto Sans Mono CJK JP', MeiryoKe_Gothic, monospace",
+  "editor.fontSize": 14.5,
   "editor.minimap.enabled": false,
   "editor.renderControlCharacters": true,
   "editor.renderWhitespace": "all",
   "editor.scrollBeyondLastLine": false,
   "editor.suggestSelection": "first",
+  "editor.tabCompletion": "on",
   "editor.tabSize": 2,
   "editor.trimAutoWhitespace": false,
   "editor.unicodeHighlight.ambiguousCharacters": false,
   "editor.unicodeHighlight.invisibleCharacters": false,
   
+  "explorer.compactFolders": false,
   "explorer.confirmDelete": false,
   "explorer.confirmDragAndDrop": false,
   "explorer.fileNesting.patterns": {
@@ -44,18 +64,46 @@
   "extensions.ignoreRecommendations": true,
   
   "files.eol": "\n",
+  "files.exclude": {
+    "**/.qodo": true
+  },
   "files.trimTrailingWhitespace": false,
+  
+  "geminicodeassist.displayInlineContextHint": false,
   
   "git.ignoreMissingGitWarning": true,
   "git.openRepositoryInParentFolders": "never",
+  
+  "github.copilot.chat.anthropic.tools.websearch.enabled": true,
+  "github.copilot.chat.codesearch.enabled": true,
+  "github.copilot.chat.completionsFetcher": "node-fetch",
+  "github.copilot.chat.languageContext.fix.typescript.enabled": true,
+  "github.copilot.chat.languageContext.typescript.enabled": true,
+  "github.copilot.chat.languageContext.inline.typescript.enabled": true,
+  "github.copilot.chat.languageContext.typescript.includeDocumentation": true,
+  "github.copilot.chat.localeOverride": "ja",
+  "github.copilot.enable": {
+    "plaintext": false,
+    "markdown": false,
+    "*": false
+  },
   
   "html.autoClosingTags": false,
   "html.format.extraLiners": "",
   "html.format.indentInnerHtml": true,
   
+  "http.systemCertificatesNode": true,
+  
+  "javascript.preferences.quoteStyle": "single",
+  "javascript.suggest.completeFunctionCalls": true,
   "javascript.updateImportsOnFileMove.enabled": "never",
   
   "js/ts.implicitProjectConfig.experimentalDecorators": true,
+  
+  "markdown-preview-enhanced.codeBlockTheme": "monokai.css",
+  "markdown-preview-enhanced.frontMatterRenderingOption": "table",
+  
+  "mcpServers": {},
   
   "merge-conflict.codeLens.enabled": false,
   
@@ -63,6 +111,8 @@
   "problems.decorations.enabled": false,
   
   "python.venvPath": ".venv",
+  
+  "remote.autoForwardPortsSource": "hybrid",
   
   "scss.lint.duplicateProperties": "warning",
   "scss.lint.zeroUnits": "warning",
@@ -90,10 +140,16 @@
   "terminal.integrated.shellIntegration.decorationsEnabled": "never",
   "terminal.integrated.defaultProfile.windows": "Git Bash",
   
+  "traycer.languagePreference": "日本語",
+  
   "typescript.preferences.importModuleSpecifier": "relative",
+  "typescript.preferences.quoteStyle": "single",
+  "typescript.suggest.completeFunctionCalls": true,
   "typescript.updateImportsOnFileMove.enabled": "never",
   
   "update.showReleaseNotes": false,
+  
+  "vue.inlayHints.missingProps": true,
   
   "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
   
@@ -104,6 +160,8 @@
   
   "workbench.activityBar.location": "hidden",
   "workbench.colorCustomizations": {
+    "editor.foreground"         : "#ffffff",
+    "editor.background"         : "#121416",
     "terminal.foreground"       : "#ffffff",
     "terminal.background"       : "#000000",
     "terminal.ansiBlack"        : "#646464",
@@ -131,5 +189,5 @@
   },
   "workbench.iconTheme": "material-icon-theme",
   "workbench.quickOpen.closeOnFocusLost": false,
-  "workbench.startupEditor": "newUntitledFile"
+  "workbench.startupEditor": "newUntitledFile",
 }
