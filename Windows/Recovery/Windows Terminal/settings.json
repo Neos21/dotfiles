@@ -10,18 +10,15 @@
                 "split": "auto",
                 "splitMode": "duplicate"
             },
-            "id": "User.splitPane.A6751878",
-            "keys": "alt+shift+d"
+            "id": "User.splitPane.A6751878"
         },
         {
             "command": "find",
-            "id": "User.find",
-            "keys": "ctrl+shift+f"
+            "id": "User.find"
         },
         {
             "command": "paste",
-            "id": "User.paste",
-            "keys": "ctrl+v"
+            "id": "User.paste"
         },
         {
             "command": 
@@ -29,15 +26,35 @@
                 "action": "copy",
                 "singleLine": false
             },
+            "id": "User.copy.644BA8F2"
+        }
+    ],
+    "alwaysShowNotificationIcon": true,
+    "compatibility.allowHeadless": false,
+    "copyFormatting": "none",
+    "copyOnSelect": false,
+    "defaultProfile": "{b9fb0a6c-bf12-5097-bab9-a9928ec0f4f7}",
+    "disableAnimations": true,
+    "keybindings": 
+    [
+        {
+            "id": "User.splitPane.A6751878",
+            "keys": "alt+shift+d"
+        },
+        {
+            "id": "User.find",
+            "keys": "ctrl+shift+f"
+        },
+        {
+            "id": "User.paste",
+            "keys": "ctrl+v"
+        },
+        {
             "id": "User.copy.644BA8F2",
             "keys": "ctrl+c"
         }
     ],
-    "alwaysShowNotificationIcon": true,
-    "copyFormatting": "none",
-    "copyOnSelect": false,
-    "defaultProfile": "{2c4de342-38b7-51cf-b940-2309a097f518}",
-    "disableAnimations": true,
+    "language": "ja",
     "minimizeToNotificationArea": true,
     "newTabMenu": 
     [
@@ -62,6 +79,17 @@
         },
         "list": 
         [
+            {
+                "elevate": true,
+                "font": 
+                {
+                    "face": "Cascadia Mono"
+                },
+                "guid": "{b9fb0a6c-bf12-5097-bab9-a9928ec0f4f7}",
+                "hidden": false,
+                "name": "Ubuntu",
+                "source": "Microsoft.WSL"
+            },
             {
                 "bellStyle": 
                 [
@@ -88,6 +116,7 @@
                 ],
                 "colorScheme": "Neo's Color Scheme",
                 "commandline": "C:\\git-sdk-64\\usr\\bin\\bash.exe --login",
+                "elevate": true,
                 "font": 
                 {
                     "size": 13
@@ -104,6 +133,7 @@
                     "taskbar"
                 ],
                 "commandline": "C:\\Program Files\\PowerShell\\7\\pwsh.exe",
+                "elevate": true,
                 "font": 
                 {
                     "size": 13
@@ -119,6 +149,7 @@
                     "taskbar"
                 ],
                 "colorScheme": "Neo's Color Scheme",
+                "elevate": true,
                 "font": 
                 {
                     "size": 13
@@ -128,6 +159,7 @@
                 "name": "Command Prompt"
             },
             {
+                "elevate": true,
                 "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
                 "hidden": false,
                 "name": "PowerShell",
