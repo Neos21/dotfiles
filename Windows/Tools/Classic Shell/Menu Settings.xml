@@ -49,9 +49,8 @@
 		<Line>Item4.Command=run</Line>
 		<Line>Item5.Command=separator</Line>
 		<Line>Item6.Command=user_files</Line>
-		<Line>Item7.Command=user_documents</Line>
-		<Line>Item8.Command=computer</Line>
-		<Line>Item9.Command=separator</Line>
+		<Line>Item7.Command=computer</Line>
+		<Line>Item8.Command=separator</Line>
 	</MenuItems7>
 	<DisablePinExt value="1"/>
 	<SoundMain value=""/>
