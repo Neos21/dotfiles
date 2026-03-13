@@ -1,4 +1,8 @@
 [wsl2]
 memory=16GB
 swap=0
-#networkingMode=mirrored
+# For Windows11
+networkingMode=Mirrored
+
+[experimental]
+hostAddressLoopback=true

@@ -20,6 +20,7 @@
 - 参考
     - [Ubuntu 24.04 LTSでもUSキーボードのAlt-L/Alt-Rで入力切替をする](https://zenn.dev/suree/articles/7768f5b6b871b2)
 
+
 ## 環境設定
 
 ```bash
@@ -41,6 +42,24 @@ $ sudo update-alternatives --config editor
 
 # 「neo  ALL=(ALL)  NOPASSWD:ALL」を追記する
 $ sudo visudo
+
+# 各種ディレクトリを作る・必要に応じて Git より取得する
+$ mkdir -p "${HOME}/Documents/Dev/GitHub/" "${HOME}/Documents/Dev/BitBucket/" "${HOME}/Documents/Dev/Sandboxes/"
+
+# Dotfiles リポジトリを取得する
+$ cd "${HOME}/Documents/Dev/GitHub/"
+$ git clone https://Neos21@github.com/Neos21/dotfiles.git
+$ cd ./dotfiles/
+# Dotfiles をユーザホーム配下にコピーする
+$ ./sync-dotfiles.bash
+
+# Private Backups リポジトリを取得する : 必要な資材を取り出す
+$ cd "${HOME}/Documents/Dev/BitBucket/"
+$ git clone https://Neos21@bitbucket.org/Neos21/private-backups.git
+
+# その他 Git より取得する
+# 必要なモノだけ ~/.ssh/ に配置する
+$ mkdir -p "${HOME}/.ssh/"
 ```
 
 - ホームディレクトリ配下のサブディレクトリを英語表記にする
@@ -83,6 +102,8 @@ $ sudo visudo
 
 ```bash
 $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+
+# 今のところ必須で入れてるモノなし
 ```
 
 
@@ -94,6 +115,7 @@ $ /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/
 $ curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
 # ~/.bashrc に2行書かれるのでよしなに
 
-$ nvm install v22.12.0
-$ nvm use v22.12.0
+$ nvm ls-remote
+$ nvm install v24.14.0
+$ nvm use v24.14.0
 ```
