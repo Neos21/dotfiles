@@ -13,7 +13,7 @@ IFS=$'\n'
 
 # ls -1 で上手く表示できているか見ておく。ファイル名が長すぎるとダメ
 # for 部分の `$(ls -1)` はダブルクォートで囲んではダメ。バッククォートは同じ
-for input in $(ls -1 | grep '\.mp4'); do
+for input in $(ls -1 | grep -e '\.flac' -e '\.m4a' -e '\.mp4'); do
   echo "---------- $(date --iso-8601=seconds) ----- ${input} Start"
   encode_video "${input}"
   echo "========== $(date --iso-8601=seconds) ===== ${input} Finished"
