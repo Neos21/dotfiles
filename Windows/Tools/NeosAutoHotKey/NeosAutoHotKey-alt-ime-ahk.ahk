@@ -6,8 +6,11 @@
 ;
 ; Author:     karakaram   http://www.karakaram.com/alt-ime-on-off
 
+; 作業フォルダを自身の位置に固定する
+SetWorkingDir %A_ScriptDir%
+
 ; #Include IME.ahk
-#Include NeosAutoHotKey-IME.ahk
+#Include %A_ScriptDir%\NeosAutoHotKey-IME.ahk
 
 ; Razer Synapseなど、キーカスタマイズ系のツールを併用しているときのエラー対策
 #MaxHotkeysPerInterval 350
