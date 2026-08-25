@@ -33,7 +33,7 @@
     "compatibility.allowHeadless": false,
     "copyFormatting": "none",
     "copyOnSelect": false,
-    "defaultProfile": "{b9fb0a6c-bf12-5097-bab9-a9928ec0f4f7}",
+    "defaultProfile": "{2c4de342-38b7-51cf-b940-2309a097f518}",
     "disableAnimations": true,
     "keybindings": 
     [
@@ -79,17 +79,6 @@
         },
         "list": 
         [
-            {
-                "elevate": true,
-                "font": 
-                {
-                    "face": "Cascadia Mono"
-                },
-                "guid": "{b9fb0a6c-bf12-5097-bab9-a9928ec0f4f7}",
-                "hidden": false,
-                "name": "Ubuntu",
-                "source": "Microsoft.WSL"
-            },
             {
                 "bellStyle": 
                 [
@@ -159,7 +148,6 @@
                 "name": "Command Prompt"
             },
             {
-                "elevate": true,
                 "guid": "{574e775e-4f2a-5b96-ac1e-a2962a402336}",
                 "hidden": false,
                 "name": "PowerShell",
@@ -194,6 +182,7 @@
         }
     ],
     "showTabsInTitlebar": true,
+    "theme": "dark",
     "themes": [],
     "useAcrylicInTabRow": false
 }
