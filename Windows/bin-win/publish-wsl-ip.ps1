@@ -17,7 +17,7 @@ if(!$ip) {
 
 # All the ports you want to forward separated by comma
 # 外部公開したいポート番号をカンマ区切りで列挙する
-$ports = @(22,3000,4200,8080);
+$ports = @(22,3000,4200,5173,8080);
 $ports_a = $ports -join ",";
 
 # Remove Firewall Exception Rules
