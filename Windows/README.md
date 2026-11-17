@@ -6,7 +6,10 @@
 以下をインストールする。
 
 - [メイリオ改](http://141.147.164.133/fonts/)
+    - [jsDelivr](https://www.jsdelivr.com/package/npm/@japanese-monospaced-fonts/meiryo-ke-gothic?tab=files) : [Regular](https://cdn.jsdelivr.net/npm/@japanese-monospaced-fonts/meiryo-ke-gothic@1.0.0/MeiryoKeGothic.ttf) [Bold](https://cdn.jsdelivr.net/npm/@japanese-monospaced-fonts/meiryo-ke-gothic@1.0.0/MeiryoKeGothic-Bold.ttf)
 - [Noto Sans CJK JP・Noto Sans Mono CJK JP・Noto Serif CJK JP](https://github.com/googlefonts/noto-cjk/tree/main/Sans)
+    - [jsDelivr](https://www.jsdelivr.com/package/npm/@japanese-monospaced-fonts/noto-sans-mono-cjk-jp?tab=files) : [Regular](https://cdn.jsdelivr.net/npm/@japanese-monospaced-fonts/noto-sans-mono-cjk-jp@1.0.1/NotoSansMonoCJKJP-Regular.otf) [Bold](https://cdn.jsdelivr.net/npm/@japanese-monospaced-fonts/noto-sans-mono-cjk-jp@1.0.1/NotoSansMonoCJKJP-Bold.otf)
+    - [jsDelivr](https://www.jsdelivr.com/package/npm/@neos21/japanese-monospaced-fonts?tab=files) : [Regular](https://cdn.jsdelivr.net/npm/@neos21/japanese-monospaced-fonts@1.0.2/NotoSansMonoCJKjp-Regular.otf) [Bold](https://cdn.jsdelivr.net/npm/@neos21/japanese-monospaced-fonts@1.0.2/NotoSansMonoCJKjp-Bold.otf)
 - [M Plus 1 Code](https://fonts.google.com/specimen/M+PLUS+1+Code)
 - お好みで
     - [源柔ゴシック](http://jikasei.me/font/genjyuu/)
@@ -187,7 +190,7 @@ PS> choco install -y classic-shell
 - Twinkle Tray
 - Ubuntu
     - WSL
-- Windows Subsystem for Linux
+- Windows Subsystem For Linux
     - WSL
 - Windows Terminal
     - `Recovery/` 配下の設定ファイルをコピーする

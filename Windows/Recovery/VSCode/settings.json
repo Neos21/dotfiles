@@ -1,26 +1,16 @@
-// 2026-03-13 時点のバックアップ : 実際は GitHub アカウントで同期しているのでソチラを利用すれば OK
+// 2026-11-17 時点のバックアップ : 実際は GitHub アカウントで同期しているのでソチラを利用すれば OK
 {
-  "bracketPairColorizer.depreciation-notice": false,
-  
-  "bracket-pair-colorizer-2.depreciation-notice": false,
-  
+  "chat.titleBar.openInAgentsWindow.enabled": false,
   "chat.tools.terminal.autoApprove": {
     "true": true
   },
   "chat.viewSessions.orientation": "stacked",
   
+  "chatgpt.composerEnterBehavior": "cmdAlways",
+  "chatgpt.followUpQueueMode": "steer",
   "chatgpt.localeOverride": "ja-JP",
+  "chatgpt.reviewDelivery": "detached",
   "chatgpt.runCodexInWindowsSubsystemForLinux": true,
-  
-  "codium.codeCompletion.enable": false,
-  "codium.commitMessage.format": "",
-  "codium.customInstructions.allMessages": "",
-  "codium.customInstructions.specificCommands": {},
-  "codium.editorButton": true,
-  "codium.git.showCommitNotification": false,
-  "codium.rag.maxRemoteSnippets": 5,
-  "codium.terminalAllowedCommands": [],
-  "codium.terminalBlockedCommands": [],
   
   "css.lint.duplicateProperties": "warning",
   "css.lint.zeroUnits": "warning",
@@ -42,6 +32,7 @@
   "editor.trimAutoWhitespace": false,
   "editor.unicodeHighlight.ambiguousCharacters": false,
   "editor.unicodeHighlight.invisibleCharacters": false,
+  "editor.unicodeHighlight.nonBasicASCII": false,
   
   "explorer.compactFolders": false,
   "explorer.confirmDelete": false,
@@ -69,10 +60,10 @@
   },
   "files.trimTrailingWhitespace": false,
   
-  "geminicodeassist.displayInlineContextHint": false,
-  
+  "git.blame.editorDecoration.enabled": false,
   "git.ignoreMissingGitWarning": true,
   "git.openRepositoryInParentFolders": "never",
+  "git.path": "C:\\git-sdk-64\\usr\\bin\\git.exe",
   
   "github.copilot.chat.anthropic.tools.websearch.enabled": true,
   "github.copilot.chat.codesearch.enabled": true,
@@ -87,6 +78,7 @@
     "markdown": false,
     "*": false
   },
+  "github.copilot.nextEditSuggestions.enabled": false,
   
   "html.autoClosingTags": false,
   "html.format.extraLiners": "",
@@ -94,16 +86,15 @@
   
   "http.systemCertificatesNode": true,
   
-  "javascript.preferences.quoteStyle": "single",
-  "javascript.suggest.completeFunctionCalls": true,
-  "javascript.updateImportsOnFileMove.enabled": "never",
-  
   "js/ts.implicitProjectConfig.experimentalDecorators": true,
+  "js/ts.preferences.importModuleSpecifier": "relative",
+  "js/ts.preferences.preferTypeOnlyAutoImports": true,
+  "js/ts.preferences.quoteStyle": "single",
+  "js/ts.suggest.completeFunctionCalls": true,
+  "js/ts.updateImportsOnFileMove.enabled": "always",
   
   "markdown-preview-enhanced.codeBlockTheme": "monokai.css",
   "markdown-preview-enhanced.frontMatterRenderingOption": "table",
-  
-  "mcpServers": {},
   
   "merge-conflict.codeLens.enabled": false,
   
@@ -114,6 +105,10 @@
   
   "remote.autoForwardPortsSource": "hybrid",
   
+  "scm.diffDecorationsGutterPattern": {
+    "added": true
+  },
+  
   "scss.lint.duplicateProperties": "warning",
   "scss.lint.zeroUnits": "warning",
   
@@ -121,44 +116,69 @@
     "**/node_modules": true
   },
   
+  "security.allowedUNCHosts": [
+    "wsl.localhost"
+  ],
+  "security.promptForLocalFileProtocolHandling": false,
+  "security.promptForRemoteFileProtocolHandling": false,
   "security.workspace.trust.untrustedFiles": "open",
   
-  "telemetry.enableCrashReporter": false,
+  "telemetry.editStats.enabled": false,
+  "telemetry.feedback.enabled": false,
+  "telemetry.telemetryLevel": "off",
   
   "terminal.explorerKind": "both",
-  "terminal.external.windowsExec": "C:/git-sdk-64/usr/bin/bash.exe",
+  "terminal.external.windowsExec": "C:\\git-sdk-64\\usr\\bin\\bash.exe",
+  "terminal.integrated.allowInUntrustedWorkspace": true,
   "terminal.integrated.automationProfile.windows": {
     "path": "C:\\git-sdk-64\\usr\\bin\\bash.exe",
     "args": ["-l"]
   },
   "terminal.integrated.cursorBlinking": true,
-  "terminal.integrated.enableMultiLinePasteWarning": false,
+  "terminal.integrated.defaultProfile.windows": "GitSDK",
+  "terminal.integrated.enableMultiLinePasteWarning": "never",
   "terminal.integrated.fontFamily": "Menlo, MeiryoKe_Gothic, 'Noto Sans Mono CJK JP', monospace",
   "terminal.integrated.fontWeight": "bold",
-  "terminal.integrated.shell.windows": "C:\\git-sdk-64\\usr\\bin\\bash.exe",
-  "terminal.integrated.shellArgs.windows": ["-l"],
+  "terminal.integrated.initialHint": false,
+  "terminal.integrated.profiles.windows": {
+    "GitSDK": {
+      "path": "C:\\git-sdk-64\\usr\\bin\\bash.exe",
+      "args": [
+        "-l",
+        "-i"
+      ]
+    },
+    "Ubuntu (WSL)": {
+      "path": "C:\\WINDOWS\\System32\\wsl.exe",
+      "args": [
+        "-d",
+        "Ubuntu"
+      ]
+    },
+    "PowerShell": {
+      "source": "PowerShell",
+      "icon": "terminal-powershell"
+    },
+    "Command Prompt": {
+      "path": [
+        "${env:windir}\\Sysnative\\cmd.exe",
+        "${env:windir}\\System32\\cmd.exe"
+      ],
+      "args": [],
+      "icon": "terminal-cmd"
+    }
+  },
   "terminal.integrated.shellIntegration.decorationsEnabled": "never",
-  "terminal.integrated.defaultProfile.windows": "Git Bash",
-  
-  "traycer.languagePreference": "日本語",
-  
-  "typescript.preferences.importModuleSpecifier": "relative",
-  "typescript.preferences.quoteStyle": "single",
-  "typescript.suggest.completeFunctionCalls": true,
-  "typescript.updateImportsOnFileMove.enabled": "never",
   
   "update.showReleaseNotes": false,
   
-  "vue.inlayHints.missingProps": true,
-  
-  "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-  
   "window.customTitleBarVisibility": "windowed",
   "window.customMenuBarAltFocus": false,
+  "window.density.layout": "compact",
   "window.menuBarVisibility": "visible",
   "window.titleBarStyle": "custom",
   
-  "workbench.activityBar.location": "hidden",
+  "workbench.activityBar.location": "top",
   "workbench.colorCustomizations": {
     "editor.foreground"         : "#ffffff",
     "editor.background"         : "#121416",
@@ -188,6 +208,8 @@
     "*.db": "default"
   },
   "workbench.iconTheme": "material-icon-theme",
+  "workbench.layoutControl.enabled": false,
+  "workbench.navigationControl.enabled": false,
   "workbench.quickOpen.closeOnFocusLost": false,
-  "workbench.startupEditor": "newUntitledFile",
+  "workbench.startupEditor": "newUntitledFile"
 }
